@@ -1,0 +1,1 @@
+apktool d -o apktool_output original_petking_5.apk
