@@ -1,6 +1,6 @@
 package com.PetKing5_480x800;
 
-public final class R {
+public final class decompileR {
 
     public static final class array {
         public static final int FontSize = 0x7f050000;

@@ -1044,6 +1044,7 @@ public class GameRun extends GameRun_F {
                                     }
                                 }
                             }
+                            //todo unreachable statement
                             if (rId == 34 && findItem(-2, rId, true) > 0) {
                                 rId = -1;
                             } else if (rId == -1 || findItem(-2, rId, true) >= 99) {
@@ -2429,6 +2430,7 @@ public class GameRun extends GameRun_F {
             b_e = true;
         }
         this.proReplace = null;
+        //todo error array[][]
         this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 1, 6);
         this.proReplace[0][0] = (short) (getbuffRateV(monster, this.monster_pro[eid][0] + ((this.monster_pro[eid][7] * level) / 10)) - monster.monsterPro[2]);
         this.proReplace[0][1] = (short) ((this.monster_pro[eid][1] + ((this.monster_pro[eid][8] * level) / 10)) - monster.monsterPro[3]);
@@ -2701,7 +2703,8 @@ public class GameRun extends GameRun_F {
         	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:45)
         	at jadx.core.dex.visitors.InitCodeVariables.visit(InitCodeVariables.java:29)
         */
-    private void drawMonsterHp(dm.Monster r14, int r15, int r16, int r17, int r18, int r19, 
+    //todo decompiler error
+    private void drawMonsterHp(dm.Monster r14, int r15, int r16, int r17, int r18, int r19, int r20) {
     /*  JADX ERROR: JadxRuntimeException in pass: InitCodeVariables
         jadx.core.utils.exceptions.JadxRuntimeException: Several immutable types in one variable: [int, short], vars: [r20v0 ??, r20v1 ??, r20v2 ??, r20v3 ??]
         	at jadx.core.dex.visitors.InitCodeVariables.setCodeVarType(InitCodeVariables.java:107)
@@ -2743,7 +2746,7 @@ public class GameRun extends GameRun_F {
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:390)
         	at jadx.core.dex.nodes.ClassNode.getCode(ClassNode.java:340)
         */
-
+    }
     private short getMonsterExp(Monster monster) {
         return (short) (((monster.monster[2] * 210) / 10) - 2);
     }
@@ -4134,6 +4137,7 @@ public class GameRun extends GameRun_F {
                     this.myB.cexp = Ms.i().mathSpeedN(this.myB.cexp, this.myMonsters[id].monsterPro[4], 8, false);
                     break;
                 }
+                //todo unreachable statement
                 break;
             case -4:
                 if (this.say_c == 0) {
@@ -4564,6 +4568,7 @@ public class GameRun extends GameRun_F {
             }
             action = this.magic[skill_mode].action(select, this.now_action_Magic[i], 0);
         }
+        //todo decompiler error: not return expected value
     }
 
     private boolean setCartoonFrameMagic_C(int i, int skill_mode, int select, boolean mode) {
@@ -4645,6 +4650,7 @@ public class GameRun extends GameRun_F {
 
     public void goBattlePVC() {
         this.enemyList = null;
+        //todo error array[][]
         this.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 1, 2);
         getEnemy(this.enemyList[0], -1, 0);
         Sound.i().setMusicId(6);
@@ -4733,8 +4739,10 @@ public class GameRun extends GameRun_F {
         this.mon_in_battle = null;
         this.mon_in_battle = new byte[this.max_takes + 1];
         this.levelUp_in_battle = null;
+        //todo error array[][]
         this.levelUp_in_battle = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, this.max_takes, 2);
         this.proReplace = null;
+        //todo error array[][]
         this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, this.myMonsters.length, 7);
         this.myB = new Battle(this.myMonsters);
         enemy_init();
@@ -4928,6 +4936,7 @@ public class GameRun extends GameRun_F {
                     }
                 }
             }
+            //todo syntax error
             if (i > 1) {
             }
         }

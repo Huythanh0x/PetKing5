@@ -274,8 +274,10 @@ public class SMSSender implements Key_H {
         gr.b_c = (byte) 0;
         if (this.tState != -31) {
             gr.levelUp_in_battle = null;
+            //todo error array[][]
             gr.levelUp_in_battle = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, gr.max_takes, 2);
             gr.proReplace = null;
+            //todo error array[][]
             gr.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, gr.myMonsters.length, 7);
         }
         for (byte i = 0; i < gr.myMon_length; i = (byte) (i + 1)) {

@@ -8,6 +8,7 @@ android {
     defaultConfig {
         applicationId 'com.PetKing5_480x800'
         minSdkVersion 4
+        //todo upgrade to higher version later
         targetSdkVersion 4
         versionCode 2
         versionName "2.0"

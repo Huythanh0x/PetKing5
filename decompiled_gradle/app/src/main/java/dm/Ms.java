@@ -71,7 +71,7 @@ public class Ms implements Key_H {
                         rms = null;
                     }
                 } else if (flag == 5) {
-                    Log.e("rms.getSizeAvailable() = ", new StringBuilder().append(rms.getSizeAvailable()).toString());
+                    Log.e("rms.getSizeAvailable()", new StringBuilder().append(rms.getSizeAvailable()).toString());
                     return null;
                 }
             }

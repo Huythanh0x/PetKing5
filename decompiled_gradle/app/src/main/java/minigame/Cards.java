@@ -42,8 +42,10 @@ public class Cards implements MiniGame_H {
         this.gr.setStringB(Constants_H.GAME_TXT_27, Constants_H.WIDTH, 1);
         this.lv = (byte) lv_;
         this.findN = null;
+        //todo error array[][]
         this.findN = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, this.num[this.lv][0], this.num[this.lv][1]);
         this.findC = null;
+        //todo error array[][]
         this.findC = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, this.num[this.lv][0], this.num[this.lv][1]);
         this.length = (byte) 9;
         go(mode);

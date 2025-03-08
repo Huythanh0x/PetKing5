@@ -35,6 +35,7 @@ public final class Font {
 
     public static Font getDefaultFont() {
         Font font = new Font();
+        //todo error syntax
         int style = 0 | 0;
         font.tTypeface = Typeface.create(Typeface.SANS_SERIF, style);
         font.tmpPaint.setTypeface(font.tTypeface);

@@ -803,6 +803,7 @@ public class Map implements Key_H {
                                 byte[] data = Ms.i().getStream("data/battle/boss.d", -1);
                                 byte[][] bossStream = Ms.i().create2Array(data);
                                 int event_temp4 = this.event[i][this.event_now[i] + 1] >> 1;
+                                //todo error array[][]
                                 this.gr.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, event_temp4, 5);
                                 this.now_eV2 = (byte) 0;
                                 while (this.now_eV2 < event_temp4) {
@@ -2159,6 +2160,7 @@ public class Map implements Key_H {
                 return (byte) -1;
             }
         }
+        //todo unreachable statement
         return i;
     }
 
@@ -2989,6 +2991,7 @@ public class Map implements Key_H {
             dis.read(buff);
             Ms.i();
             this.rows = (byte) Ms.getNum(buff);
+            //todo error array[][]
             this.worldData = (short[][]) Array.newInstance((Class<?>) Short.TYPE, this.cols, this.rows);
             for (byte i = 0; i < 3; i = (byte) (i + 1)) {
                 byte layerType = dis.readByte();
@@ -3718,6 +3721,7 @@ public class Map implements Key_H {
             if (this.imgCloud == null) {
                 this.imgCloud = Ms.i().createImage("data/cloud");
                 this.cloud = null;
+                //todo error array[][]
                 this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 4, 3);
             }
             for (byte i = 0; i < this.cloud.length; i = (byte) (i + 1)) {

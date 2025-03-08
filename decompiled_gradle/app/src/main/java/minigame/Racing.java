@@ -30,12 +30,14 @@ public class Racing implements MiniGame_H {
     private final byte NUM = 4;
     private final short MAP_HEIGHT = 450;
     private final short WIN_HEIGHT = 70;
+    //todo error array[][]
     private byte[][] now_a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 4, 3);
 
     public Racing(GameRun gr_) {
         byte[] bArr = new byte[4];
         bArr[3] = -1;
         this.myDate = bArr;
+        //todo error array[][]
         this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 10, 3);
         this.monY = new short[4];
         this.money = new short[]{100, 120, 300, 350, 1000, 1200};

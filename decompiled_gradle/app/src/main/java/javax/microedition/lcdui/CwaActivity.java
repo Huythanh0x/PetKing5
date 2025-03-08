@@ -37,7 +37,7 @@ public class CwaActivity extends Activity {
     }
 
     private void killBackgroundProcess() {
-        ActivityManager activityManager = (ActivityManager) getSystemService("activity");
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> apps = activityManager.getRunningAppProcesses();
         int mypid = Process.myPid();
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : apps) {
@@ -97,7 +97,7 @@ public class CwaActivity extends Activity {
         super.onCreate(savedInstanceState);
         killBackgroundProcess();
         initActivity();
-        this.audioManager = (AudioManager) getSystemService("audio");
+        this.audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         if (this.isFullWindow) {
             setFullScreen();
         }
