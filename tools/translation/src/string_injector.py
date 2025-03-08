@@ -20,6 +20,14 @@ class SmaliStringInjector:
             translations[name] = value
         return translations
     
+    def __init__(self, translation_file: Path):
+        self.translation_file = translation_file
+        self.translations = self.load_translations()
+        self.logger = Logger().get_logger()
+        self.chinese_pattern = re.compile(r'[\u4e00-\u9fff]')
+        self.unicode_string_pattern = re.compile(r'\\u[0-9a-fA-F]{4}')
+        self.string_field_pattern = re.compile(r'\.field.*?String.*?=\s*"(.*?)"')
+
     def inject_translations(self, smali_file: Path):
         """Inject translations into the smali file"""
         with open(smali_file, 'r', encoding='utf-8') as f:
@@ -27,13 +35,11 @@ class SmaliStringInjector:
         
         with open(smali_file, 'w', encoding='utf-8') as f:
             for line in lines:
-                for key, value in self.translations.items():
-                    print()
-                    escaped_key = key.encode("unicode_escape").decode("utf-8")
-                    if f'"{key}"' in line or f'"{escaped_key}"' in line:
-                        # line = re.sub(rf'("{key}"|"{escaped_key}")', f'"{value}"', line)
-                        line = line.replace(f'"{key}"', f'"{value}"')
-                        line = line.replace(f'"{escaped_key}"', f'"{value}"')
-                        # self.logger.info(f"Injected translation: {key} -> {value} in {smali_file}")
-                        self.logger.info(f"Translated line: {line}")
+                if self.chinese_pattern.search(line) or self.unicode_string_pattern.search(line) or self.string_field_pattern.search(line):
+                    for key, value in self.translations.items():
+                        escaped_key = key.encode("unicode_escape").decode("utf-8")
+                        if f'"{key}"' in line or f'"{escaped_key}"' in line:
+                            line = line.replace(f'"{key}"', f'"{value}"')
+                            line = line.replace(f'"{escaped_key}"', f'"{value}"')
+                            self.logger.info(f"Translated line: {line}")
                 f.write(line)

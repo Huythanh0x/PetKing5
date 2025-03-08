@@ -9,6 +9,7 @@ from translation_enum import Translation
 def extract_chinese_string_from_smali():
     # Configure paths
     smali_dir = "../../apktool_output"
+    excluded_dir = "com/uc/paymentsdk"
     output_dir = "out"
     
     # Initialize components
@@ -19,8 +20,10 @@ def extract_chinese_string_from_smali():
     
     # Process files
     smali_files = scanner.scan_smali_files()
-    # logger.info(f"Found {len(smali_files)} smali files to process.")
     for smali_file in smali_files:
+        if str(excluded_dir) in str(smali_file.absolute):
+            continue
+        logger.info(f"Found {len(smali_files)} smali files to process.")
         chinese_strings = extractor.extract_chinese_strings(smali_file)
         for field_name, string_value in chinese_strings:
             xml_handler.add_chinese_string(field_name, string_value)
