@@ -11,12 +11,16 @@ import android.os.Bundle;
 import android.os.Process;
 import android.util.Log;
 import android.view.KeyEvent;
+
 import com.uc.paymentsdk.util.Constants;
-import dalvik.system.VMRuntime;
+
 import java.util.List;
+
 import javax.microedition.lcdui.game.GameCanvas;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletManager;
+
+import dalvik.system.VMRuntime;
 import main.Constants_H;
 
 public class CwaActivity extends Activity {
@@ -27,23 +31,12 @@ public class CwaActivity extends Activity {
     private static Canvas curCanvas;
     private static CwaActivity cwaActivity;
     public AudioManager audioManager;
-    private MIDletManager jam = MIDletManager.getInstance();
+    private final MIDletManager jam = MIDletManager.getInstance();
     private boolean isFullWindow = false;
 
     protected CwaActivity() {
         if (cwaActivity == null) {
             cwaActivity = this;
-        }
-    }
-
-    private void killBackgroundProcess() {
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> apps = activityManager.getRunningAppProcesses();
-        int mypid = Process.myPid();
-        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : apps) {
-            if (runningAppProcessInfo.pid != mypid && runningAppProcessInfo.importance > 300) {
-                Process.killProcess(runningAppProcessInfo.pid);
-            }
         }
     }
 
@@ -58,12 +51,23 @@ public class CwaActivity extends Activity {
         return context;
     }
 
-    public void setCanvas(Canvas canvas) {
-        curCanvas = canvas;
+    private void killBackgroundProcess() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> apps = activityManager.getRunningAppProcesses();
+        int mypid = Process.myPid();
+        for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : apps) {
+            if (runningAppProcessInfo.pid != mypid && runningAppProcessInfo.importance > 300) {
+                Process.killProcess(runningAppProcessInfo.pid);
+            }
+        }
     }
 
     public Canvas getCanvas() {
         return curCanvas;
+    }
+
+    public void setCanvas(Canvas canvas) {
+        curCanvas = canvas;
     }
 
     private void setFullScreen() {

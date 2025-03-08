@@ -2,18 +2,19 @@ package javax.microedition.midlet;
 
 import android.content.Intent;
 import android.net.Uri;
+
 import javax.microedition.io.ConnectionNotFoundException;
 import javax.microedition.lcdui.CwaActivity;
 
 public abstract class MIDlet {
+    protected MIDlet() {
+    }
+
     protected abstract void destroyApp(boolean z) throws MIDletStateChangeException;
 
     protected abstract void pauseApp();
 
     protected abstract void startApp() throws MIDletStateChangeException;
-
-    protected MIDlet() {
-    }
 
     public final void notifyDestroyed() {
         MIDletManager.getInstance().notifyDestroyed();

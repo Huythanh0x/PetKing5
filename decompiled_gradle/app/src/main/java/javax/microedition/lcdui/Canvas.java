@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+
 import com.android.Util.AndroidUtil;
+
 import javax.microedition.midlet.MIDletManager;
 
 public abstract class Canvas extends View implements View.OnTouchListener, View.OnKeyListener {
@@ -31,13 +33,11 @@ public abstract class Canvas extends View implements View.OnTouchListener, View.
     public static final int LEFT = 21;
     public static final int RIGHT = 22;
     public static final int UP = 19;
-    private Graphics g;
     public float keyxx;
     public float keyyy;
     float scale_x;
     float scale_y;
-
-    protected abstract void paint(Graphics graphics);
+    private Graphics g;
 
     protected Canvas() {
         super(CwaActivity.getContextInstance());
@@ -60,6 +60,8 @@ public abstract class Canvas extends View implements View.OnTouchListener, View.
         setOnKeyListener(this);
         setOnTouchListener(this);
     }
+
+    protected abstract void paint(Graphics graphics);
 
     public void setFullScreenMode(boolean mode) {
     }

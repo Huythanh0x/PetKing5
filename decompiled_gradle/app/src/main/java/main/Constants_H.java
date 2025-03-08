@@ -1,6 +1,7 @@
 package main;
 
 import android.util.DisplayMetrics;
+
 import javax.microedition.lcdui.CwaActivity;
 import javax.microedition.media.Player;
 
@@ -90,7 +91,6 @@ public class Constants_H {
     public static final byte CENTER_X = 46;
     public static final byte CENTER_Y = 29;
     public static final byte CHAR_LINE = 10;
-    static byte COL_SELLS = 0;
     public static final byte COMPUTER_MONSTER = 45;
     public static final byte CONFIGURE_MENU = 7;
     public static final byte C_C_MONSTER = 6;
@@ -198,17 +198,13 @@ public class Constants_H {
     public static final int G_RIGHT_BOTTOM = 40;
     public static final int G_RIGHT_TOP = 24;
     public static final int G_RIGHT_VCENTER = 10;
-    static byte HALF_XCELLS = 0;
-    static byte HALF_YCELLS = 0;
     public static final byte HATE = 10;
     public static final byte HATE_ = 3;
     public static final byte HCELL_HEIGHT = 10;
     public static final byte HCELL_WIDTH = 10;
     public static final byte HEAL_MAP = 16;
     public static final int HEIGHT_ = 360;
-    public static int HEIGHT_H = 0;
     public static final int HEIGHT_H_ = 180;
-    public static int HEIGHT__ = 0;
     public static final byte HELP_BUTTON = 3;
     public static final byte HELP_MENU = 4;
     public static final byte INCREASE = 4;
@@ -476,7 +472,6 @@ public class Constants_H {
     public static final byte RMS_NIDUS = 3;
     public static final byte RMS_OTHER = 10;
     public static final byte RMS_SMS = 5;
-    static byte ROW_CELLS = 0;
     public static final byte ROW_HIGHT = 18;
     public static final byte RUN_IN_MAP = -10;
     public static final byte RUN_LEVEL_UP = 20;
@@ -537,7 +532,6 @@ public class Constants_H {
     public static final String TXT_106 = "\u7ecf\u9a8c\u5df2\u6ee1\uff0c\u53ef\u4ee5\u5b75\u5316\u4e86\u3002";
     public static final String TXT_107 = "\u5947\u5f02\u517d\u4e0d\u4ec5\u8dd1\u5f97\u5feb\u800c\u4e14\u53ef\u4ee5\u4e0d\u9047\u654c\uff0c\u73b0\u63d0\u4f9b\u8bd5\u9a91\u4f53\u9a8c\uff0c\u6b63\u7248\u9a8c\u8bc1\u540e\u9700\u8d2d\u4e70\uff01";
     public static final String TXT_11 = "\u83b7\u5f97\u7ecf\u9a8c\uff1a";
-    static final String TXT_111 = "\u643a\u5e26\u7684\u5ba0\u7269\u5168\u90fd\u727a\u7272\u4e86!";
     public static final String TXT_12 = "\u60a8\u7684\u5ba0\u7269\u5df2\u7ecf\u65e0\u6cd5\u83b7\u5f97\u7ecf\u9a8c";
     public static final String TXT_13 = "\u8eab\u4e0a\u5fc5\u987b\u643a\u5e26\u4e00\u53ea\u80fd\u53c2\u6218\u7684\u5ba0\u7269\uff01";
     public static final String TXT_14 = "\u5931\u53bb\u5ba0\u7269\uff1a";
@@ -645,285 +639,160 @@ public class Constants_H {
     public static final byte WALK = 0;
     public static final byte WATER = 2;
     public static final int WIDTH_ = 640;
-    public static int WIDTH_H = 0;
     public static final int WIDTH_H_ = 320;
-    public static int WIDTH__ = 0;
-    static byte XCELLS = 0;
-    static byte YCELLS = 0;
     public static final byte YOUPAUSE = 97;
     public static final byte _ACTION = 7;
     public static final byte _BROW = 6;
     public static final byte _SHOW = 4;
     public static final byte sellPrice = 10;
-
     public static final byte f0 = 8;
-
     public static final byte f1 = 27;
-
     public static final byte f2 = 41;
-
     public static final byte f3 = 2;
-
     public static final byte f4 = 12;
-
     public static final byte f5 = 17;
-
     public static final byte f6 = 26;
-
     public static final byte f7 = 27;
-
     public static final byte f8 = 1;
-
     public static final byte f9 = 2;
-
     public static final byte f10 = 0;
-
     public static final byte f11 = 4;
-
     public static final byte f12 = 29;
-
     public static final byte f13 = 9;
-
     public static final byte f14 = 20;
-
     public static final byte f15 = 13;
-
     public static final byte f16 = 22;
-
     public static final byte f17 = 5;
-
     public static final byte f18 = 16;
-
     public static final byte f19 = 11;
-
     public static final byte f20 = 47;
-
     public static final byte f21 = 14;
-
     public static final byte f22 = 45;
-
     public static final byte f23 = 23;
-
     public static final byte f24 = 35;
-
     public static final byte f25 = 32;
-
     public static final byte f26 = 3;
-
     public static final byte f27 = 58;
-
     public static final byte f28 = 9;
-
     public static final byte f29 = 30;
-
     public static final byte f30 = 6;
-
     public static final byte f31 = 32;
-
     public static final byte f32 = 2;
-
     public static final byte f33 = 39;
-
     public static final byte f34 = 34;
-
     public static final byte f35 = 40;
-
     public static final byte f36 = 17;
-
     public static final byte f37 = 8;
-
     public static final byte f38 = 7;
-
     public static final byte f39 = 0;
-
     public static final byte f40 = 0;
-
     public static final byte f41 = 15;
-
     public static final byte f42 = 2;
-
     public static final byte f43 = 16;
-
     public static final byte f44 = 2;
-
     public static final byte f45 = 7;
-
     public static final byte f46 = 1;
-
     public static final byte f47 = 25;
-
     public static final byte f48 = 11;
-
     public static final byte f49 = 48;
-
     public static final byte f50 = 19;
-
     public static final byte f51 = 3;
-
     public static final byte f52 = 18;
-
     public static final byte f53 = 4;
-
     public static final byte f54 = 0;
-
     public static final byte f55 = 29;
-
     public static final byte f56 = 10;
-
     public static final byte f57 = 31;
-
     public static final byte f58 = 20;
-
     public static final byte f59 = 0;
-
     public static final byte f60 = 11;
-
     public static final byte f61 = 4;
-
     public static final byte f62 = 21;
-
     public static final byte f63 = 26;
-
     public static final byte f64 = 5;
-
     public static final byte f65 = 19;
-
     public static final byte f66 = 5;
-
     public static final byte f67 = 7;
-
     public static final byte f68 = 12;
-
     public static final byte f69 = 25;
-
     public static final byte f70 = 0;
-
     public static final byte f71 = 5;
-
     public static final byte f72 = 4;
-
     public static final byte f73 = 22;
-
     public static final byte f74 = 8;
-
     public static final byte f75 = 24;
-
     public static final byte f76 = 34;
-
     public static final byte f77 = 12;
-
     public static final byte f78 = 37;
-
     public static final byte f79 = 36;
-
     public static final byte f80 = 0;
-
     public static final byte f81 = 4;
-
     public static final byte f82 = 18;
-
     public static final byte f83 = 35;
-
     public static final byte f84 = 3;
-
     public static final byte f85 = 5;
-
     public static final byte f86 = 4;
-
     public static final byte f87 = 3;
-
     public static final byte f88 = 1;
-
     public static final byte f89 = 43;
-
     public static final byte f90 = 2;
-
     public static final byte f91 = 30;
-
     public static final byte f92 = 1;
-
     public static final byte f93 = 13;
-
     public static final byte f94 = 2;
-
     public static final byte f95 = 1;
-
     public static final byte f96 = 1;
-
     public static final byte f97 = 42;
-
     public static final byte f98 = 14;
-
     public static final byte f99 = 38;
-
     public static final byte f100 = 3;
-
     public static final byte f101 = 44;
-
     public static final byte f102 = 31;
-
     public static final byte f103 = 1;
-
     public static final byte f104 = 6;
-
     public static final byte f105 = 46;
-
     public static final byte f106 = 33;
-
     public static final byte f107 = 33;
-
     public static final byte f108 = 7;
-
     public static final byte f109 = 6;
-
     public static final byte f110 = 5;
-
     public static final byte f111 = 3;
-
     public static final byte f112 = 9;
-
     public static final byte f113 = 10;
-
     public static final byte f114 = 2;
-
     public static final byte f115 = 0;
-
     public static final byte f116 = 1;
-
     public static final byte f117 = 15;
-
     public static final byte f118 = -1;
-
     public static final byte f119 = 0;
-
     public static final byte f120 = 4;
-
     public static final byte f121 = 3;
-
     public static final byte f122 = 1;
-
     public static final byte f123 = 2;
-
     public static final byte f124 = 28;
-
     public static final byte f125 = 10;
-
     public static final byte f126 = 3;
-
     public static final byte f127 = 28;
-
     public static final byte f128 = 6;
-
     public static final byte f129 = 23;
-
     public static final byte f130 = 21;
-
     public static final byte f131 = 24;
+    static final String TXT_111 = "\u643a\u5e26\u7684\u5ba0\u7269\u5168\u90fd\u727a\u7272\u4e86!";
+    public static int HEIGHT_H = 0;
+    public static int HEIGHT__ = 0;
+    public static int WIDTH_H = 0;
+    public static int WIDTH__ = 0;
     public static int WIDTH = Player.STARTED;
-    public static int HEIGHT = 240;
     public static final short SCREEN_X = (short) WIDTH;
     public static final int OFF_WIDTH = WIDTH + 20;
+    public static int HEIGHT = 240;
     public static final int OFF_HEIGHT = HEIGHT + 20;
+    static byte COL_SELLS = 0;
+    static byte HALF_XCELLS = 0;
+    static byte HALF_YCELLS = 0;
+    static byte ROW_CELLS = 0;
+    static byte XCELLS = 0;
+    static byte YCELLS = 0;
 
     static {
         WIDTH__ = 533;

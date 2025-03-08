@@ -1,25 +1,28 @@
 package minigame;
 
+import java.lang.reflect.Array;
+
+import javax.microedition.lcdui.Image;
+import javax.microedition.media.Player;
+
 import dm.Ms;
 import dm.Sprite;
 import dm.Ui;
-import java.lang.reflect.Array;
-import javax.microedition.lcdui.Image;
-import javax.microedition.media.Player;
 import main.Constants_H;
 import main.GameRun;
 
 public class Bearer implements MiniGame_H {
+    private final byte SPEED = 10;
+    GameRun gr;
+    byte sel;
     private short ballC0;
     private short ballC1;
     private Sprite bsp;
     private short count;
     private byte cur;
-    GameRun gr;
     private Image img;
     private byte length;
     private byte lv;
-    byte sel;
     private Sprite[] sp;
     private byte state;
     private short time0;
@@ -28,10 +31,9 @@ public class Bearer implements MiniGame_H {
     private short[][] ballDate = {new short[]{10, 20, 60, 10, 220}, new short[]{13, 40, 60, 12, Constants_H.FIRST_ROW}, new short[]{10, 40, 60, 10, 120}};
     private short[] money = {150, 200, 300, 450};
     //todo error array[][]
-    private short[][] xy = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 40, 7);
-    private short[] myxy = {0, 275, 67, 10, 0};
-    private byte[] ball_time = {20, 15, 10, 5};
-    private final byte SPEED = 10;
+    private final short[][] xy = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 40, 7);
+    private final short[] myxy = {0, 275, 67, 10, 0};
+    private final byte[] ball_time = {20, 15, 10, 5};
 
     public Bearer(GameRun gr_) {
         this.gr = gr_;
@@ -150,7 +152,7 @@ public class Bearer implements MiniGame_H {
             int i6 = (Player.REALIZED + 10) * 2;
             gameRun.drawItem(s, x + 420 + 25 + (i5 % 4 == 2 ? 100 : 0), ((i5 >> 2) * 30) + ty2, 0);
             Ui i7 = Ui.i();
-            String str = String.valueOf(this.gDate[0][i5 + 1] < 0 ? "" : "+") + ((int) this.gDate[0][i5 + 1]);
+            String str = (this.gDate[0][i5 + 1] < 0 ? "" : "+") + ((int) this.gDate[0][i5 + 1]);
             int i8 = (Player.REALIZED + 10) * 2;
             i7.drawString(str, x + 420 + 25 + (i5 % 4 == 2 ? 100 : 0) + 16, (((i5 >> 2) * 30) + ty2) - 4, 0, 0, 1);
         }

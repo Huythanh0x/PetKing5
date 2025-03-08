@@ -2,6 +2,7 @@ package javax.microedition.midlet;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 import javax.microedition.lcdui.CwaActivity;
 import javax.microedition.lcdui.Display;
 
@@ -11,8 +12,8 @@ public class MIDletManager {
     private boolean autoLaunch = true;
     private boolean paused = false;
     private boolean destroyed = true;
-    private Map<String, String> midlets = new LinkedHashMap();
-    private Map<String, String> jad = new LinkedHashMap();
+    private final Map<String, String> midlets = new LinkedHashMap();
+    private final Map<String, String> jad = new LinkedHashMap();
 
     private MIDletManager() {
     }
@@ -24,12 +25,12 @@ public class MIDletManager {
         return jam;
     }
 
-    public void setAutoLaunch(boolean autoLaunch) {
-        this.autoLaunch = autoLaunch;
-    }
-
     public boolean isAutoLaunch() {
         return this.autoLaunch;
+    }
+
+    public void setAutoLaunch(boolean autoLaunch) {
+        this.autoLaunch = autoLaunch;
     }
 
     public final String getAppProperty(MIDlet midlet, String key) {

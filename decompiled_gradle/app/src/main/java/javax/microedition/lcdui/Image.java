@@ -3,7 +3,9 @@ package javax.microedition.lcdui;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
+
 import com.android.Util.AndroidUtil;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -58,14 +60,27 @@ public class Image {
         return image;
     }
 
-    Bitmap getBitMapInpackage() {
-        return this.mBitmap;
-    }
-
     public static Image createRGBImage(int[] rgb, int width, int height, boolean processAlpha) {
         Image image = new Image();
         image.mBitmap = Bitmap.createBitmap(rgb, width, height, Bitmap.Config.ARGB_8888);
         return image;
+    }
+
+    public static Image createImage(String name, int zoom) throws IOException {
+        Image image = new Image();
+        InputStream is = AndroidUtil.getResourceAsStream(name);
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inInputShareable = true;
+        opts.inSampleSize = zoom;
+        image.mBitmap = BitmapFactory.decodeStream(is, null, opts);
+        if (image.mBitmap == null) {
+            throw new IOException();
+        }
+        return image;
+    }
+
+    Bitmap getBitMapInpackage() {
+        return this.mBitmap;
     }
 
     public Graphics getGraphics() {
@@ -98,18 +113,5 @@ public class Image {
 
     public Bitmap getBitMap() {
         return this.mBitmap;
-    }
-
-    public static Image createImage(String name, int zoom) throws IOException {
-        Image image = new Image();
-        InputStream is = AndroidUtil.getResourceAsStream(name);
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inInputShareable = true;
-        opts.inSampleSize = zoom;
-        image.mBitmap = BitmapFactory.decodeStream(is, null, opts);
-        if (image.mBitmap == null) {
-            throw new IOException();
-        }
-        return image;
     }
 }

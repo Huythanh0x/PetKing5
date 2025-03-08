@@ -6,7 +6,7 @@ public class MD5 {
     private String rhex(int num) {
         String str = "";
         for (int j = 0; j <= 3; j++) {
-            str = String.valueOf(str) + this.hex_chr.charAt((num >> ((j * 8) + 4)) & 15) + this.hex_chr.charAt((num >> (j * 8)) & 15);
+            str = str + this.hex_chr.charAt((num >> ((j * 8) + 4)) & 15) + this.hex_chr.charAt((num >> (j * 8)) & 15);
         }
         return str;
     }
@@ -68,7 +68,7 @@ public class MD5 {
             int oldb = b;
             int oldc = c;
             int oldd = d;
-            int a2 = ff(a, b, c, d, x[i + 0], 7, -680876936);
+            int a2 = ff(a, b, c, d, x[i], 7, -680876936);
             int d2 = ff(d, a2, b, c, x[i + 1], 12, -389564586);
             int c2 = ff(c, d2, a2, b, x[i + 2], 17, 606105819);
             int b2 = ff(b, c2, d2, a2, x[i + 3], 22, -1044525330);
@@ -87,7 +87,7 @@ public class MD5 {
             int a6 = gg(a5, b5, c5, d5, x[i + 1], 5, -165796510);
             int d6 = gg(d5, a6, b5, c5, x[i + 6], 9, -1069501632);
             int c6 = gg(c5, d6, a6, b5, x[i + 11], 14, 643717713);
-            int b6 = gg(b5, c6, d6, a6, x[i + 0], 20, -373897302);
+            int b6 = gg(b5, c6, d6, a6, x[i], 20, -373897302);
             int a7 = gg(a6, b6, c6, d6, x[i + 5], 5, -701558691);
             int d7 = gg(d6, a7, b6, c6, x[i + 10], 9, 38016083);
             int c7 = gg(c6, d7, a7, b6, x[i + 15], 14, -660478335);
@@ -109,14 +109,14 @@ public class MD5 {
             int c11 = hh(c10, d11, a11, b10, x[i + 7], 16, -155497632);
             int b11 = hh(b10, c11, d11, a11, x[i + 10], 23, -1094730640);
             int a12 = hh(a11, b11, c11, d11, x[i + 13], 4, 681279174);
-            int d12 = hh(d11, a12, b11, c11, x[i + 0], 11, -358537222);
+            int d12 = hh(d11, a12, b11, c11, x[i], 11, -358537222);
             int c12 = hh(c11, d12, a12, b11, x[i + 3], 16, -722521979);
             int b12 = hh(b11, c12, d12, a12, x[i + 6], 23, 76029189);
             int a13 = hh(a12, b12, c12, d12, x[i + 9], 4, -640364487);
             int d13 = hh(d12, a13, b12, c12, x[i + 12], 11, -421815835);
             int c13 = hh(c12, d13, a13, b12, x[i + 15], 16, 530742520);
             int b13 = hh(b12, c13, d13, a13, x[i + 2], 23, -995338651);
-            int a14 = ii(a13, b13, c13, d13, x[i + 0], 6, -198630844);
+            int a14 = ii(a13, b13, c13, d13, x[i], 6, -198630844);
             int d14 = ii(d13, a14, b13, c13, x[i + 7], 10, 1126891415);
             int c14 = ii(c13, d14, a14, b13, x[i + 14], 15, -1416354905);
             int b14 = ii(b13, c14, d14, a14, x[i + 5], 21, -57434055);
@@ -137,6 +137,6 @@ public class MD5 {
             c = add(c17, oldc);
             d = add(d17, oldd);
         }
-        return String.valueOf(rhex(a)) + rhex(b) + rhex(c) + rhex(d);
+        return rhex(a) + rhex(b) + rhex(c) + rhex(d);
     }
 }

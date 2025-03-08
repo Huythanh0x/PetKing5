@@ -1,31 +1,33 @@
 package minigame;
 
+import java.lang.reflect.Array;
+
+import javax.microedition.lcdui.Image;
+import javax.microedition.media.Player;
+
 import dm.Ms;
 import dm.Sprite;
 import dm.Ui;
-import java.lang.reflect.Array;
-import javax.microedition.lcdui.Image;
-import javax.microedition.media.Player;
 import main.Constants_H;
 import main.GameRun;
 
 public class Guess implements MiniGame_H {
-    private byte b_win;
-    private int[][] box;
-    private byte[] boxNum;
-    private byte[][] gameData;
-    GameRun gr;
-    private Image[] imgBox;
-    private Sprite[] imgMon;
-    private byte length;
-    private byte lv;
-    byte sel;
-    private int sell_money;
-    private byte time;
     final short TIME = 20;
     final short TIME2 = 40;
     final short BOX_Y1 = 150;
     final short MON_Y = 165;
+    GameRun gr;
+    byte sel;
+    private byte b_win;
+    private int[][] box;
+    private byte[] boxNum;
+    private byte[][] gameData;
+    private Image[] imgBox;
+    private Sprite[] imgMon;
+    private byte length;
+    private byte lv;
+    private int sell_money;
+    private byte time;
     private byte mon_size_move = 0;
     private byte state = 0;
     private byte gameR = 0;

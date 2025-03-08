@@ -1,42 +1,41 @@
 package main;
 
 import android.util.Log;
+
 import com.android.Util.AndroidUtil;
 import com.nokia.mid.ui.DirectGraphics;
 import com.nokia.mid.ui.DirectUtils;
 import com.nokia.mid.ui.FullCanvas;
+
+import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Image;
+
 import dm.Ms;
 import dm.Sound;
 import dm.Sprite;
 import dm.Ui;
-import javax.microedition.lcdui.Graphics;
-import javax.microedition.lcdui.Image;
 
 public final class MainCanvas extends FullCanvas implements Runnable {
-    private static DirectGraphics dg;
-    private static Graphics g;
     public static float mainxx;
     public static float mainyy;
     public static float mapxx;
     public static float mapyy;
+    private static DirectGraphics dg;
+    private static Graphics g;
     public boolean createStop;
+    public int game_state;
+    public int menu_state;
+    public int prevGameState;
+    public int prevMenuState;
+    public int prevRunState;
+    public int temp_state = 0;
     StringBuffer[] dialog;
     int error;
-    private byte fisrt_paint;
-    private Sprite flashSP;
     XConnection game;
-    public int game_state;
-    private byte help_state;
     byte iii;
     Image image_logo;
     Image image_logo_word;
     int loop_s;
-    private byte ma;
-    public int menu_state;
-    private byte mt;
-    public int prevGameState;
-    public int prevMenuState;
-    public int prevRunState;
     String errorString = "";
     boolean quitGame = false;
     int logo_c = 0;
@@ -47,14 +46,18 @@ public final class MainCanvas extends FullCanvas implements Runnable {
     String strTemp = "";
     int[] imageData = null;
     boolean bblack = false;
-    public int temp_state = 0;
     int temp_gamestate = 0;
-    private boolean haveSoundBeforeHideNotify = false;
-    private boolean smsIsSetRun_state = false;
     int load_c = -1;
     GameRun gr = new GameRun(this);
     public SMSSender sender = SMSSender.i(this.gr);
     PointerKey pkey = new PointerKey(this);
+    private byte fisrt_paint;
+    private Sprite flashSP;
+    private byte help_state;
+    private byte ma;
+    private byte mt;
+    private boolean haveSoundBeforeHideNotify = false;
+    private boolean smsIsSetRun_state = false;
 
     public MainCanvas(XConnection game) {
         this.game = game;
@@ -67,15 +70,15 @@ public final class MainCanvas extends FullCanvas implements Runnable {
         mapyy = Constants_H.HEIGHT__ / Constants_H.HEIGHT;
     }
 
-    private final void game_init() {
+    private void game_init() {
         this.gr.initOffG();
     }
 
-    public final void game_start() {
+    public void game_start() {
         new Thread(this).start();
     }
 
-    public final void game_stop() {
+    public void game_stop() {
         Ms.i().rmsOptions(0, null, 4);
         Sound.i().soundStop();
     }
@@ -361,9 +364,9 @@ public final class MainCanvas extends FullCanvas implements Runnable {
     }
 
     @Override
-    protected final void keyPressed(int key) {
+    protected void keyPressed(int key) {
         if (SMSSender.isWorking) {
-            System.out.println("");
+            System.out.println();
         } else {
             Ms.keyRepeat = true;
             Ms.key = key;
@@ -371,11 +374,11 @@ public final class MainCanvas extends FullCanvas implements Runnable {
     }
 
     @Override
-    protected final void keyReleased(int key) {
+    protected void keyReleased(int key) {
         Ms.i().keyRelease();
     }
 
-    private final void keyProcess() {
+    private void keyProcess() {
         this.error = 3;
         switch (this.game_state) {
             case 10:
@@ -510,7 +513,7 @@ public final class MainCanvas extends FullCanvas implements Runnable {
         }
     }
 
-    protected void paintMobileLogo() {
+    private void paintMobileLogo() {
         int WIDTH = Constants_H.WIDTH__;
         int HEIGHT = Constants_H.HEIGHT__;
         int WIDTH_H = Constants_H.WIDTH__ / 2;

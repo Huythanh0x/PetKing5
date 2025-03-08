@@ -3,11 +3,14 @@ package javax.microedition.media;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.util.Log;
+
 import com.android.Util.AndroidUtil;
 import com.uc.paymentsdk.util.Constants;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Vector;
+
 import javax.microedition.media.control.ToneControl;
 import javax.microedition.media.control.VolumeControl;
 
@@ -23,8 +26,8 @@ public class Player implements MediaPlayer.OnCompletionListener {
     private int playedCount;
     private String type;
     private int state = 100;
-    private MediaPlayer mp = new MediaPlayer();
-    private Vector<PlayerListener> playerListeners = new Vector<>();
+    private final MediaPlayer mp = new MediaPlayer();
+    private final Vector<PlayerListener> playerListeners = new Vector<>();
 
     public Player() {
         this.mp.setOnCompletionListener(this);
@@ -143,14 +146,14 @@ public class Player implements MediaPlayer.OnCompletionListener {
             now = 0;
         } else if (mill_now > this.mp.getDuration()) {
             mill_now = this.mp.getDuration();
-            now = this.mp.getDuration() * Constants.PAYMENT_MAX;
+            now = (long) this.mp.getDuration() * Constants.PAYMENT_MAX;
         }
         this.mp.seekTo(mill_now);
         return now;
     }
 
     public long getMediaTime() {
-        long mediaTime = this.mp.getCurrentPosition() * Constants.PAYMENT_MAX;
+        long mediaTime = (long) this.mp.getCurrentPosition() * Constants.PAYMENT_MAX;
         if (mediaTime <= 0) {
             return -1L;
         }
@@ -162,7 +165,7 @@ public class Player implements MediaPlayer.OnCompletionListener {
     }
 
     public long getDuration() {
-        long duration = this.mp.getDuration() * Constants.PAYMENT_MAX;
+        long duration = (long) this.mp.getDuration() * Constants.PAYMENT_MAX;
         if (duration <= 0) {
             return -1L;
         }

@@ -1,27 +1,33 @@
 package main;
 
 import android.util.Log;
+
 import com.nokia.mid.ui.DirectGraphics;
 import com.nokia.mid.ui.DirectUtils;
-import dm.Monster;
-import dm.Ms;
-import dm.Sound;
-import dm.Ui;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
+
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 import javax.microedition.media.Player;
 
+import dm.Monster;
+import dm.Ms;
+import dm.Sound;
+import dm.Ui;
+
 public class GameRun_F implements Key_H {
+    public static MainCanvas mc;
+    public static int run_state = 1;
     static DirectGraphics dg;
     static Graphics g;
-    public static MainCanvas mc;
     static Graphics offG;
-    public static int run_state = 1;
     static Image scrT;
+    final byte[] anchor = {20, Constants_H.f79, 40, 24, 24, 40, Constants_H.f79, 20};
+    final short[] transB = {0, 90, 180, 270, 8192, 8282, 8372, 8462};
     public StringBuffer[] about_a;
     public StringBuffer[] about_b;
     public StringBuffer[] about_c;
@@ -54,13 +60,10 @@ public class GameRun_F implements Key_H {
     public byte selecty;
     public StringBuffer[] showS;
     public String str_cur;
-    final byte[] anchor = {20, Constants_H.f79, 40, 24, 24, 40, Constants_H.f79, 20};
-    final short[] transB = {0, 90, 180, 270, 8192, 8282, 8372, 8462};
     public int introX = Constants_H.WIDTH_H;
     public String gogoString = "";
     public int introT = Constants_H.WIDTH_;
     public String gogoST = "";
-    private byte brow5 = 0;
     public byte page_max = 0;
     public byte help_page = 0;
     public byte[] src_c = new byte[4];
@@ -73,6 +76,7 @@ public class GameRun_F implements Key_H {
     public byte[][] select = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 2, 2);
     public byte max_takes = 3;
     public byte max_monsters = 10;
+    private byte brow5 = 0;
 
     public void initGraphics(Graphics _g) {
         g = _g;
@@ -106,7 +110,7 @@ public class GameRun_F implements Key_H {
     public short getSIndexW(String str) {
         byte num = 0;
         byte start = 0;
-        byte end = (byte) str.indexOf("#", 0);
+        byte end = (byte) str.indexOf("#");
         if (end == 0) {
             end = 1;
         }
@@ -223,7 +227,7 @@ public class GameRun_F implements Key_H {
         }
         if (help_strbuff.length > line_num) {
             this.page_max = (byte) ((help_strbuff.length / line_num) + (help_strbuff.length % line_num != 0 ? 1 : 0));
-            Ui.i().drawString(String.valueOf(this.help_page + 1) + "/" + ((int) this.page_max), Constants_H.WIDTH_H, Constants_H.HEIGHT - 2, 1 | 32, 3, 0);
+            Ui.i().drawString(this.help_page + 1 + "/" + ((int) this.page_max), Constants_H.WIDTH_H, Constants_H.HEIGHT - 2, 1 | 32, 3, 0);
             Ui.i().drawTriangle(Constants_H.WIDTH_H, Constants_H.HEIGHT - 12, 75, true, true);
             return;
         }
@@ -412,7 +416,7 @@ public class GameRun_F implements Key_H {
         this.len = new byte[10];
         byteArray.read(this.len);
         for (int i = 0; i < 5; i++) {
-            mon.monsterPro[i] = (short) (((this.len[(i * 2) + 1] & 255) << 8) | (this.len[(i * 2) + 0] & 255));
+            mon.monsterPro[i] = (short) (((this.len[(i * 2) + 1] & 255) << 8) | (this.len[(i * 2)] & 255));
         }
         mon.setProAFD(data[mon.monster[0]]);
         this.len = null;
@@ -573,9 +577,7 @@ public class GameRun_F implements Key_H {
         }
         this.info = new byte[this.items.length + (len * 2)];
         int len2 = 0;
-        for (int i2 = 0; i2 < 4; i2++) {
-            this.info[i2] = this.itemsLength[i2];
-        }
+        System.arraycopy(this.itemsLength, 0, this.info, 0, 4);
         for (int i3 = 0; i3 < this.items.length; i3++) {
             int j = 0;
             while (j < this.itemsLength[i3]) {
@@ -594,9 +596,7 @@ public class GameRun_F implements Key_H {
         this.len = new byte[]{16, 19, 23, 12};
         this.itemsLength = new byte[4];
         if (this.info[0] != -1) {
-            for (int i = 0; i < 4; i++) {
-                this.itemsLength[i] = this.info[i];
-            }
+            System.arraycopy(this.info, 0, this.itemsLength, 0, 4);
         }
         this.items = new byte[this.itemsLength.length][][];
         int k = 0;

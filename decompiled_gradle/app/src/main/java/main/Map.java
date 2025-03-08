@@ -1,72 +1,113 @@
 package main;
 
 import android.util.Log;
+
 import com.android.Util.AndroidUtil;
 import com.uc.paymentsdk.util.Constants;
-import dm.Ms;
-import dm.Npc;
-import dm.Sound;
-import dm.Sprite;
-import dm.Ui;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.lang.reflect.Array;
+
 import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 import javax.microedition.lcdui.game.GameCanvas;
 import javax.microedition.media.Player;
+
+import dm.Ms;
+import dm.Npc;
+import dm.Sound;
+import dm.Sprite;
+import dm.Ui;
 import minigame.Mg;
 
 public class Map implements Key_H {
+    static Sprite[][] npcSp = new Sprite[3][];
     private static Npc cur_npc;
     private static Graphics g;
-    static Sprite[][] npcSp = new Sprite[3][];
-    private byte action_5;
     public byte[] bMission;
     public short black_0;
     public short black_1;
-    private short black_width;
     public byte[][] boatCourse;
-    Sprite brow;
-    byte checkType;
-    private short[][] cloud;
-    private short cols;
     public StringBuffer[] dialog;
-    private byte[][] door;
-    private byte[][] event;
-    private int eventCount;
     public byte eventGoing;
     public short[] event_now;
     public short[][] event_now_list;
     public String fString;
-    boolean fontSizeControl;
-    private byte get_meet;
     public GameRun gr;
+    public Image imgShadow;
+    public byte[] mDirect;
+    public short[] mapInfo;
+    public byte map_key;
+    public int map_x;
+    public int map_y;
+    public Npc my;
+    public PointerKey pkey;
+    public byte sEvent_eV1;
+    public byte sEvent_eV2;
+    public int smissionLength;
+    public Image[] walkIco;
+    public Npc[][] npc = new Npc[3][];
+    public byte anole_temp = -1;
+    public byte anole_type = -1;
+    public byte mapNo = 0;
+    public byte inShop = 0;
+    public byte notMeet = 0;
+    public byte dialog_no = -1;
+    public byte fmap = -1;
+    public byte sIfElse = -1;
+    public boolean gmErr = false;
+    public byte[][] dir_select = {new byte[2], new byte[]{0, -1}, new byte[]{0, 1}, new byte[]{-1, 0}, new byte[]{1, 0}};
+    public byte npcDirTalk = -1;
+    public boolean bDirTalk = false;
+    public byte firstDrawMap = 0;
+    public byte boatSelect = -1;
+    Sprite brow;
+    byte checkType;
+    boolean fontSizeControl;
+    boolean bExitBoss = false;
+    byte mapNotemp = 0;
+    int i = 0;
+    int ii = 0;
+    byte checkNpcT = -1;
+    short[][] moduleData = null;
+    Image[] mapImg = null;
+    int bgColor = 0;
+    short[] bottomData = null;
+    short[] frontData = null;
+    short[][] worldData = null;
+    int map_left = 0;
+    int map_top = 0;
+    int map_right = 0;
+    int map_bottom = 0;
+    int rightCol = 0;
+    int bottomRow = 0;
+    private byte action_5;
+    private short black_width;
+    private short[][] cloud;
+    private short cols;
+    private byte[][] door;
+    private byte[][] event;
+    private int eventCount;
+    private byte get_meet;
     private Image hudong;
     private Image imgCloud;
-    public Image imgShadow;
     private byte[][] item;
     private byte lastExit;
     private byte lastMap;
     private short leftCol;
-    public byte[] mDirect;
     private byte[] mapChange;
     private short mapDown_NOmove;
-    public short[] mapInfo;
     private short mapLeft_NOmove;
     private short mapRight_NOmove;
     private short mapUp_NOmove;
-    public byte map_key;
-    public int map_x;
-    public int map_y;
     private byte[][] mapdataArea;
     private byte[][] mapdataMap;
     private short mapoffx;
     private short mapoffy;
     private short meet_step;
-    public Npc my;
     private byte myMiniMap;
     private byte now_eV1;
     private byte now_eV2;
@@ -75,61 +116,25 @@ public class Map implements Key_H {
     private String[] npcNameData;
     private byte[] npcPos;
     private String[] npcStringData;
-    public PointerKey pkey;
     private short rows;
-    public byte sEvent_eV1;
-    public byte sEvent_eV2;
     private StringBuffer[][] sMission;
     private byte selectMap;
-    public int smissionLength;
     private byte time_5;
     private short topRow;
-    public Image[] walkIco;
-    public Npc[][] npc = new Npc[3][];
     private byte srcNpcNo = -1;
     private byte sleep_count = 0;
     private short step_MEET = 4;
     private byte event_state = 0;
     private byte[][] mapTemp = new byte[70][];
-    public byte anole_temp = -1;
-    public byte anole_type = -1;
-    public byte mapNo = 0;
-    public byte inShop = 0;
-    public byte notMeet = 0;
-    public byte dialog_no = -1;
     private byte bStep = -1;
     private byte go = -2;
-    boolean bExitBoss = false;
-    byte mapNotemp = 0;
-    public byte fmap = -1;
-    public byte sIfElse = -1;
-    public boolean gmErr = false;
     private byte xxx = 0;
-    int i = 0;
-    int ii = 0;
-    public byte[][] dir_select = {new byte[2], new byte[]{0, -1}, new byte[]{0, 1}, new byte[]{-1, 0}, new byte[]{1, 0}};
     private byte anoleSel = 0;
-    public byte npcDirTalk = -1;
-    public boolean bDirTalk = false;
-    byte checkNpcT = -1;
     private byte roadType = 0;
     private boolean miniMapMode = false;
     private byte showArea = -1;
-    private short littleMapClipY = 300;
+    private final short littleMapClipY = 300;
     private boolean bPause = false;
-    short[][] moduleData = null;
-    Image[] mapImg = null;
-    int bgColor = 0;
-    short[] bottomData = null;
-    short[] frontData = null;
-    short[][] worldData = null;
-    public byte firstDrawMap = 0;
-    int map_left = 0;
-    int map_top = 0;
-    int map_right = 0;
-    int map_bottom = 0;
-    int rightCol = 0;
-    int bottomRow = 0;
     private Image imgFace = null;
     private boolean faceDir = false;
     private byte faceLast = -1;
@@ -137,8 +142,13 @@ public class Map implements Key_H {
     private short bSrc_c = 0;
     private boolean bSrc = false;
     private byte srcFlash_c = 0;
-    public byte boatSelect = -1;
     private boolean isNeedWait = true;
+
+    public Map(GameRun gameRun) {
+        this.gr = gameRun;
+        System.gc();
+        init();
+    }
 
     public void setTempNull() {
         this.mapTemp = null;
@@ -171,12 +181,6 @@ public class Map implements Key_H {
             this.meet_step = (short) 0;
             this.bStep = (byte) 100;
         }
-    }
-
-    public Map(GameRun gameRun) {
-        this.gr = gameRun;
-        System.gc();
-        init();
     }
 
     public void createNpcString() {
@@ -266,7 +270,7 @@ public class Map implements Key_H {
             this.eventCount = 0;
             return;
         }
-        int start_pos = 0 + 1;
+        int start_pos = 1;
         this.eventCount = data[0];
         if (this.mapInfo[this.mapNo * 2] < 1) {
             this.event_now_list[this.mapNo] = null;
@@ -837,7 +841,7 @@ public class Map implements Key_H {
                                     if (this.eventGoing == 1) {
                                         this.gr.money += event_temp5;
                                         GameRun gameRun = this.gr;
-                                        StringBuilder sb = new StringBuilder(String.valueOf(event_temp5 < 0 ? Constants_H.MONEY_TXT_13 : Constants_H.MONEY_TXT_7));
+                                        StringBuilder sb = new StringBuilder(event_temp5 < 0 ? Constants_H.MONEY_TXT_13 : Constants_H.MONEY_TXT_7);
                                         Ms.i();
                                         gameRun.say(sb.append(Ms.abs(event_temp5)).append(Constants_H.MONEY_TXT_0).toString(), 0);
                                         break;
@@ -1473,7 +1477,7 @@ public class Map implements Key_H {
             }
             if (event_temp != -1) {
                 GameRun gameRun2 = this.gr;
-                StringBuilder append = new StringBuilder(String.valueOf(this.now_eV2 >= 0 ? Constants_H.MONEY_TXT_7 : Constants_H.MONEY_TXT_13)).append(this.gr.getNameItem(this.now_eV1)).append("x");
+                StringBuilder append = new StringBuilder(this.now_eV2 >= 0 ? Constants_H.MONEY_TXT_7 : Constants_H.MONEY_TXT_13).append(this.gr.getNameItem(this.now_eV1)).append("x");
                 Ms.i();
                 gameRun2.say(append.append(Ms.abs(this.now_eV2)).toString(), 0);
             }
@@ -2302,7 +2306,7 @@ public class Map implements Key_H {
             }
             _anole_type2 = 2;
         }
-        byte check_n = _x % 20 != 0 ? (byte) (0 + 1) : (byte) 0;
+        byte check_n = _x % 20 != 0 ? (byte) (1) : (byte) 0;
         if (_y % 20 != 0) {
             check_n = (byte) (check_n + 1);
         }
@@ -2387,15 +2391,11 @@ public class Map implements Key_H {
         if (this.my.speed_x != 0) {
             Ms.i();
             byte w = (byte) (20 - Ms.abs(this.my.y - this.npc[0][this.checkNpcT].y));
-            if (w > 0 && w < 11) {
-                return true;
-            }
+            return w > 0 && w < 11;
         } else if (this.my.speed_y != 0) {
             Ms.i();
             byte w2 = (byte) (20 - Ms.abs(this.my.x - this.npc[0][this.checkNpcT].x));
-            if (w2 > 0 && w2 < 11) {
-                return true;
-            }
+            return w2 > 0 && w2 < 11;
         }
         return false;
     }
@@ -2494,7 +2494,7 @@ public class Map implements Key_H {
             return true;
         }
         if (!isAnoleType(id)) {
-            this.gr.say(Constants_H.TXT_75 + ((Object) this.gr.monsterT[id]) + Constants_H.TXT_82 + Constants_H.TXT_103, -1);
+            this.gr.say(Constants_H.TXT_75 + this.gr.monsterT[id] + Constants_H.TXT_82 + Constants_H.TXT_103, -1);
         }
         return false;
     }
@@ -2851,7 +2851,7 @@ public class Map implements Key_H {
         Ui.i().drawString(Constants_H.MISSION_TXT_0, Constants_H.WIDTH_H_ - 75, 9, 17, this.gr.cur_a == 0 ? 0 : 1, 0);
         Ui.i().drawString(Constants_H.MISSION_TXT_1, Constants_H.WIDTH_H_ + 75, 9, 17, this.gr.cur_a == 1 ? 0 : 1, 0);
         Ui.i().drawTriangle(Constants_H.WIDTH_H_, 20, 150, true, true);
-        Ui.i().drawString(String.valueOf(this.gr.cur_a == 0 ? Constants_H.MISSION_TXT_4 : Constants_H.MISSION_TXT_5) + Ms.i().getPrecision((this.bMission[this.gr.cur_a == 0 ? (char) 14 : (char) 15] * 1000) / (this.gr.cur_a == 0 ? this.sMission.length - 1 : this.sMission.length)) + "%", Constants_H.WIDTH_H_, Constants_H.HEIGHT_ - 1, 33, -1, 1);
+        Ui.i().drawString((this.gr.cur_a == 0 ? Constants_H.MISSION_TXT_4 : Constants_H.MISSION_TXT_5) + Ms.i().getPrecision((this.bMission[this.gr.cur_a == 0 ? (char) 14 : (char) 15] * 1000) / (this.gr.cur_a == 0 ? this.sMission.length - 1 : this.sMission.length)) + "%", Constants_H.WIDTH_H_, Constants_H.HEIGHT_ - 1, 33, -1, 1);
         Ui.i().drawYesNo(false, true);
     }
 
@@ -2862,7 +2862,7 @@ public class Map implements Key_H {
         Ui.i().drawListKY(show_num, x, y, w, 6, sh, -1, sel[0] - sel[1], 4, 2);
         while (i3 < sel[1] + show_num) {
             if (i3 < length) {
-                String s = this.gr.cur_a == 0 ? String.valueOf(i3 + 1) + "\u3001" + this.sMission[i3][0].toString() : String.valueOf(i3 + 1) + "\u3001" + this.sMission[this.mDirect[i3]][0].toString();
+                String s = this.gr.cur_a == 0 ? i3 + 1 + "\u3001" + this.sMission[i3][0].toString() : i3 + 1 + "\u3001" + this.sMission[this.mDirect[i3]][0].toString();
                 Log.e("sk", "drawMisstionList");
                 Ui i4 = Ui.i();
                 int i5 = x + 8;
@@ -3257,7 +3257,7 @@ public class Map implements Key_H {
     }
 
     public void initNpcAniOne(String sid, int id, int type) {
-        npcSp[type][id] = Ms.i().createSprite("data/npc" + type + "/" + sid, type == 2 ? this.gr.isNpc2ImageType(Integer.parseInt(sid)) : true);
+        npcSp[type][id] = Ms.i().createSprite("data/npc" + type + "/" + sid, type != 2 || this.gr.isNpc2ImageType(Integer.parseInt(sid)));
     }
 
     public void initNpcAni() {
@@ -3310,7 +3310,7 @@ public class Map implements Key_H {
         for (int i = length - 1; i > 0; i--) {
             if (em[i] != 0) {
                 if (npcSp[type][i] == null) {
-                    initNpcAniOne(new StringBuilder().append(i).toString(), i, type);
+                    initNpcAniOne(String.valueOf(i), i, type);
                 }
             } else {
                 npcSp[type][i] = null;
@@ -3536,7 +3536,7 @@ public class Map implements Key_H {
     }
 
     private boolean isAuto_canMove(Npc _npc, int sx, int sy) {
-        return (checkWorld(_npc.x, _npc.y, sx, sy, false) == 1 || Ms.i().isRect(_npc.x + sx, _npc.y + sy, 19, 19, this.my.x, this.my.y, 19, 19)) ? false : true;
+        return checkWorld(_npc.x, _npc.y, sx, sy, false) != 1 && !Ms.i().isRect(_npc.x + sx, _npc.y + sy, 19, 19, this.my.x, this.my.y, 19, 19);
     }
 
     private void runAutoY(Npc _npc, int w) {

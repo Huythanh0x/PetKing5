@@ -4,8 +4,8 @@ import main.GameRun;
 
 public class Mg {
     private static Mg mgListener;
-    private MiniGame_H mg;
     public byte type;
+    private MiniGame_H mg;
 
     public Mg() {
         mgListener = this;

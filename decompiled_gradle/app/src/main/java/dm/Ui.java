@@ -1,25 +1,28 @@
 package dm;
 
 import android.util.Log;
+
 import com.nokia.mid.ui.DirectGraphics;
 import com.nokia.mid.ui.DirectUtils;
+
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
+
 import main.Constants_H;
 import main.Key_H;
 
 public class Ui {
+    private static final short[] transforms = {0, 5, 3, 6, 2, 4, 1, 7};
     public static DirectGraphics dg;
     public static Graphics g;
-    private static final short[] transforms = {0, 5, 3, 6, 2, 4, 1, 7};
     private static Ui uiListener;
+    public byte cTriangle = 0;
     private byte rz;
     private Image ui_img;
     private short[][] ui_modules;
-    private byte[][] MIRROR2 = {new byte[]{0, 1, 2, 3, 4, 5, 6, 7}, new byte[]{4, 5, 6, 7, 0, 1, 2, 3}};
-    private byte[] MIRROR3 = {1, -1};
-    private int[] MIRROR = {4 | 16, 8 | 16};
-    public byte cTriangle = 0;
+    private final byte[][] MIRROR2 = {new byte[]{0, 1, 2, 3, 4, 5, 6, 7}, new byte[]{4, 5, 6, 7, 0, 1, 2, 3}};
+    private final byte[] MIRROR3 = {1, -1};
+    private final int[] MIRROR = {4 | 16, 8 | 16};
 
     public Ui() {
         uiListener = this;
@@ -187,7 +190,7 @@ public class Ui {
                     c = (byte) color;
                 }
             } else {
-                drawString(str.substring(start, str.length()), x + tw, y, 0, c, mode);
+                drawString(str.substring(start), x + tw, y, 0, c, mode);
             }
         } while (end != -1);
     }
@@ -452,9 +455,9 @@ public class Ui {
                     sw = (short) (sw + w);
                 } else {
                     if (anchor == 0) {
-                        drawString(new StringBuilder().append(cr).toString(), x + sw, y + 5, 36, 3, 0);
+                        drawString(String.valueOf(cr), x + sw, y + 5, 36, 3, 0);
                     } else {
-                        drawString(new StringBuilder().append(cr).toString(), x - sw, y + 5, 40, 3, 0);
+                        drawString(String.valueOf(cr), x - sw, y + 5, 40, 3, 0);
                     }
                     sw = (short) (sw + 25);
                 }

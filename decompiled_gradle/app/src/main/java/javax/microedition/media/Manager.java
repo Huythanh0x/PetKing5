@@ -3,9 +3,9 @@ package javax.microedition.media;
 import java.io.IOException;
 
 public class Manager {
-    private static boolean islocator = false;
     private static final String[] supportedContentTypes = {"audio/x-wav", "audio/basic", "audio/mpeg", "audio/midi", "audio/x-tone-seq", "audio/amr"};
     private static final String[] supportedProtocols = {"http://", "rtsp://"};
+    private static boolean islocator = false;
 
     public static Player createPlayer(String sound, String type) throws IOException, MediaException {
         islocator = false;
@@ -21,7 +21,7 @@ public class Manager {
         }
         Player player = new Player();
         if (sound.indexOf(47) == 0) {
-            player.setDatasource(sound.substring(1, sound.length()));
+            player.setDatasource(sound.substring(1));
         } else {
             player.setDatasource(sound);
         }

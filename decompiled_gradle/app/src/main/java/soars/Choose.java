@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+
 import com.PetKing5_480x800.PetKing5;
 import com.PetKing5_480x800.R;
+
 import main.GameRun;
 import main.SMSSender;
 

@@ -1,12 +1,14 @@
 package dm;
 
 import android.util.Log;
+
 import javax.microedition.media.Manager;
 import javax.microedition.media.Player;
 import javax.microedition.media.control.VolumeControl;
 
 public final class Sound {
     private static Sound soundListener;
+    public byte[] loop = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
     private byte loop_s;
     private byte play_music;
     private Player snd_music;
@@ -16,7 +18,6 @@ public final class Sound {
     private byte musicId = -1;
     private byte musicId_temp = -1;
     private byte volume = 30;
-    public byte[] loop = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
     public Sound() {
         soundListener = this;
@@ -29,28 +30,28 @@ public final class Sound {
         return soundListener;
     }
 
-    public void setSoundON(boolean sound_on_) {
-        this.sound_on = sound_on_;
-    }
-
     public boolean getSoundON() {
         return this.sound_on;
     }
 
-    public void setMusicId(int musicId_) {
-        this.musicId = (byte) musicId_;
+    public void setSoundON(boolean sound_on_) {
+        this.sound_on = sound_on_;
     }
 
     public byte getMusicId() {
         return this.musicId;
     }
 
-    public void setVolume(int volume_) {
-        this.volume = (byte) volume_;
+    public void setMusicId(int musicId_) {
+        this.musicId = (byte) musicId_;
     }
 
     public byte getVolume() {
         return this.volume;
+    }
+
+    public void setVolume(int volume_) {
+        this.volume = (byte) volume_;
     }
 
     private Player createMusicForMenu(int id, int flag) {

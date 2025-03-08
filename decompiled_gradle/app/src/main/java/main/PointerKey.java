@@ -1,10 +1,13 @@
 package main;
 
 import android.util.Log;
+
 import com.uc.paymentsdk.util.Constants;
+
 import dm.Ms;
 
 public class PointerKey implements Key_H {
+    public int[][][] button_pos = {new int[][]{new int[]{0, Constants_H.HEIGHT - 50, 50, 50, -6}, new int[]{Constants_H.WIDTH - 50, Constants_H.HEIGHT - 50, 50, 50, -7}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH, Constants_H.HEIGHT, 48}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH, Constants_H.HEIGHT, 53}}, new int[][]{new int[]{170, 275, 106, 97, -3}, new int[]{363, 285, 108, 83, -4}, new int[]{281, 290, 76, 88, 53}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH_H_, Constants_H.HEIGHT_, -3}, new int[]{Constants_H.WIDTH_H_, 0, Constants_H.WIDTH_H_, Constants_H.HEIGHT_, -4}}, new int[][]{new int[]{462, 42, 83, 72, Constants_H.GAME_ERROR}, new int[]{548, 116, 83, 71, Constants_H.GAME_ERROR}, new int[]{466, 182, 85, 75, Constants_H.GAME_ERROR}, new int[]{524, 266, 91, 68, Constants_H.GAME_ERROR}, new int[]{48, 277, 87, 80, Constants_H.GAME_ERROR}}, new int[][]{new int[]{Constants_H.WIDTH__ - 60, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{0, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - 120) - 40, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - 60) - 20, 60, 60, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH__ - 60) - 120) - 40, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH__ - 60) - 60) - 20, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - Constants_H.HEIGHT_H_) - 60, 60, 60, Constants_H.GAME_ERROR}}, new int[][]{new int[]{Constants_H.WIDTH - 50, Constants_H.HEIGHT - 50, 50, 50, -7}}, new int[][]{new int[]{0, 310, 50, 50, -6}, new int[]{590, 310, 50, 50, -7}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH_, Constants_H.HEIGHT_, 48}}, new int[][]{new int[]{Constants_H.WIDTH - 30, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{0, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 90) - 25, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 45) - 15, 30, 30, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH - 30) - 90) - 40, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH - 30) - 45) - 20, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 135) - 35, 30, 30, Constants_H.GAME_ERROR}}};
     boolean dir;
     int gox;
     int goy;
@@ -16,7 +19,6 @@ public class PointerKey implements Key_H {
     MainCanvas mc;
     int tempx;
     int tempy;
-    public int[][][] button_pos = {new int[][]{new int[]{0, Constants_H.HEIGHT - 50, 50, 50, -6}, new int[]{Constants_H.WIDTH - 50, Constants_H.HEIGHT - 50, 50, 50, -7}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH, Constants_H.HEIGHT, 48}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH, Constants_H.HEIGHT, 53}}, new int[][]{new int[]{170, 275, 106, 97, -3}, new int[]{363, 285, 108, 83, -4}, new int[]{281, 290, 76, 88, 53}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH_H_, Constants_H.HEIGHT_, -3}, new int[]{Constants_H.WIDTH_H_, 0, Constants_H.WIDTH_H_, Constants_H.HEIGHT_, -4}}, new int[][]{new int[]{462, 42, 83, 72, Constants_H.GAME_ERROR}, new int[]{548, 116, 83, 71, Constants_H.GAME_ERROR}, new int[]{466, 182, 85, 75, Constants_H.GAME_ERROR}, new int[]{524, 266, 91, 68, Constants_H.GAME_ERROR}, new int[]{48, 277, 87, 80, Constants_H.GAME_ERROR}}, new int[][]{new int[]{Constants_H.WIDTH__ - 60, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{0, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - 120) - 40, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - 60) - 20, 60, 60, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH__ - 60) - 120) - 40, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH__ - 60) - 60) - 20, Constants_H.HEIGHT__ - 60, 60, 60, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH__ - 60, ((Constants_H.HEIGHT__ - 60) - Constants_H.HEIGHT_H_) - 60, 60, 60, Constants_H.GAME_ERROR}}, new int[][]{new int[]{Constants_H.WIDTH - 50, Constants_H.HEIGHT - 50, 50, 50, -7}}, new int[][]{new int[]{0, 310, 50, 50, -6}, new int[]{590, 310, 50, 50, -7}}, new int[][]{new int[]{0, 0, Constants_H.WIDTH_, Constants_H.HEIGHT_, 48}}, new int[][]{new int[]{Constants_H.WIDTH - 30, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{0, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 90) - 25, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 45) - 15, 30, 30, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH - 30) - 90) - 40, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{((Constants_H.WIDTH - 30) - 45) - 20, Constants_H.HEIGHT - 30, 30, 30, Constants_H.GAME_ERROR}, new int[]{Constants_H.WIDTH - 30, ((Constants_H.HEIGHT - 30) - 135) - 35, 30, 30, Constants_H.GAME_ERROR}}};
     int i0 = -1;
     int i1 = -1;
 
@@ -178,10 +180,7 @@ public class PointerKey implements Key_H {
             npcX = this.map.my.x;
             npcY = this.map.my.y - 40;
         }
-        if ((Ms.i().isRect(x, y, 1, 1, npcX, npcY, 20, 80) || Ms.i().isRect(this.i0, this.i1, 1, 1, Constants_H.WIDTH_H - 30, Constants_H.HEIGHT - 60, 60, 60)) && this.map.checkSoftKey(this.map.my.x, this.map.my.y, this.map.dir_select[this.map.my.dir][0] * this.map.my.speed, this.map.dir_select[this.map.my.dir][1] * this.map.my.speed) != -1) {
-            return false;
-        }
-        return true;
+        return (!Ms.i().isRect(x, y, 1, 1, npcX, npcY, 20, 80) && !Ms.i().isRect(this.i0, this.i1, 1, 1, Constants_H.WIDTH_H - 30, Constants_H.HEIGHT - 60, 60, 60)) || this.map.checkSoftKey(this.map.my.x, this.map.my.y, this.map.dir_select[this.map.my.dir][0] * this.map.my.speed, this.map.dir_select[this.map.my.dir][1] * this.map.my.speed) == -1;
     }
 
     public boolean isSelect(int x, int y, int w, int h) {

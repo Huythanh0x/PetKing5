@@ -1,6 +1,7 @@
 package javax.microedition.rms;
 
 import android.database.Cursor;
+
 import javax.microedition.lcdui.CwaActivity;
 
 public class RecordEnumeration {

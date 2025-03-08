@@ -1,20 +1,26 @@
 package minigame;
 
 import com.uc.paymentsdk.util.Constants;
+
+import java.lang.reflect.Array;
+
+import javax.microedition.lcdui.Image;
+import javax.microedition.media.Player;
+
 import dm.Ms;
 import dm.Sprite;
 import dm.Ui;
-import java.lang.reflect.Array;
-import javax.microedition.lcdui.Image;
-import javax.microedition.media.Player;
 import main.Constants_H;
 import main.GameRun;
 import main.Key_H;
 
 public class Racing implements MiniGame_H {
+    private final byte NUM = 4;
+    private final short MAP_HEIGHT = 450;
+    private final short WIN_HEIGHT = 70;
+    GameRun gr;
     private short[][] cloud;
     private short[][] gDate;
-    GameRun gr;
     private Image imgCloud;
     private byte length;
     private byte lv;
@@ -27,9 +33,6 @@ public class Racing implements MiniGame_H {
     private short srcY;
     private byte state;
     private byte time;
-    private final byte NUM = 4;
-    private final short MAP_HEIGHT = 450;
-    private final short WIN_HEIGHT = 70;
     //todo error array[][]
     private byte[][] now_a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 4, 3);
 
@@ -109,7 +112,7 @@ public class Racing implements MiniGame_H {
                 z = false;
             }
             i2.drawActionOne(sprite, 0, i3, i4, bArr, 0, z);
-            Ui.i().drawNum(new StringBuilder().append(i + 1).toString(), x + 25 + (i * Key_H.KEY_NUM4) + 27, y + 50 + 12, 20, 2);
+            Ui.i().drawNum(String.valueOf(i + 1), x + 25 + (i * Key_H.KEY_NUM4) + 27, y + 50 + 12, 20, 2);
             i = (byte) (i + 1);
         }
         if (this.state == 1) {
@@ -155,11 +158,11 @@ public class Racing implements MiniGame_H {
         drawCloud();
         drawEnd();
         for (byte i = 0; i < this.length; i = (byte) (i + 1)) {
-            Ui.i().drawNum(new StringBuilder().append(i + 1).toString(), (i * 100) + 125 + 22, 20 - this.srcY, 1, 2);
+            Ui.i().drawNum(String.valueOf(i + 1), (i * 100) + 125 + 22, 20 - this.srcY, 1, 2);
             Ui.i().drawActionOne(this.sp[0], 1, (i * 100) + 125 + 22, this.monY[i] - this.srcY, this.now_a[i], 0, true);
         }
         if (this.state == 3 && this.time != 0) {
-            Ui.i().drawNum(new StringBuilder().append(this.time / 20).toString(), Constants_H.WIDTH_H_ - 5, Constants_H.HEIGHT_H_, 0, 2);
+            Ui.i().drawNum(String.valueOf(this.time / 20), Constants_H.WIDTH_H_ - 5, Constants_H.HEIGHT_H_, 0, 2);
         }
     }
 

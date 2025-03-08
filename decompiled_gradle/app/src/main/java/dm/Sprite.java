@@ -16,16 +16,6 @@ public class Sprite {
         nullIMFA();
     }
 
-    public void nullIMFA() {
-        this.img = null;
-        this.module_byte = null;
-        this.frame_byte = null;
-        this.action_byte = null;
-        this.module_short = null;
-        this.frame_short = null;
-        this.action_short = null;
-    }
-
     public static Sprite Create(Image _img, byte[][] _module, byte[][][] _frame, byte[][][] _action) {
         Sprite sp = new Sprite();
         sp.type = true;
@@ -36,15 +26,6 @@ public class Sprite {
         return sp;
     }
 
-    public void Set(Image _img, byte[][] _module, byte[][][] _frame, byte[][][] _action) {
-        nullIMFA();
-        this.type = true;
-        this.img = _img;
-        this.module_byte = _module;
-        this.frame_byte = _frame;
-        this.action_byte = _action;
-    }
-
     public static Sprite Create(Image _img, short[][] _module, short[][][] _frame, short[][][] _action) {
         Sprite sp = new Sprite();
         sp.type = false;
@@ -53,6 +34,25 @@ public class Sprite {
         sp.frame_short = _frame;
         sp.action_short = _action;
         return sp;
+    }
+
+    public void nullIMFA() {
+        this.img = null;
+        this.module_byte = null;
+        this.frame_byte = null;
+        this.action_byte = null;
+        this.module_short = null;
+        this.frame_short = null;
+        this.action_short = null;
+    }
+
+    public void Set(Image _img, byte[][] _module, byte[][][] _frame, byte[][][] _action) {
+        nullIMFA();
+        this.type = true;
+        this.img = _img;
+        this.module_byte = _module;
+        this.frame_byte = _frame;
+        this.action_byte = _action;
     }
 
     public void Set(Image _img, short[][] _module, short[][][] _frame, short[][][] _action) {

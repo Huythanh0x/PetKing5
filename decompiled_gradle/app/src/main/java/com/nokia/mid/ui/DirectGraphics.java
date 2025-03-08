@@ -2,10 +2,10 @@ package com.nokia.mid.ui;
 
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
+
 import main.Constants_H;
 
 public class DirectGraphics {
-    Graphics g;
     public static int FLIP_HORIZONTAL = 8192;
     public static int FLIP_VERTICAL = 16384;
     public static int ROTATE_180 = Constants_H.HEIGHT_H_;
@@ -26,6 +26,7 @@ public class DirectGraphics {
     public static int TYPE_USHORT_565_RGB = 565;
     static int[] transA = {0, 6, 3, 5, 2, 4, 1, 7};
     static int[] transB = {1, 7, 2, 4};
+    Graphics g;
 
     protected DirectGraphics() {
     }

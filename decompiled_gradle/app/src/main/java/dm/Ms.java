@@ -1,34 +1,38 @@
 package dm;
 
 import android.util.Log;
+
 import com.android.Util.AndroidUtil;
 import com.uc.paymentsdk.util.Constants;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.util.Random;
 import java.util.Vector;
+
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 import javax.microedition.lcdui.game.GameCanvas;
 import javax.microedition.rms.RecordStore;
+
 import main.Constants_H;
 import main.Key_H;
 
 public class Ms implements Key_H {
     public static int key;
     public static boolean keyRepeat;
-    private static Ms msListener;
-    private static RecordStore rms;
     public static int skip;
     public static int skip2;
-    private int sleep_time;
-    private static Random random = new Random();
     public static Font font = Font.getFont(0, 0, 26);
     public static byte key_delay = 0;
     public static byte key_time = 10;
+    private static Ms msListener;
+    private static RecordStore rms;
+    private static final Random random = new Random();
     final int RMSSIZE = 15360;
     private final byte[] transA = {0, 6, 3, 5, 2, 7, 1, 4};
+    private int sleep_time;
 
     public Ms() {
         msListener = this;
@@ -39,6 +43,40 @@ public class Ms implements Key_H {
             msListener = new Ms();
         }
         return msListener;
+    }
+
+    public static long getNum(byte[] b) {
+        int rtn = 0;
+        int len = b.length;
+        for (int i = 0; i < len; i++) {
+            switch (len) {
+                case 1:
+                    rtn += (byte) ((b[i] & 255) << (i * 8));
+                    break;
+                case 2:
+                    rtn += (short) ((b[i] & 255) << (i * 8));
+                    break;
+                case 4:
+                    rtn += (b[i] & 255) << (i * 8);
+                    break;
+                case 8:
+                    rtn = rtn + ((b[i] & 255) << (i * 8));
+                    break;
+            }
+        }
+        return rtn;
+    }
+
+    public static int getRandom(int ss) {
+        return (random.nextInt() & Integer.MAX_VALUE) % ss;
+    }
+
+    public static int abs(int a) {
+        return a > 0 ? a : -a;
+    }
+
+    public static int compare_min(int c0, int c1) {
+        return c0 <= c1 ? c0 : c1;
     }
 
     public void sleep(int time) {
@@ -71,7 +109,7 @@ public class Ms implements Key_H {
                         rms = null;
                     }
                 } else if (flag == 5) {
-                    Log.e("rms.getSizeAvailable()", new StringBuilder().append(rms.getSizeAvailable()).toString());
+                    Log.e("rms.getSizeAvailable()", String.valueOf(rms.getSizeAvailable()));
                     return null;
                 }
             }
@@ -132,28 +170,6 @@ public class Ms implements Key_H {
             }
         }
         return event_now;
-    }
-
-    public static long getNum(byte[] b) {
-        int rtn = 0;
-        int len = b.length;
-        for (int i = 0; i < len; i++) {
-            switch (len) {
-                case 1:
-                    rtn += (byte) ((b[i] & 255) << (i * 8));
-                    break;
-                case 2:
-                    rtn += (short) ((b[i] & 255) << (i * 8));
-                    break;
-                case 4:
-                    rtn += (b[i] & 255) << (i * 8);
-                    break;
-                case 8:
-                    rtn = (int) (rtn + ((b[i] & 255) << (i * 8)));
-                    break;
-            }
-        }
-        return rtn;
     }
 
     public int getLen_byte(byte value) {
@@ -241,7 +257,7 @@ public class Ms implements Key_H {
     }
 
     public byte[] getStream(String i, int num) {
-        byte[] data = (byte[]) null;
+        byte[] data = null;
         try {
             DataInputStream dataInput = new DataInputStream(AndroidUtil.getResourceAsStream("/" + i));
             if (num > -1) {
@@ -437,7 +453,7 @@ public class Ms implements Key_H {
 
     public String[] loadText(byte[] bArr) {
         try {
-            StringBuffer stringbuffer = new StringBuffer("");
+            StringBuffer stringbuffer = new StringBuffer();
             int j = 2;
             while (j < bArr.length) {
                 int j2 = j + 1;
@@ -531,7 +547,7 @@ public class Ms implements Key_H {
     }
 
     public Sprite createSprite(String name, boolean mode) {
-        byte[] date = getStream(String.valueOf(name) + ".data", -1);
+        byte[] date = getStream(name + ".data", -1);
         skip = 0;
         if (mode) {
             return Sprite.Create(createImage(name), create2Array(date), create3Array(date), create3Array(date));
@@ -540,7 +556,7 @@ public class Ms implements Key_H {
     }
 
     public void setSprite(Sprite sp, String name, boolean mode) {
-        byte[] date = getStream(String.valueOf(name) + ".data", -1);
+        byte[] date = getStream(name + ".data", -1);
         skip = 0;
         sp.nullIMFA();
         if (mode) {
@@ -559,7 +575,7 @@ public class Ms implements Key_H {
     }
 
     public String getPrecision(int t) {
-        return String.valueOf(t / 10) + "." + (t % 10);
+        return t / 10 + "." + (t % 10);
     }
 
     public int sqrt(int x) {
@@ -574,18 +590,6 @@ public class Ms implements Key_H {
             b = ((x2 / b) + b) >> 1;
         } while (b < y);
         return y / 100;
-    }
-
-    public static int getRandom(int ss) {
-        return (random.nextInt() & Integer.MAX_VALUE) % ss;
-    }
-
-    public static int abs(int a) {
-        return a > 0 ? a : -a;
-    }
-
-    public static int compare_min(int c0, int c1) {
-        return c0 <= c1 ? c0 : c1;
     }
 
     public short mathPercent(int m0, int m1, int per) {
@@ -693,7 +697,7 @@ public class Ms implements Key_H {
             return true;
         } catch (Exception e) {
             String platForm = System.getProperty("microedition.platform");
-            return (platForm.toLowerCase().indexOf("wtk") == -1 && platForm.toLowerCase().indexOf("javasdk") == -1 && platForm.toLowerCase().indexOf("j2me") == -1) ? false : true;
+            return platForm.toLowerCase().indexOf("wtk") != -1 || platForm.toLowerCase().indexOf("javasdk") != -1 || platForm.toLowerCase().indexOf("j2me") != -1;
         }
     }
 

@@ -1,80 +1,51 @@
 package main;
 
 import android.util.Log;
+
 import com.PetKing5_480x800.PetKing5;
 import com.nokia.mid.ui.DirectGraphics;
 import com.uc.paymentsdk.util.Constants;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import javax.microedition.lcdui.Canvas;
+import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Image;
+import javax.microedition.media.Player;
+
 import dm.Battle;
 import dm.Monster;
 import dm.Ms;
 import dm.Sound;
 import dm.Sprite;
 import dm.Ui;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import javax.microedition.lcdui.Canvas;
-import javax.microedition.lcdui.Graphics;
-import javax.microedition.lcdui.Image;
-import javax.microedition.media.Player;
 import minigame.Mg;
 
 public class GameRun extends GameRun_F {
     public static boolean isSay = false;
-    private StringBuffer[] NAME;
-    Battle am;
     public byte b_c;
     public byte battle_type;
     public byte bg_c;
-    private StringBuffer[] buff_help;
-    private StringBuffer[] buff_name;
-    private byte[][] buyItem;
-    private short[][] buyPrice;
-    short cThrowS;
-    short cThrowX;
-    short cThrowY;
     public byte cityName_c;
-    private StringBuffer[] city_name;
     public byte createOver;
     public byte dead_c;
-
-    Battle f133dm;
-    private Image[] effectImage;
-    Battle enB;
     public byte[][] enemyList;
     public int enemyOff;
-    short exp;
-    byte getSkill;
-    private Image[] imgBG;
-    private Image[] imgBattle;
     public Image[] imgIco;
-    private Image[] imgItem;
     public byte[] inhesion;
-    boolean isTalk;
-    private byte[][] itemMine;
-    private StringBuffer[] item_help;
-    private Image item_img;
-    private byte[][] item_modules;
-    private StringBuffer[] item_name;
-    private byte item_type;
     public byte[][] levelUp_in_battle;
     public byte line_max;
     public byte[][] mList_id;
     public byte[] makeLevel;
     public byte[] mapMove;
     public byte[][] mapRect;
-    private byte[][] monAppearMap;
-    private byte[][] monInfo_dir;
     public byte[] monPro;
-    private byte mon_action;
     public byte[] mon_in_battle;
-    private StringBuffer[] monsterInfo;
-    private byte[][] monsterMake;
     public StringBuffer[] monsterT;
     public byte[][] monster_pro;
     public byte[][] mouduls;
     public byte[] musicNo;
-    Battle myB;
-    private StringBuffer[] nameTemp;
     public byte[] npc2ImageType;
     public short[][] proReplace;
     public byte say_c;
@@ -82,11 +53,6 @@ public class GameRun extends GameRun_F {
     public int say_s;
     public byte select_S;
     public byte select_T;
-    private byte[][] skill;
-    private StringBuffer[] skill_help;
-    private StringBuffer[] skill_name;
-    private byte[][] skill_up;
-    String strHit;
     public byte t_battle_state;
     public byte t_length;
     public byte time_count;
@@ -101,35 +67,72 @@ public class GameRun extends GameRun_F {
     public byte battle_state = 0;
     public byte buyOk = 0;
     public byte off = 0;
-    private byte list_rows = 8;
-    private byte infoStart = 0;
-    int sell_money = 0;
-    private byte mon_action_c = 0;
-    private byte[] initFealty = {100, 120};
-    private Boolean isChangeSound = false;
     public ArrayList<String> sayStr = new ArrayList<>();
     public ArrayList<Integer> sayFlag = new ArrayList<>();
     public byte sayOverSms = -1;
-    byte[] zb = {-6, -4, -3, -2, -1, 0, 1, 2, 3, 4, 8, -3, 2, -1, 1, 1};
-    private byte[][] Shuxing = {new byte[]{2, 3}, new byte[]{3, 4}, new byte[]{4, 0}, new byte[]{0, 1}, new byte[]{1, 2}};
-    private int hit_rate = 0;
     public byte magic_id = -2;
     public int magic_x = 0;
     public int magic_y = 0;
     public Sprite[] mon = new Sprite[2];
     public Sprite[] magic = new Sprite[6];
-    private short[] now_action_Magic = new short[6];
-    private short[] now_time_Magic = new short[6];
     public byte overMode = 0;
-    private boolean[] evolve = {true, true, true, true, true};
-    private byte[] now_action = new byte[2];
-    private byte[] now_time = new byte[2];
-    String[] battleSay = {Constants_H.BATTLE_TXT_12, Constants_H.BATTLE_TXT_13, Constants_H.BATTLE_TXT_14};
     public boolean isUpdateList = false;
     public byte first_battle = 0;
     public byte lastSkill = 0;
-    private byte[] skill_list = new byte[9];
     public byte b_ico = 2;
+    Battle am;
+    short cThrowS;
+    short cThrowX;
+    short cThrowY;
+    Battle f133dm;
+    Battle enB;
+    short exp;
+    byte getSkill;
+    boolean isTalk;
+    Battle myB;
+    String strHit;
+    int sell_money = 0;
+    byte[] zb = {-6, -4, -3, -2, -1, 0, 1, 2, 3, 4, 8, -3, 2, -1, 1, 1};
+    String[] battleSay = {Constants_H.BATTLE_TXT_12, Constants_H.BATTLE_TXT_13, Constants_H.BATTLE_TXT_14};
+    private StringBuffer[] NAME;
+    private StringBuffer[] buff_help;
+    private StringBuffer[] buff_name;
+    private byte[][] buyItem;
+    private short[][] buyPrice;
+    private StringBuffer[] city_name;
+    private Image[] effectImage;
+    private Image[] imgBG;
+    private Image[] imgBattle;
+    private Image[] imgItem;
+    private byte[][] itemMine;
+    private StringBuffer[] item_help;
+    private Image item_img;
+    private byte[][] item_modules;
+    private StringBuffer[] item_name;
+    private byte item_type;
+    private byte[][] monAppearMap;
+    private byte[][] monInfo_dir;
+    private byte mon_action;
+    private StringBuffer[] monsterInfo;
+    private byte[][] monsterMake;
+    private StringBuffer[] nameTemp;
+    private byte[][] skill;
+    private StringBuffer[] skill_help;
+    private StringBuffer[] skill_name;
+    private byte[][] skill_up;
+    private byte list_rows = 8;
+    private byte infoStart = 0;
+    private byte mon_action_c = 0;
+    private final byte[] initFealty = {100, 120};
+    private Boolean isChangeSound = false;
+    private final byte[][] Shuxing = {new byte[]{2, 3}, new byte[]{3, 4}, new byte[]{4, 0}, new byte[]{0, 1}, new byte[]{1, 2}};
+    private int hit_rate = 0;
+    private final short[] now_action_Magic = new short[6];
+    private final short[] now_time_Magic = new short[6];
+    private final boolean[] evolve = {true, true, true, true, true};
+    private final byte[] now_action = new byte[2];
+    private final byte[] now_time = new byte[2];
+    private final byte[] skill_list = new byte[9];
 
     public GameRun(MainCanvas maincanvas) {
         mc = maincanvas;
@@ -225,7 +228,7 @@ public class GameRun extends GameRun_F {
                     }
                     if (this.myB.now_id >= this.myMon_length) {
                         boolean b = false;
-                        StringBuffer sbuf = new StringBuffer("");
+                        StringBuffer sbuf = new StringBuffer();
                         for (byte i = 0; i < this.myMon_length; i = (byte) (i + 1)) {
                             if (this.myMonsters[i].monster[5] > 0 && this.evolve[i] && isEvolveKind(this.myMonsters[i].monster[4], this.myMonsters[i].monster[2]) == -1) {
                                 if (!Ms.i().equals(sbuf, "")) {
@@ -239,14 +242,14 @@ public class GameRun extends GameRun_F {
                         if (b) {
                             sbuf.append(Constants_H.BATTLE_TXT_17);
                         }
-                        StringBuffer sbuf0 = new StringBuffer("");
+                        StringBuffer sbuf0 = new StringBuffer();
                         boolean b2 = false;
                         for (byte i2 = 0; i2 < 5; i2 = (byte) (i2 + 1)) {
                             if (getRid(i2) != -2 && getNexp(i2, 1) == getNexp(i2, 3)) {
                                 if (!Ms.i().equals(sbuf0, "")) {
                                     sbuf0.append("\u3001");
                                 }
-                                sbuf0.append(((Object) this.monsterT[this.monster_pro[getNid(i2)][6]]) + Constants_H.TXT_96);
+                                sbuf0.append(this.monsterT[this.monster_pro[getNid(i2)][6]] + Constants_H.TXT_96);
                                 b2 = true;
                             }
                         }
@@ -255,7 +258,7 @@ public class GameRun extends GameRun_F {
                             if (!Ms.i().equals(sbuf, "")) {
                                 sbuf.append("#n");
                             }
-                            sbuf.append(sbuf0.toString());
+                            sbuf.append(sbuf0);
                         }
                         if (!Ms.i().equals(sbuf, "")) {
                             say(sbuf.toString(), -1);
@@ -579,7 +582,7 @@ public class GameRun extends GameRun_F {
             Graphics graphics2 = g;
             i.drawImage(image, x, y, 8 | 32);
             Ui i2 = Ui.i();
-            String sb = new StringBuilder().append((int) monster.effect_time).toString();
+            String sb = String.valueOf(monster.effect_time);
             Graphics graphics3 = g;
             Graphics graphics4 = g;
             i2.drawNum(sb, x, y, 8 | 32, 0);
@@ -894,7 +897,7 @@ public class GameRun extends GameRun_F {
     }
 
     public void drawMoney(int x, int y, int c, boolean bb) {
-        String s = String.valueOf(bb ? this.coin : this.money) + (bb ? "\u5fbd\u7ae0" : Constants_H.MONEY_TXT_0);
+        String s = (bb ? this.coin : this.money) + (bb ? "\u5fbd\u7ae0" : Constants_H.MONEY_TXT_0);
         Ui i = Ui.i();
         int i2 = bb ? 53 : 52;
         int stringWidth = (x - (Ms.i().getStringWidth(s) >> 1)) - 1;
@@ -929,7 +932,7 @@ public class GameRun extends GameRun_F {
                     int i5 = ((i - sel[1]) * 30) + y + 1;
                     Graphics graphics3 = g;
                     Graphics graphics4 = g;
-                    Ui.i().drawString(String.valueOf((int) getPrice(itemType, i, true)) + str2, (x + w) - 12, i5, 8 | 16, color, 0);
+                    Ui.i().drawString(String.valueOf(getPrice(itemType, i, true)) + str2, (x + w) - 12, i5, 8 | 16, color, 0);
                 }
                 if (this.popMenu == -1 && this.say_c == 0 && this.pkey.isSelect(x, ((i - sel[1]) * 30) + y, Constants_H.WIDTH, 30)) {
                     if (sel[0] == i) {
@@ -981,7 +984,7 @@ public class GameRun extends GameRun_F {
     }
 
     private boolean isBagUse(int id) {
-        return this.view_state == -1 ? (id == 14 || id == 15) ? false : true : (id == 9 || id == 10 || id == 11 || id == 8) ? false : true;
+        return this.view_state == -1 ? id != 14 && id != 15 : id != 9 && id != 10 && id != 11 && id != 8;
     }
 
     private void popBagState() {
@@ -1179,8 +1182,8 @@ public class GameRun extends GameRun_F {
         Ui.i().fillRectB();
         drawBG0(this.bg_c, x + 1, 108, 0, w);
         Log.e("sk", "drawNidus");
-        Ui.i().drawString(String.valueOf(this.popMenu + 1) + "/5", x + 10, 106, 36, 0, 2);
-        Ui.i().drawString(getRid(this.popMenu) == -2 ? Constants_H.TXT_95 : ((Object) this.monsterT[this.monster_pro[getNid(this.popMenu)][6]]) + Constants_H.TXT_96, x + 20, 110, 0, 1, 0);
+        Ui.i().drawString(this.popMenu + 1 + "/5", x + 10, 106, 36, 0, 2);
+        Ui.i().drawString(getRid(this.popMenu) == -2 ? Constants_H.TXT_95 : this.monsterT[this.monster_pro[getNid(this.popMenu)][6]] + Constants_H.TXT_96, x + 20, 110, 0, 1, 0);
         if (getRid(this.popMenu) != -2) {
             if (this.b_c < 2) {
                 if (drawCartoonOne(1, 1, this.mon_action, 377, 97, this.b_c != 1, 0)) {
@@ -1188,7 +1191,7 @@ public class GameRun extends GameRun_F {
                     this.b_c = (byte) 2;
                     if (this.b_c == -1) {
                         short barW = (short) (w - 40);
-                        this.str_cur = String.valueOf((int) getNexp(this.popMenu, 1)) + "/" + ((int) getNexp(this.popMenu, 3));
+                        this.str_cur = String.valueOf(getNexp(this.popMenu, 1)) + "/" + ((int) getNexp(this.popMenu, 3));
                         Ui.i().drawBarOne(x + 20, 158, barW, Ms.i().mathPercent(getNexp(this.popMenu, 1), barW - 2, getNexp(this.popMenu, 3)), Ms.i().mathPercent(getNexp(this.popMenu, 1), barW - 2, getNexp(this.popMenu, 3)), 2);
                         Ui.i().drawNum(this.str_cur, x + 20 + ((barW - (this.str_cur.length() * 8)) >> 1), 164, 0, 0);
                         Ui.i().drawString(getNexp(this.popMenu, 1) == getNexp(this.popMenu, 3) ? Constants_H.TXT_98 : Constants_H.TXT_97, x + 20 + (barW >> 1), 164, 17, 3, 1);
@@ -1429,7 +1432,7 @@ public class GameRun extends GameRun_F {
                 i = this.monInfoList[this.monInfo_dir[this.cur_a][i2]] != 0 ? 3 : -1;
             }
             byte color = (byte) i;
-            Ui.i().drawString(String.valueOf((this.infoStart + i2) + 1 < 10 ? "0" : "") + (this.infoStart + i2 + 1) + " " + (this.monInfoList[this.monInfo_dir[this.cur_a][i2]] != 0 ? getNameMon(this.monInfo_dir[this.cur_a][i2]) : Constants_H.TXT_20), x + 10, ((i2 - sel[1]) * (sh + 4 + 2)) + y + 5, 0, color, 0);
+            Ui.i().drawString(((this.infoStart + i2) + 1 < 10 ? "0" : "") + (this.infoStart + i2 + 1) + " " + (this.monInfoList[this.monInfo_dir[this.cur_a][i2]] != 0 ? getNameMon(this.monInfo_dir[this.cur_a][i2]) : Constants_H.TXT_20), x + 10, ((i2 - sel[1]) * (sh + 4 + 2)) + y + 5, 0, color, 0);
             Ui i6 = Ui.i();
             String infoType = getInfoType(this.monAppearMap[this.monInfo_dir[this.cur_a][i2]][0]);
             int i7 = (Constants_H.WIDTH - 25) - 15;
@@ -1540,7 +1543,7 @@ public class GameRun extends GameRun_F {
         Ui.i().drawYesNo(false, true);
         Ui.i().drawUi(this.cur_a + 5, x + 2, 35 + 2, 0, 0);
         Log.e("sk", "drawUi");
-        Ui.i().drawString(String.valueOf(getNameMon(id)) + "\uff08" + (this.monInfoList[id] == 2 ? Constants_H.TXT_26 : Constants_H.TXT_27) + "\uff09", Constants_H.WIDTH_H_, 6, 17, 0, 0);
+        Ui.i().drawString(getNameMon(id) + "\uff08" + (this.monInfoList[id] == 2 ? Constants_H.TXT_26 : Constants_H.TXT_27) + "\uff09", Constants_H.WIDTH_H_, 6, 17, 0, 0);
         int i = 100 >> 1;
         if (drawCartoonOne(1, 1, (this.mList_id[id][1] * 3) + this.mon_action, x + 50, (35 + 90) - 10, this.mon_action != 1, 0)) {
             this.mon_action = (byte) 0;
@@ -1562,7 +1565,7 @@ public class GameRun extends GameRun_F {
         while (i4 < 7) {
             int i5 = 35 + 90 + 12;
             int i6 = 29 + 4;
-            Ui.i().drawString(Constants_H.TXT_24 + ((this.monsterMake[id].length == 0 || i4 >= this.monsterMake[id].length) ? "" : String.valueOf(getNameItem(this.monsterMake[id][i4])) + " x" + ((int) this.monsterMake[id][i4 + 1])), 29 + 192 + 14, (j * 33) + 137, 0, 3, 0);
+            Ui.i().drawString(Constants_H.TXT_24 + ((this.monsterMake[id].length == 0 || i4 >= this.monsterMake[id].length) ? "" : getNameItem(this.monsterMake[id][i4]) + " x" + ((int) this.monsterMake[id][i4 + 1])), 29 + 192 + 14, (j * 33) + 137, 0, 3, 0);
             i4 = (byte) (i4 + 2);
             j = (byte) (j + 1);
         }
@@ -1583,7 +1586,7 @@ public class GameRun extends GameRun_F {
         Ui.i().drawK1(lx, 5 + 6, 118, 116, 1);
         if (this.t_length != 0) {
             drawMonsterHp(monsters[this.select[0][0]], lx + 30, 5, 74, 2, 2, monsters[this.select[0][0]].monsterPro[4]);
-            Ui.i().drawNum(String.valueOf((int) monsters[this.select[0][0]].monster[2]) + Constants_H.TXT_9, lx + 2, 5 + 10, 0, 0);
+            Ui.i().drawNum(String.valueOf(monsters[this.select[0][0]].monster[2]) + Constants_H.TXT_9, lx + 2, 5 + 10, 0, 0);
             Ui.i().drawUi(monsters[this.select[0][0]].monster[3] + 5, lx + 9, 5 + 11, 17, 0);
             if (drawCartoonOne(1, 1, (this.mList_id[monsters[this.select[0][0]].monster[0]][1] * 3) + this.mon_action, 248, 111, this.mon_action != 1, 0)) {
                 this.mon_action = (byte) 0;
@@ -1608,10 +1611,10 @@ public class GameRun extends GameRun_F {
         drawMonPro(monsters, lx, ly);
         int lx2 = ((280 + Constants_H.HEIGHT_H_) - 75) - 15;
         if (this.t_length != 0) {
-            drawMonList(monsters, lx2 + 2, 0 + 13, this.list_rows, this.t_length, this.select[0]);
+            drawMonList(monsters, lx2 + 2, 13, this.list_rows, this.t_length, this.select[0]);
         }
-        Ui.i().sliding((280 + Constants_H.HEIGHT_H_) - 17, 0 + 12, 116 + 6, this.select[0][0], this.t_length, true);
-        Ui.i().drawNum(String.valueOf((int) this.t_length) + "/" + ((int) (this.mini_state == 6 ? this.max_monsters : this.max_takes)), (280 + Constants_H.HEIGHT_H_) - 40, 0 + 12, 0, 0);
+        Ui.i().sliding((280 + Constants_H.HEIGHT_H_) - 17, 12, 116 + 6, this.select[0][0], this.t_length, true);
+        Ui.i().drawNum(String.valueOf(this.t_length) + "/" + ((int) (this.mini_state == 6 ? this.max_monsters : this.max_takes)), (280 + Constants_H.HEIGHT_H_) - 40, 12, 0, 0);
         if (this.popMenu != -1) {
             drawSelectMenu(this.about_d, Constants_H.WIDTH_H_ - 25, 30, 75, 2, 0, this.popMenu);
             if (this.buyOk == 1) {
@@ -1643,7 +1646,7 @@ public class GameRun extends GameRun_F {
             if (select[0] == i) {
                 Ui.i().drawK(x - 50, ((i - select[1]) * 29) + y, 108, 26, 1);
             }
-            Ui.i().drawString(getNameMon(monster[i].monster[0]).toString(), x + 4, (y - 2) + ((i - select[1]) * 29), 17, select[0] == i ? 0 : 1, 1);
+            Ui.i().drawString(getNameMon(monster[i].monster[0]), x + 4, (y - 2) + ((i - select[1]) * 29), 17, select[0] == i ? 0 : 1, 1);
             if (this.popMenu == -1 && this.pkey.isSelect(x - 50, ((i - select[1]) * 29) + y, 100, 26)) {
                 if (select[0] == i) {
                     Ms.key = 53;
@@ -1671,9 +1674,9 @@ public class GameRun extends GameRun_F {
         while (i < sel[1] + show_num && i < this.skill_list[8]) {
             Ui.i().drawUi(this.skill_list[i] > 25 ? 50 : 51, x + 8, y + 8 + ((i - sel[1]) * fontH), 0, 0);
             Log.e("sk", "\u666e\u901a\u653b\u51fb");
-            Ui.i().drawString(getNameSkill(this.skill_list[i]).toString(), x + 21, y + 1 + ((i - sel[1]) * fontH), 0, sel[0] == i ? 0 : 3, 0);
+            Ui.i().drawString(getNameSkill(this.skill_list[i]), x + 21, y + 1 + ((i - sel[1]) * fontH), 0, sel[0] == i ? 0 : 3, 0);
             Ui i2 = Ui.i();
-            String str = this.skill_list[i] <= 30 ? String.valueOf((int) this.skill[this.skill_list[i]][1]) + Constants_H.PRO_TXT_1 : Constants_H.PRO_TXT_7;
+            String str = this.skill_list[i] <= 30 ? String.valueOf(this.skill[this.skill_list[i]][1]) + Constants_H.PRO_TXT_1 : Constants_H.PRO_TXT_7;
             int i3 = (x + w) - 8;
             int i4 = y + 1 + ((i - sel[1]) * fontH);
             Graphics graphics = g;
@@ -1854,7 +1857,7 @@ public class GameRun extends GameRun_F {
             this.move_x = (short) 0;
             Graphics graphics = g;
             Graphics graphics2 = g;
-            Ui.i().drawString(String.valueOf(getNameMon(this.myMonsters[id].monster[0])) + Constants_H.TXT_8 + ((int) this.myMonsters[id].monster[2]) + Constants_H.TXT_9, 432, 108 + 4, 8 | 16, 1, 0);
+            Ui.i().drawString(getNameMon(this.myMonsters[id].monster[0]) + Constants_H.TXT_8 + ((int) this.myMonsters[id].monster[2]) + Constants_H.TXT_9, 432, 108 + 4, 8 | 16, 1, 0);
             Ui.i().drawImage(this.imgItem[1], Player.REALIZED - this.say_s, 108 - 4, 36);
             if (this.levelUp_in_battle[bb ? id : this.myMonsters[id].monster[1]][1] != -1) {
                 Ui.i().drawString(Constants_H.TXT_10 + getNameSkill(this.levelUp_in_battle[bb ? id : this.myMonsters[id].monster[1]][1]), Constants_H.WIDTH_H_, Constants_H.HEIGHT_ - 60, 17, 9, 0);
@@ -1952,14 +1955,14 @@ public class GameRun extends GameRun_F {
         byte i2 = 2;
         byte j = 0;
         do {
-            Ui.i().drawString(String.valueOf(getNameItem(this.monsterMake[id][i2])) + "\uff08" + ((int) findItem(-2, this.monsterMake[id][i2], true)) + "/" + ((int) this.monsterMake[id][i2 + 1]) + "\uff09", x, y + (j * fontH), 0, 3, 0);
+            Ui.i().drawString(getNameItem(this.monsterMake[id][i2]) + "\uff08" + ((int) findItem(-2, this.monsterMake[id][i2], true)) + "/" + ((int) this.monsterMake[id][i2 + 1]) + "\uff09", x, y + (j * fontH), 0, 3, 0);
             i2 = (byte) (i2 + 2);
             j = (byte) (j + 1);
         } while (i2 < this.monsterMake[id].length - 1);
         if (this.monsterMake[id][0] <= 0 || (i = findItem(-2, 34, true)) <= 0) {
             return;
         }
-        Ui.i().drawString(String.valueOf(getNameItem(34)) + "\uff08" + ((int) i) + "/1\uff09", x, y + (j * fontH), 0, -1, 0);
+        Ui.i().drawString(getNameItem(34) + "\uff08" + ((int) i) + "/1\uff09", x, y + (j * fontH), 0, -1, 0);
     }
 
     private byte isEvolveMake(int id) {
@@ -2100,7 +2103,7 @@ public class GameRun extends GameRun_F {
             return;
         }
         if (mon.isMonReel(this.getSkill)) {
-            say(String.valueOf(getNameMon(mon.monster[0])) + Constants_H.TXT_45, 0);
+            say(getNameMon(mon.monster[0]) + Constants_H.TXT_45, 0);
             return;
         }
         if (mon.monster[14] != -1 && mon.monster[15] != -1) {
@@ -2119,7 +2122,7 @@ public class GameRun extends GameRun_F {
     }
 
     private void delItemSkill(Monster mon) {
-        say(String.valueOf(getNameMon(mon.monster[0])) + Constants_H.TXT_10 + getNameSkill(this.getSkill), 0);
+        say(getNameMon(mon.monster[0]) + Constants_H.TXT_10 + getNameSkill(this.getSkill), 0);
         goMY_BAG(2);
         deleteItems(((this.getSkill + 35) - 25) - 1, 1);
         Ms.i().correctSelect(this.select[0], this.itemsLength[this.selectx], this.list_rows);
@@ -2229,11 +2232,10 @@ public class GameRun extends GameRun_F {
     }
 
     private void setShowPro(Monster monster) {
-        StringBuffer sbuff = new StringBuffer();
-        sbuff.append(String.valueOf((int) monster.monsterPro[6]) + "#n");
-        sbuff.append(String.valueOf((int) monster.monsterPro[7]) + "#n");
-        sbuff.append((int) monster.monsterPro[5]);
-        setStringB(sbuff.toString(), Constants_H.WIDTH, 2);
+        String sbuff = String.valueOf(monster.monsterPro[6]) + "#n" +
+                String.valueOf(monster.monsterPro[7]) + "#n" +
+                monster.monsterPro[5];
+        setStringB(sbuff, Constants_H.WIDTH, 2);
     }
 
     private void goGO_RUNINMAP() {
@@ -2747,6 +2749,7 @@ public class GameRun extends GameRun_F {
         	at jadx.core.dex.nodes.ClassNode.getCode(ClassNode.java:340)
         */
     }
+
     private short getMonsterExp(Monster monster) {
         return (short) (((monster.monster[2] * 210) / 10) - 2);
     }
@@ -2758,7 +2761,7 @@ public class GameRun extends GameRun_F {
             byte LevelCha = (byte) (b - Ms.skip2);
             Ms.i();
             Ms.skip = this.exp;
-            short buff = this.myMonsters[no].isMonReel(36) ? (short) (0 + 100) : (short) 0;
+            short buff = this.myMonsters[no].isMonReel(36) ? (short) (100) : (short) 0;
             if (this.myMonsters[no].isMonReel(37)) {
                 buff = (short) (buff + 200);
             }
@@ -3020,7 +3023,7 @@ public class GameRun extends GameRun_F {
             bArr[1] = b;
             if (b > 99) {
                 this.items[item_type][item_no][1] = 99;
-                say(String.valueOf(getNameItem(this.items[item_type][item_no][0])) + Constants_H.MONEY_TXT_5, 0);
+                say(getNameItem(this.items[item_type][item_no][0]) + Constants_H.MONEY_TXT_5, 0);
                 return (byte) -1;
             }
         } else {
@@ -3075,9 +3078,9 @@ public class GameRun extends GameRun_F {
             AddMP((this.myMonsters[this.select[0][0]].monsterPro[3] * hp) / 100, this.myMonsters[this.select[0][0]]);
             useState(0, this.select_it[0]);
         } else if (this.myMonsters[this.select[0][0]].monsterPro[1] < 1) {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_0, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_0, 0);
         } else {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_1, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_1, 0);
         }
     }
 
@@ -3086,9 +3089,9 @@ public class GameRun extends GameRun_F {
             AddHP(offer + ((this.myMonsters[this.select[0][0]].monsterPro[2] * hp) / 100), this.myMonsters[this.select[0][0]]);
             useState(0, this.select_it[0]);
         } else if (this.myMonsters[this.select[0][0]].monsterPro[0] < 1) {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_0, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_0, 0);
         } else {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_1, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_1, 0);
         }
     }
 
@@ -3096,7 +3099,7 @@ public class GameRun extends GameRun_F {
         boolean bmp = false;
         boolean bhp = false;
         if (this.myMonsters[this.select[0][0]].monsterPro[0] < 1) {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_0, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_0, 0);
             return;
         }
         if (this.myMonsters[this.select[0][0]].monsterPro[1] < this.myMonsters[this.select[0][0]].monsterPro[3] && this.myMonsters[this.select[0][0]].monsterPro[0] > 0) {
@@ -3112,7 +3115,7 @@ public class GameRun extends GameRun_F {
         } else if (this.myMonsters[this.select[0][0]].monsterPro[0] < 1) {
             AddHP((this.myMonsters[this.select[0][0]].monsterPro[2] * hp) / 100, this.myMonsters[this.select[0][0]]);
         } else {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_1, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_1, 0);
         }
     }
 
@@ -3121,7 +3124,7 @@ public class GameRun extends GameRun_F {
             this.myMonsters[this.select[0][0]].effect = (byte) 7;
             useState(0, this.select_it[0]);
         } else {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_2, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_2, 0);
         }
     }
 
@@ -3133,7 +3136,7 @@ public class GameRun extends GameRun_F {
             useState(0, this.select_it[0]);
             return;
         }
-        say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_4, 0);
+        say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_4, 0);
     }
 
     private void resetFealty(int hp) {
@@ -3155,7 +3158,7 @@ public class GameRun extends GameRun_F {
             return;
         }
         if (this.myMonsters[this.select[0][0]].monsterPro[0] > 0) {
-            say(String.valueOf(getNameMon(this.myMonsters[this.select[0][0]].monster[0])) + Constants_H.TXT_3, 0);
+            say(getNameMon(this.myMonsters[this.select[0][0]].monster[0]) + Constants_H.TXT_3, 0);
         }
     }
 
@@ -3619,7 +3622,7 @@ public class GameRun extends GameRun_F {
                 } else if (dm2.hit[i][0] == -2) {
                     this.strHit = Constants_H.BATTLE_TXT_18;
                 } else {
-                    StringBuilder sb = new StringBuilder(String.valueOf(dm2.hit[i][1] > -1 ? "-" : "+"));
+                    StringBuilder sb = new StringBuilder(dm2.hit[i][1] > -1 ? "-" : "+");
                     Ms.i();
                     this.strHit = sb.append(Ms.abs(dm2.hit[i][1])).toString();
                 }
@@ -3743,7 +3746,7 @@ public class GameRun extends GameRun_F {
 
     private byte isShuXing(Monster am, Monster dm2) {
         if (am.monster[3] != -1 && this.Shuxing[am.monster[3]][0] != dm2.monster[3]) {
-            return this.Shuxing[am.monster[3]][1] == dm2.monster[3] ? (byte) 0 : (byte) 0;
+            return (byte) 0;
         }
         return (byte) 30;
     }
@@ -3987,10 +3990,10 @@ public class GameRun extends GameRun_F {
         switch (this.battle_state) {
             case -5:
                 if (this.proReplace[this.myB.now_id][2] > -1) {
-                    String s = String.valueOf(getNameMon(this.myMonsters[this.myB.now_id].monster[0])) + Constants_H.TXT_11;
+                    String s = getNameMon(this.myMonsters[this.myB.now_id].monster[0]) + Constants_H.TXT_11;
                     Log.e("sk", "\u83b7\u5f97\u7ecf\u9a8c");
                     Ui.i().drawString(s, 204, 308, 36, 1, 0);
-                    Ui.i().drawNum(new StringBuilder().append((int) this.proReplace[this.myB.now_id][2]).toString(), 220, 315, 0, 1);
+                    Ui.i().drawNum(String.valueOf(this.proReplace[this.myB.now_id][2]), 220, 315, 0, 1);
                     break;
                 } else if (this.proReplace[this.myB.now_id][2] == -1) {
                     Ui.i().drawString(Constants_H.TXT_12, 204, 282, 36, 7, 0);
@@ -4507,11 +4510,11 @@ public class GameRun extends GameRun_F {
         if (this.enB.getMon().monster[3] != -1) {
             Ui.i().drawUi(this.enB.getMon().monster[3] + 5, 10 + 16, 25 + 16, 3, 0);
         }
-        Ui.i().drawString(getNameMon(this.enB.getMon().monster[0]).toString(), 10 + 75 + 14, 25 + 1, 17, 4, 2);
-        Ui.i().drawNum(String.valueOf((int) this.enB.getMon().monster[2]) + Constants_H.TXT_9, 10 + 125 + 27, 25 + 20, 0, 0);
+        Ui.i().drawString(getNameMon(this.enB.getMon().monster[0]), 10 + 75 + 14, 25 + 1, 17, 4, 2);
+        Ui.i().drawNum(String.valueOf(this.enB.getMon().monster[2]) + Constants_H.TXT_9, 10 + 125 + 27, 25 + 20, 0, 0);
         Ui.i().drawK0(10 + 2, 25 + 25 + 11, 62, 14, 4);
         Ui.i().drawUi(34, 10 + 4, 25 + 25 + 12, 0, 0);
-        Ui.i().drawNum(String.valueOf(this.enB.countS[0] + 100) + "%", 10 + 60, 25 + 25 + 24, 1, 1);
+        Ui.i().drawNum(this.enB.countS[0] + 100 + "%", 10 + 60, 25 + 25 + 24, 1, 1);
         Ui.i().drawString(Constants_H.GAME_TXT_30, 10 + 2, 25 + 25 + 30, 20, 4, 2);
         drawMonKind(this.enB.getMon().monster[4], 10 + 100 + 8, 25 + 25 + 38, 0);
         Ui.i().drawString(this.monInfoList[this.enB.getMon().monster[0]] == 2 ? Constants_H.TXT_26 : Constants_H.TXT_27, 10 + 2, 25 + 50 + 32, 20, 4, 2);
@@ -4522,11 +4525,11 @@ public class GameRun extends GameRun_F {
         Ui.i().drawK(10, 140, 179, 110, 2);
         Ui.i().drawKuang(10 + 2, 140 + 2, 147, 33);
         Ui.i().drawUi(this.myB.getMon().monster[3] + 5, 10 + 16, 140 + 16, 3, 0);
-        Ui.i().drawString(getNameMon(this.myB.getMon().monster[0]).toString(), 10 + 75 + 14, 140 + 1, 17, 4, 2);
-        Ui.i().drawNum(String.valueOf((int) this.myB.getMon().monster[2]) + Constants_H.TXT_9, 10 + 125 + 27, 140 + 20, 0, 0);
+        Ui.i().drawString(getNameMon(this.myB.getMon().monster[0]), 10 + 75 + 14, 140 + 1, 17, 4, 2);
+        Ui.i().drawNum(String.valueOf(this.myB.getMon().monster[2]) + Constants_H.TXT_9, 10 + 125 + 27, 140 + 20, 0, 0);
         Ui.i().drawK0(10 + 2, 140 + 25 + 11, 62, 14, 4);
         Ui.i().drawUi(34, 10 + 4, 140 + 25 + 12, 0, 0);
-        Ui.i().drawNum(String.valueOf(this.myB.countS[0] + 100) + "%", 10 + 60, 140 + 25 + 24, 1, 1);
+        Ui.i().drawNum(this.myB.countS[0] + 100 + "%", 10 + 60, 140 + 25 + 24, 1, 1);
         Ui.i().drawString(Constants_H.GAME_TXT_30, 10 + 2, 140 + 25 + 30, 20, 4, 2);
         drawMonKind(this.myB.getMon().monster[4], 10 + 100 + 8, 140 + 25 + 38, 0);
         Ui.i().drawString(Constants_H.GAME_TXT_31, 10 + 2, 140 + 50 + 32, 20, 4, 2);
@@ -4640,7 +4643,7 @@ public class GameRun extends GameRun_F {
 
     public void initMonStream(int type, int id, int i) {
         String name = "data/npc" + type + "/" + id;
-        boolean bb = type == 2 ? isNpc2ImageType(id) : true;
+        boolean bb = type != 2 || isNpc2ImageType(id);
         if (this.mon[i] != null) {
             Ms.i().setSprite(this.mon[i], name, bb);
         } else {

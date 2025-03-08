@@ -20,7 +20,17 @@ public final class Graphics {
     public static final int SOLID = 0;
     public static final int TOP = 16;
     public static final int VCENTER = 2;
+    private static final DashPathEffect dashPathEffect = new DashPathEffect(new float[]{5.0f, 5.0f}, 0.0f);
+    private static final StringBuffer sb = new StringBuffer();
+    static float[][] tTrans = {new float[]{1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{1.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{-1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{-1.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, 1.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, -1.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
+    static float[] tTransTemp = new float[9];
+    static Matrix regionMatrix = new Matrix();
+    static int[][] tTransXY = {new int[2], new int[]{0, 1}, new int[]{1, 0}, new int[]{1, 1}, new int[2], new int[]{1, 0}, new int[]{0, 1}, new int[]{1, 1}};
     private static Matrix ttmatrix;
+    private static final Rect rect1 = new Rect();
+    private static final Rect rect2 = new Rect();
+    float scale_x = 1.0f;
+    float scale_y = 1.0f;
     private Bitmap area;
     private android.graphics.Canvas canvas;
     private int cliph;
@@ -29,25 +39,11 @@ public final class Graphics {
     private int clipy;
     private Bitmap graphicbitmap;
     private int[] rgb;
-    private static final DashPathEffect dashPathEffect = new DashPathEffect(new float[]{5.0f, 5.0f}, 0.0f);
-    private static final StringBuffer sb = new StringBuffer();
-    protected static float[][] tTrans = {new float[]{1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{1.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{-1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{-1.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, 1.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}, new float[]{0.0f, -1.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
-    protected static float[] tTransTemp = new float[9];
-    protected static Matrix regionMatrix = new Matrix();
-    protected static int[][] tTransXY = {new int[2], new int[]{0, 1}, new int[]{1, 0}, new int[]{1, 1}, new int[2], new int[]{1, 0}, new int[]{0, 1}, new int[]{1, 1}};
-    private static Rect rect1 = new Rect();
-    private static Rect rect2 = new Rect();
     private Font font = Font.getDefaultFont();
     private int strokeStyle = 0;
     private int translateX = 0;
     private int translateY = 0;
     private boolean isResetPainter = false;
-    float scale_x = 1.0f;
-    float scale_y = 1.0f;
-
-    private void initPaint() {
-        this.font.tmpPaint.setAntiAlias(true);
-    }
 
     public Graphics() {
         initPaint();
@@ -58,16 +54,15 @@ public final class Graphics {
         initPaint();
     }
 
-    void setCanvas(android.graphics.Canvas canvas) {
-        this.canvas = canvas;
-        initPaint();
-    }
-
     Graphics(android.graphics.Canvas canvas, Paint painter, Bitmap bitmap) {
         this.canvas = canvas;
         this.graphicbitmap = bitmap;
         this.font.tmpPaint = painter;
         initPaint();
+    }
+
+    private void initPaint() {
+        this.font.tmpPaint.setAntiAlias(true);
     }
 
     public void clipRect(int x, int y, int width, int height) {
@@ -140,10 +135,6 @@ public final class Graphics {
         this.font.tmpPaint.setStyle(Paint.Style.STROKE);
         this.canvas.drawArc(new RectF(x, y, x + width, y + height), startAngle, arcAngle, false, this.font.tmpPaint);
         this.font.tmpPaint.setStyle(Paint.Style.FILL);
-    }
-
-    public void setFont(Font font) {
-        this.font = font;
     }
 
     public void drawChar(char character, int x, int y, int anchor) {
@@ -361,6 +352,14 @@ public final class Graphics {
         return this.font.tmpPaint.getColor();
     }
 
+    public void setColor(int RGB) {
+        if ((RGB & (-16777216)) != 0) {
+            this.font.tmpPaint.setColor(RGB);
+        } else {
+            this.font.tmpPaint.setColor((-16777216) | RGB);
+        }
+    }
+
     public int getDisplayColor(int color) {
         return color;
     }
@@ -369,8 +368,19 @@ public final class Graphics {
         return this.font;
     }
 
+    public void setFont(Font font) {
+        this.font = font;
+    }
+
     public int getGrayScale() {
         return ((getRedComponent() + getGreenComponent()) + getBlueComponent()) / 3;
+    }
+
+    public void setGrayScale(int grey) {
+        if (grey < 0 || grey > 255) {
+            throw new IllegalArgumentException();
+        }
+        setColor(grey, grey, grey);
     }
 
     public int getStrokeStyle() {
@@ -407,23 +417,8 @@ public final class Graphics {
         }
     }
 
-    public void setColor(int RGB) {
-        if ((RGB & (-16777216)) != 0) {
-            this.font.tmpPaint.setColor(RGB);
-        } else {
-            this.font.tmpPaint.setColor((-16777216) | RGB);
-        }
-    }
-
     public void setColor(int red, int green, int blue) {
         setColor(Color.rgb(red, green, blue));
-    }
-
-    public void setGrayScale(int grey) {
-        if (grey < 0 || grey > 255) {
-            throw new IllegalArgumentException();
-        }
-        setColor(grey, grey, grey);
     }
 
     public void drawLine(float x1, float y1, float x2, float y2) {
@@ -447,6 +442,11 @@ public final class Graphics {
             throw new NullPointerException();
         }
         return this.canvas;
+    }
+
+    void setCanvas(android.graphics.Canvas canvas) {
+        this.canvas = canvas;
+        initPaint();
     }
 
     public void restCanvas() {

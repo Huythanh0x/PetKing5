@@ -1,11 +1,14 @@
 package main;
 
 import android.util.Log;
+
 import com.PetKing5_480x800.PetKing5;
+
+import java.lang.reflect.Array;
+
 import dm.Ms;
 import dm.Sound;
 import dm.Ui;
-import java.lang.reflect.Array;
 
 public class SMSSender implements Key_H {
     public static GameRun gr;
@@ -13,22 +16,22 @@ public class SMSSender implements Key_H {
     public static PetKing5 pk;
     public static SMSSender smsSender;
     public static byte smsType;
-    private StringBuffer[] about;
-    private byte currentPage;
     public byte idSmsLevel;
-    private String[][] menuTxt;
     public byte menu_state;
     public PointerKey pkey;
     public byte showLine;
     public byte tMyState;
-    private int tState;
-    private byte totalPage;
     public boolean sms_a = true;
     public boolean sms_b = false;
     public byte[][] menu = {new byte[]{0, 2, 4, 5}, new byte[]{6}, new byte[]{7}, new byte[]{8}, new byte[]{2}};
     public byte[] sel = new byte[2];
     public byte[][] smsCount = {new byte[]{4, 1, 1}, new byte[]{2, 1, 2}, new byte[]{4, 1, 3}, new byte[]{1, 1, 4}, new byte[]{2, 1, 5}, new byte[]{1, 1, 0}, new byte[]{2, 1, 6}, new byte[]{2, 1, 5}};
     public byte sendSms = -1;
+    private StringBuffer[] about;
+    private byte currentPage;
+    private String[][] menuTxt;
+    private int tState;
+    private byte totalPage;
 
     public SMSSender(GameRun gr_) {
         gr = gr_;
@@ -204,7 +207,7 @@ public class SMSSender implements Key_H {
     }
 
     private String getSmsTip(int i0, int i1) {
-        String tip = String.valueOf("") + "\u60a8\u5df2\u53d1\u9001" + i0 + "\u6761\u77ed\u4fe1\u3002\u8d2d\u4e70\u6b64\u9879\uff0c\u8fd8\u9700\u53d1\u9001" + i1 + "\u6761\u77ed\u4fe1\u3002\u786e\u8ba4\u53d1\u9001\u77ed\u4fe1\u5417\uff1f";
+        String tip = "" + "\u60a8\u5df2\u53d1\u9001" + i0 + "\u6761\u77ed\u4fe1\u3002\u8d2d\u4e70\u6b64\u9879\uff0c\u8fd8\u9700\u53d1\u9001" + i1 + "\u6761\u77ed\u4fe1\u3002\u786e\u8ba4\u53d1\u9001\u77ed\u4fe1\u5417\uff1f";
         return tip;
     }
 

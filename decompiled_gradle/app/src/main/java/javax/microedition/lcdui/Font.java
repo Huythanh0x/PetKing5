@@ -2,6 +2,7 @@ package javax.microedition.lcdui;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
+
 import com.PetKing5_480x800.R;
 
 public final class Font {
@@ -17,20 +18,16 @@ public final class Font {
     public static final int STYLE_ITALIC = 2;
     public static final int STYLE_PLAIN = 0;
     public static final int STYLE_UNDERLINED = 4;
-    private static int[] fontSize = CwaActivity.getInstance().getResources().getIntArray(R.array.FontSize);
     static int font_style = 0;
+    private static final int[] fontSize = CwaActivity.getInstance().getResources().getIntArray(R.array.FontSize);
+    Paint tmpPaint = new Paint();
+    char[] cHarr = new char[1];
     private Paint.FontMetricsInt metrics;
     private int nowSize;
     private Typeface tTypeface;
-    protected Paint tmpPaint = new Paint();
-    char[] cHarr = new char[1];
     private int tmpSize = -1;
 
     private Font() {
-    }
-
-    protected Paint.FontMetricsInt getMetricsInt() {
-        return this.metrics;
     }
 
     public static Font getDefaultFont() {
@@ -68,10 +65,7 @@ public final class Font {
         if ((style & 2) != 0) {
             font_style |= 2;
         }
-        boolean underLine = false;
-        if ((style & 4) != 0) {
-            underLine = true;
-        }
+        boolean underLine = (style & 4) != 0;
         font.tTypeface = Typeface.create(family, font_style);
         switch (size) {
             case 8:
@@ -89,6 +83,10 @@ public final class Font {
         font.tmpPaint.setUnderlineText(underLine);
         font.metrics = font.tmpPaint.getFontMetricsInt();
         return font;
+    }
+
+    Paint.FontMetricsInt getMetricsInt() {
+        return this.metrics;
     }
 
     public int getHeight() {

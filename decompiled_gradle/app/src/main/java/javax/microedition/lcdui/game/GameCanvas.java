@@ -2,6 +2,7 @@ package javax.microedition.lcdui.game;
 
 import android.content.Context;
 import android.util.AttributeSet;
+
 import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Graphics;
 

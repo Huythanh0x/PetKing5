@@ -5,31 +5,33 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.os.ConditionVariable;
 import android.util.Log;
+
 import java.io.IOException;
 import java.io.InputStream;
+
 import javax.microedition.lcdui.CwaActivity;
 
 public class AndroidUtil {
     private static final String LOG = "PIC_ERROR";
     public static int SCREEN_HEIGHT;
     public static int SCREEN_WIDTH;
-    private static AudioManager aManager;
     public static ConditionVariable cv = new ConditionVariable(true);
     public static AssetManager am = CwaActivity.getInstance().getAssets();
+    private static AudioManager aManager;
 
     public static InputStream getResourceAsStream(String name) {
         InputStream is = null;
         try {
             if (name.indexOf(47) == 0) {
-                is = am.open(name.substring(1, name.length()));
+                is = am.open(name.substring(1));
             } else {
                 is = am.open(name);
             }
             if (is == null) {
-                Log.e(LOG, String.valueOf(name) + " is not exist");
+                Log.e(LOG, name + " is not exist");
             }
         } catch (IOException e) {
-            Log.e(LOG, String.valueOf(name) + " is not exist");
+            Log.e(LOG, name + " is not exist");
             e.printStackTrace();
         }
         return is;

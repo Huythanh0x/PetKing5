@@ -1,33 +1,35 @@
 package minigame;
 
+import java.lang.reflect.Array;
+
+import javax.microedition.media.Player;
+
 import dm.Ms;
 import dm.Ui;
-import java.lang.reflect.Array;
-import javax.microedition.media.Player;
 import main.Constants_H;
 import main.GameRun;
 
 public class Cards implements MiniGame_H {
+    GameRun gr;
+    byte sel;
     private short count;
     private byte[][] findC;
     private byte[][] findN;
-    GameRun gr;
     private short gx;
     private short gy;
     private byte length;
     private byte lv;
-    byte sel;
     private int sell_money;
     private byte selx;
     private byte sely;
     private byte state;
     private byte tx;
     private byte ty;
-    private short gw = 30;
-    private short gh = 40;
-    private short gspace = 4;
-    private short wh = 320;
-    private short hh = 160;
+    private final short gw = 30;
+    private final short gh = 40;
+    private final short gspace = 4;
+    private final short wh = 320;
+    private final short hh = 160;
     private byte time = 3;
     private byte find_count = 3;
     private byte[][] num = {new byte[]{3, 4}, new byte[]{3, 6}, new byte[]{4, 6}, new byte[]{5, 6}};
@@ -275,7 +277,7 @@ public class Cards implements MiniGame_H {
         int i4 = this.gx;
         i2.drawRectZ(15400191, i3 + i4 + (this.tx * (this.gw + this.gspace)), this.hh + this.gy + (this.ty * (this.gh + this.gspace)), this.gw, this.gh, 3);
         if (this.count > 0) {
-            Ui.i().drawNum(new StringBuilder().append(this.count / 10).toString(), Constants_H.WIDTH_H_ + 10, 29, 36, 2);
+            Ui.i().drawNum(String.valueOf(this.count / 10), Constants_H.WIDTH_H_ + 10, 29, 36, 2);
         } else {
             Ui.i().drawString(Constants_H.GAME_TXT_17, Constants_H.WIDTH_H_, 4, 17, 3, 0);
             this.gr.showStringM(Constants_H.GAME_TXT_18 + (this.time < 0 ? 0 : this.time - 1) + "\u6b21", Constants_H.WIDTH_H_ + Player.REALIZED, Constants_H.HEIGHT_H_ - 75, 5, 0);
@@ -300,6 +302,6 @@ public class Cards implements MiniGame_H {
         }
         Ui.i().drawK(x, y, this.gw, this.gh, 5);
         this.gr.drawItem(this.findN[i][j], (this.gw >> 1) + x, (this.gh >> 1) + y, 3);
-        Ui.i().drawNum(new StringBuilder().append((int) this.findN[i][j]).toString(), this.gw + x, this.gh + y, 40, 0);
+        Ui.i().drawNum(String.valueOf(this.findN[i][j]), this.gw + x, this.gh + y, 40, 0);
     }
 }
