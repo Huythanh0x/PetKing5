@@ -538,15 +538,15 @@
     .line 5513
     new-array v0, v6, [Ljava/lang/String;
 
-    const-string v1, "\u654c\u4eba\u51fa\u73b0\u4e86\uff0c\u6218\u6597\u5427\uff01"
+    const-string v1, "An enemy appeared! Let's battle!"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u8003\u9a8c\u7684\u65f6\u523b\u6765\u4e86\uff0c\u8bad\u7ec3\u5e08\uff01"
+    const-string v1, "The time of trial has come, Trainer!"
 
     aput-object v1, v0, v5
 
-    const-string v1, "\u5c3d\u60c5\u6355\u6349\u5ba0\u7269\u5427\uff01"
+    const-string v1, "Capture Pokémon to your heart's content!"
 
     aput-object v1, v0, v4
 
@@ -1317,7 +1317,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "\u5df2\u7ecf\u6b7b\u4ea1\uff0c\u65e0\u6cd5\u4f7f\u7528\uff01"
+    const-string v3, "It's already dead and cannot be used!"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1597,7 +1597,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "\u4e0d\u9700\u8981\u4f7f\u7528\u8fd9\u4e2a\u9053\u5177"
+    const-string v3, "This item is not needed"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1799,7 +1799,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u6ca1\u6709\u5f02\u5e38\uff01"
+    const-string v1, "No abnormalities!"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2582,7 +2582,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u4e60\u5f97\u6280\u80fd\uff1a"
+    const-string v1, "Learned skill:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3436,7 +3436,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u590d\u6d3b\u6b7b\u4ea1\u7684\u5ba0\u7269\u5e76\u4e3a\u5176\u56de\u590d\u751f\u547d\u503c\u7684"
+    const-string v6, "Revives the dead Pokémon and restores its HP."
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -3445,7 +3445,7 @@
     if-eqz v5, :cond_9
 
     .line 819
-    const-string v6, "\u590d\u6d3b\u6b7b\u4ea1\u7684\u5ba0\u7269\u5e76\u4e3a\u5176\u56de\u590d\u751f\u547d\u503c\u768430%,\u8bf7\u52ff\u5728\u5ba0\u7269\u6218\u6597\u4e2d\u8d2d\u4e70!"
+    const-string v6, "Revives the dead Pokémon and restores 30% of its HP. Please do not purchase during Pokémon battles!"
 
     move-object/from16 v0, p0
 
@@ -3654,7 +3654,7 @@
     .line 833
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u9700\u8981\u8bad\u7ec3\u5e08"
+    const-string v6, "Requires Trainer Level"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3704,7 +3704,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u7ea7\u624d\u80fd\u5b66\u4e60\uff01"
+    const-string v6, "to learn!"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3731,7 +3731,7 @@
     invoke-virtual/range {v5 .. v10}, Lmain/GameRun;->showStringM(Ljava/lang/String;IIII)V
 
     .line 835
-    const-string v5, "\u662f\u5426\u8d2d\u4e70\uff1f"
+    const-string v5, "Purchase?"
 
     add-int/lit8 v6, v14, 0x19
 
@@ -4283,7 +4283,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u7ecf\u9a8c"
+    const-string v1, "Experience"
 
     const/16 v2, 0xc8
 
@@ -4603,7 +4603,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u6570\u91cf\uff1a"
+    const-string v2, "Quantity:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4650,7 +4650,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "\u9700\u8981\uff1a"
+    const-string v0, "Requires:"
 
     invoke-virtual {v11, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -4669,7 +4669,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v0, "\u91d1"
+    const-string v0, "Gold"
 
     invoke-virtual {v11, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -4708,7 +4708,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u73b0\u6709\uff1a"
+    const-string v1, "Current:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4782,7 +4782,7 @@
     .line 869
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u662f\u5426"
+    const-string v1, "Are you sure you want to"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4790,14 +4790,14 @@
 
     if-eqz v1, :cond_6
 
-    const-string v1, "\u8d2d\u4e70"
+    const-string v1, "Buy"
 
     :goto_4
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\uff1f"
+    const-string v1, "?"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4831,7 +4831,7 @@
     .restart local v3    # "t":I
     .restart local v11    # "s":Ljava/lang/StringBuffer;
     :cond_3
-    const-string v0, "\u83b7\u5f97\uff1a"
+    const-string v0, "Obtained:"
 
     invoke-virtual {v11, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -4839,7 +4839,7 @@
 
     .line 862
     :cond_4
-    const-string v0, "\u5fbd\u7ae0"
+    const-string v0, "Badges"
 
     invoke-virtual {v11, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -4855,7 +4855,7 @@
 
     .line 869
     :cond_6
-    const-string v1, "\u5356\u51fa"
+    const-string v1, "Sell"
 
     goto :goto_4
 .end method
@@ -5734,7 +5734,7 @@
 
     invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v4, "\u7ea7"
+    const-string v4, "Level"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5844,7 +5844,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u5ba0\u7269\u6863\u6b21"
+    const-string v4, "Pokémon Tier"
 
     add-int/lit8 v5, v1, 0x2
 
@@ -5910,7 +5910,7 @@
 
     if-ne v0, v4, :cond_1
 
-    const-string v0, "\u5df2\u6355\u83b7"
+    const-string v0, "Caught"
 
     move-object v4, v0
 
@@ -5978,7 +5978,7 @@
 
     .line 5304
     :cond_1
-    const-string v0, "\u672a\u6355\u83b7"
+    const-string v0, "Not Caught"
 
     move-object v4, v0
 
@@ -6032,7 +6032,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\uff08"
+    const-string v2, "("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6074,7 +6074,7 @@
 
     move-result-object v1
 
-    const-string v2, "\uff09"
+    const-string v2, ")"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6166,7 +6166,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\uff08"
+    const-string v2, "("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6188,7 +6188,7 @@
 
     move-result-object v1
 
-    const-string v2, "\uff09"
+    const-string v2, ")"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6297,7 +6297,7 @@
 
     if-ne v0, v1, :cond_6
 
-    const-string v0, "\u95ea\u907f"
+    const-string v0, "Evasion"
 
     iput-object v0, p0, Lmain/GameRun;->strHit:Ljava/lang/String;
 
@@ -6614,7 +6614,7 @@
 
     if-ne v0, v1, :cond_7
 
-    const-string v0, "\u5fe0\u8bda\u5ea6\u51cf\u5c11"
+    const-string v0, "Loyalty decreased"
 
     iput-object v0, p0, Lmain/GameRun;->strHit:Ljava/lang/String;
 
@@ -7594,7 +7594,7 @@
     goto/16 :goto_3
 
     :cond_7
-    const-string v7, "\u672a\u77e5\u5ba0\u7269"
+    const-string v7, "Unknown Pokémon"
 
     goto/16 :goto_4
 
@@ -7924,7 +7924,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u91d1"
+    const-string v6, "Gold"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8225,7 +8225,7 @@
 
     if-ne v0, v1, :cond_8
 
-    const-string v6, "\u5fbd\u7ae0"
+    const-string v6, "Badges"
 
     .line 1087
     .restart local v6    # "str":Ljava/lang/String;
@@ -8307,7 +8307,7 @@
     .line 1086
     .restart local v12    # "color":B
     :cond_8
-    const-string v6, "\u91d1"
+    const-string v6, "Gold"
 
     .restart local v6    # "str":Ljava/lang/String;
     goto :goto_7
@@ -8463,7 +8463,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u53d1\u73b0\u5ea6 "
+    const-string v2, "Discovery Rate "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -8553,7 +8553,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u6355\u6349\u79cd\u7c7b "
+    const-string v2, "Caught Species "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -9077,7 +9077,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "\uff08"
+    const-string v3, "("
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9095,14 +9095,14 @@
 
     if-ne v3, v4, :cond_2
 
-    const-string v3, "\u5df2\u6355\u83b7"
+    const-string v3, "Caught"
 
     :goto_0
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, "\uff09"
+    const-string v3, ")"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9203,7 +9203,7 @@
 
     move-result-object v16
 
-    const-string v17, "\u53d1\u73b0\u5730\u70b9"
+    const-string v17, "Location"
 
     add-int/lit16 v2, v14, 0xc0
 
@@ -9264,7 +9264,7 @@
 
     move-result-object v16
 
-    const-string v17, "\u8fdb"
+    const-string v17, "Evo"
 
     add-int/lit8 v2, v12, 0xc
 
@@ -9287,7 +9287,7 @@
 
     move-result-object v16
 
-    const-string v17, "\u5316"
+    const-string v17, "lve"
 
     add-int/lit8 v2, v12, 0xc
 
@@ -9436,7 +9436,7 @@
     .end local v32    # "j":B
     .restart local v5    # "offw":I
     :cond_2
-    const-string v3, "\u672a\u6355\u83b7"
+    const-string v3, "Not Caught"
 
     goto/16 :goto_0
 
@@ -9513,7 +9513,7 @@
 
     move-result-object v16
 
-    const-string v17, "\u672a\u77e5"
+    const-string v17, "Unknown"
 
     add-int/lit16 v2, v14, 0xc0
 
@@ -9542,7 +9542,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u6750\u6599\uff1a"
+    const-string v3, "Materials:"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -9864,7 +9864,7 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v5, "\u7ea7"
+    const-string v5, "Level"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10269,7 +10269,7 @@
 
     move-result-object v17
 
-    const-string v18, "\u4e0d\u53ef\u8fdb\u5316"
+    const-string v18, "Cannot Evolve"
 
     add-int/lit8 v19, v9, 0x73
 
@@ -10571,7 +10571,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u53ef\u8fdb\u5316"
+    const-string v5, "Can evolve"
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -10601,7 +10601,7 @@
 
     move-result-object v4
 
-    const-string v5, "\u6b21"
+    const-string v5, "times"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11354,7 +11354,7 @@
 
     move-result-object v14
 
-    const-string v15, "\u666e\u901a\u6280\u80fd"
+    const-string v15, "Normal Skill"
 
     const/16 v2, 0x19
 
@@ -11392,7 +11392,7 @@
 
     move-result-object v14
 
-    const-string v15, "\u5929\u8d4b\u6280\u80fd"
+    const-string v15, "Talent Skill"
 
     add-int/lit8 v16, v23, 0x19
 
@@ -12999,7 +12999,7 @@
 
     invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v4, "\u7ea7"
+    const-string v4, "Level"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -13109,7 +13109,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u5ba0\u7269\u6863\u6b21"
+    const-string v4, "Pokémon Tier"
 
     add-int/lit8 v5, v1, 0x2
 
@@ -13155,7 +13155,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u5174\u594b\u5ea6"
+    const-string v4, "Excitement Level"
 
     add-int/lit8 v5, v1, 0x2
 
@@ -13374,7 +13374,7 @@
 
     if-ne v6, v7, :cond_5
 
-    const-string v6, "\u6b64\u4f4d\u7f6e\u76ee\u524d\u662f\u7a7a\u7684"
+    const-string v6, "This slot is currently empty"
 
     .line 1320
     :goto_1
@@ -13791,7 +13791,7 @@
     if-ne v5, v6, :cond_9
 
     .line 1338
-    const-string v5, "\u5b75\u5316\u5df2\u5b8c\u6210"
+    const-string v5, "Hatching completed"
 
     move-object v10, v5
 
@@ -13818,7 +13818,7 @@
 
     move-result-object v9
 
-    const-string v10, "\u5b75\u5316\u6240\u9700\u6750\u6599"
+    const-string v10, "Hatching requires"
 
     add-int/lit8 v5, p1, 0x14
 
@@ -13915,7 +13915,7 @@
 
     move-result-object v9
 
-    const-string v10, "\u6309\u786e\u5b9a\u952e\u5b8c\u6210\u5b75\u5316"
+    const-string v10, "Press OK to complete hatching"
 
     add-int/lit8 v11, p1, 0x14
 
@@ -14096,7 +14096,7 @@
 
     move-result-object v6
 
-    const-string v7, "\u7684\u5ba0\u7269\u86cb"
+    const-string v7, "'s Pokémon egg"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -14265,7 +14265,7 @@
     .line 1338
     .restart local v8    # "barW":S
     :cond_9
-    const-string v5, "\u5b75\u5316\u4e2d..."
+    const-string v5, "Hatching..."
 
     move-object v10, v5
 
@@ -14332,7 +14332,7 @@
 
     move-result-object v9
 
-    const-string v10, "\u6863\u6b21\uff1a"
+    const-string v10, "Tier:"
 
     add-int/lit8 v5, p1, 0x14
 
@@ -14691,7 +14691,7 @@
 
     move-result-object v1
 
-    const-string v2, "\u8981\u505a\u4ec0\u4e48\uff1f"
+    const-string v2, "What do you want to do?"
 
     const/16 v3, 0x1c2
 
@@ -14884,7 +14884,7 @@
     .line 2139
     const-string v5, "sk"
 
-    const-string v6, "\u666e\u901a\u653b\u51fb"
+    const-string v6, "Normal Attack"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -14991,7 +14991,7 @@
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v7, "\u80fd\u91cf"
+    const-string v7, "Energy"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -15137,7 +15137,7 @@
 
     .line 2141
     :cond_5
-    const-string v6, "\u88ab\u52a8"
+    const-string v6, "Passive"
 
     goto :goto_3
 
@@ -15444,7 +15444,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u5bc4\u5b58\u5ba0\u7269"
+    const-string v1, "Deposit Pokémon"
 
     mul-int/lit8 v2, v8, 0x2
 
@@ -16184,7 +16184,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const-string v0, "\u4efb\u52a1"
+    const-string v0, "Quests"
 
     .line 1684
     :goto_0
@@ -16196,7 +16196,7 @@
 
     if-ne p1, v0, :cond_1
 
-    const-string v0, "\u8fdb\u5316"
+    const-string v0, "Evolve"
 
     goto :goto_0
 
@@ -16206,7 +16206,7 @@
 
     if-ne p1, v0, :cond_2
 
-    const-string v0, "\u5f02\u5316"
+    const-string v0, "Mutation"
 
     goto :goto_0
 
@@ -16216,7 +16216,7 @@
 
     if-ne p1, v0, :cond_3
 
-    const-string v0, "\u7ade\u6280\u573a"
+    const-string v0, "Arena"
 
     goto :goto_0
 
@@ -16226,13 +16226,13 @@
 
     if-ne p1, v0, :cond_4
 
-    const-string v0, "\u5b75\u5316"
+    const-string v0, "Hatch"
 
     goto :goto_0
 
     .line 1684
     :cond_4
-    const-string v0, "\u6355\u83b7"
+    const-string v0, "Catch"
 
     goto :goto_0
 .end method
@@ -16353,7 +16353,7 @@
     .line 3561
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u643a\u5e26\u5df2\u6ee1\uff0c"
+    const-string v1, "Party is full,"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -16369,7 +16369,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u5df2\u8f6c\u5165\u5bc4\u653e\u5904"
+    const-string v1, "Transferred to the Deposit"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -16891,7 +16891,7 @@
     .line 4508
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u83b7\u5f97\uff1a"
+    const-string v2, "Obtained:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -16996,27 +16996,27 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "\u653b\u51fb"
+    const-string v2, "Attack"
 
     aput-object v2, v0, v1
 
-    const-string v1, "\u9053\u5177"
+    const-string v1, "Items"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u5ba0\u7269"
+    const-string v1, "Pokémon"
 
     aput-object v1, v0, v4
 
     const/4 v1, 0x3
 
-    const-string v2, "\u5546\u5e97"
+    const-string v2, "Shop"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
-    const-string v2, "\u9003\u8dd1"
+    const-string v2, "Run Away"
 
     aput-object v2, v0, v1
 
@@ -17288,21 +17288,21 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "\u9053\u5177"
+    const-string v1, "Items"
 
     aput-object v1, v0, v4
 
-    const-string v1, "\u8f85\u52a9"
+    const-string v1, "Support"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u5377\u8f74"
+    const-string v1, "Scrolls"
 
     aput-object v1, v0, v2
 
     const/4 v1, 0x3
 
-    const-string v2, "\u5b75\u5316"
+    const-string v2, "Hatch"
 
     aput-object v2, v0, v1
 
@@ -17405,7 +17405,7 @@
 
     new-array v0, v3, [Ljava/lang/String;
 
-    const-string v1, "\u9053\u5177"
+    const-string v1, "Items"
 
     aput-object v1, v0, v4
 
@@ -17421,7 +17421,7 @@
 
     new-array v0, v3, [Ljava/lang/String;
 
-    const-string v1, "\u5b75\u5316"
+    const-string v1, "Hatch"
 
     aput-object v1, v0, v4
 
@@ -17715,14 +17715,14 @@
     iput-byte v0, p0, Lmain/GameRun;->popMenu:B
 
     .line 2562
-    const-string v0, "\u751f\u547d#n\u80fd\u91cf#n\u6863\u6b21"
+    const-string v0, "HP#nEnergy#nTier"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
     invoke-virtual {p0, v0, v1, v2}, Lmain/GameRun;->setStringB(Ljava/lang/String;II)V
 
     .line 2563
-    const-string v0, "\u529b\u91cf#n\u9632\u5fa1#n\u654f\u6377"
+    const-string v0, "Strength#nDefense#nAgility"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
@@ -18229,7 +18229,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u5df2\u7ecf\u6b7b\u4ea1\uff0c\u65e0\u6cd5\u4f7f\u7528\uff01"
+    const-string v1, "It's already dead and cannot be used!"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -18271,7 +18271,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u4e0d\u9700\u8981\u4f7f\u7528\u8fd9\u4e2a\u9053\u5177"
+    const-string v1, "This item is not needed"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -18968,7 +18968,7 @@
 
     if-nez v2, :cond_3
 
-    const-string v2, "\u5ba0\u7269\u5fe0\u8bda\u5ea6\u4e3a0\uff0c\u8bf7\u7acb\u523b\u8865\u5145\uff01"
+    const-string v2, "Pokémon loyalty is 0! Replenish it immediately!"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19067,7 +19067,7 @@
     if-ne v2, v8, :cond_6
 
     .line 5093
-    const-string v2, "\u7981\u9522\u4e2d\u65e0\u6cd5\u4f7f\u7528\u9053\u5177\uff01"
+    const-string v2, "Cannot use items while imprisoned!"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19097,7 +19097,7 @@
     if-ne v2, v8, :cond_8
 
     .line 5097
-    const-string v2, "\u7981\u9522\u4e2d\u65e0\u6cd5\u66f4\u6362\u5ba0\u7269\uff01"
+    const-string v2, "Cannot switch Pokémon while imprisoned!"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19261,7 +19261,7 @@
     if-ne v1, v5, :cond_10
 
     .line 5124
-    const-string v2, "\u9003\u8dd1\u5931\u8d25\uff01"
+    const-string v2, "Failed to escape!"
 
     invoke-virtual {p0, v2, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19286,7 +19286,7 @@
     :cond_10
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u88ab\u602a\u7269"
+    const-string v3, "By the monster"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -19302,20 +19302,20 @@
 
     if-eqz v3, :cond_11
 
-    const-string v3, "\u7981\u9522\u4e2d"
+    const-string v3, "Imprisoned"
 
     :goto_4
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, "\uff0c"
+    const-string v3, ","
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, "\u65e0\u6cd5\u9003\u8dd1\uff01"
+    const-string v3, "Cannot escape!"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -19330,7 +19330,7 @@
     goto/16 :goto_0
 
     :cond_11
-    const-string v3, "\u7684\u7535\u773c\u9b45\u60d1\u4e86"
+    const-string v3, "Charmed by the glowing eyes of"
 
     goto :goto_4
 
@@ -19338,7 +19338,7 @@
     .end local v0    # "EscRate":S
     .end local v1    # "succ":B
     :cond_12
-    const-string v2, "\u65e0\u6cd5\u9003\u8dd1\uff01"
+    const-string v2, "Cannot escape!"
 
     invoke-virtual {p0, v2, v7}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19413,7 +19413,7 @@
 
     if-le v2, v3, :cond_14
 
-    const-string v2, "\u88ab\u52a8\u6280\u80fd\u65e0\u6cd5\u4f7f\u7528!"
+    const-string v2, "Passive skill cannot be used!"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19452,7 +19452,7 @@
     if-le v2, v3, :cond_15
 
     .line 5145
-    const-string v2, "\u5c01\u95ed\u6548\u679c\uff0c\u4e0d\u80fd\u4f7f\u75284\u7ea7\u4ee5\u4e0a\u6280\u80fd"
+    const-string v2, "Sealed effect: Cannot use skills level 4 or higher"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -19517,7 +19517,7 @@
 
     .line 5150
     :cond_16
-    const-string v2, "\u9700\u8981\u7684\u6280\u80fd\u503c\u4e0d\u591f\uff01"
+    const-string v2, "Not enough skill points!"
 
     invoke-virtual {p0, v2, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20085,7 +20085,7 @@
     :cond_d
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u83b7\u5f97\u91d1\u94b1\uff1a"
+    const-string v1, "Obtained Gold:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -20171,7 +20171,7 @@
 
     if-eq v0, v6, :cond_e
 
-    const-string v0, "\u8d2d\u4e70\u6210\u529f"
+    const-string v0, "Purchase successful"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20403,7 +20403,7 @@
     if-ne v0, v10, :cond_4
 
     .line 2513
-    const-string v4, "\u6750\u6599\u4e0d\u8db3\uff0c\u4e0d\u80fd\u8fdb\u5316\uff01"
+    const-string v4, "Insufficient materials, cannot evolve!"
 
     invoke-virtual {p0, v4, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20418,7 +20418,7 @@
 
     if-ne v0, v4, :cond_5
 
-    const-string v4, "\u7b49\u7ea7\u6ca1\u6709\u8fbe\u523015\u7ea7\uff0c\u4e0d\u80fd\u8fdb\u5316\uff01"
+    const-string v4, "Level not reached 15, cannot evolve!"
 
     invoke-virtual {p0, v4, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20430,7 +20430,7 @@
 
     if-ne v0, v4, :cond_6
 
-    const-string v4, "\u7b49\u7ea7\u6ca1\u6709\u8fbe\u523025\u7ea7\uff0c\u4e0d\u80fd\u8fdb\u5316\uff01"
+    const-string v4, "Level not reached 25, cannot evolve!"
 
     invoke-virtual {p0, v4, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20438,7 +20438,7 @@
 
     .line 2517
     :cond_6
-    const-string v4, "\u7b49\u7ea7\u6ca1\u6709\u8fbe\u523030\u7ea7\uff0c\u4e0d\u80fd\u8fdb\u5316\uff01"
+    const-string v4, "Level not reached 30, cannot evolve!"
 
     invoke-virtual {p0, v4, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -20544,7 +20544,7 @@
     .line 2665
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u9700\u8981\u8bad\u7ec3\u5e08"
+    const-string v1, "Requires Trainer Level"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -20562,7 +20562,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u7ea7\u624d\u80fd\u5b66\u4e60\uff01"
+    const-string v1, "to learn!"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -20605,7 +20605,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u5df2\u62e5\u6709\u8be5\u6280\u80fd"
+    const-string v1, "Already have this skill"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -20652,7 +20652,7 @@
     invoke-direct {p0, v0, v3}, Lmain/GameRun;->restMove(II)V
 
     .line 2676
-    const-string v0, "\u8bf7\u9009\u62e9\u8981\u66ff\u6362\u7684\u6280\u80fd\uff01"
+    const-string v0, "Please select the skill you want to replace!"
 
     invoke-virtual {p0, v0, v3}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -21043,7 +21043,7 @@
 
     if-gt v0, v1, :cond_1
 
-    const-string v0, "\u8be5\u6280\u80fd\u4e0d\u80fd\u66ff\u6362\uff01"
+    const-string v0, "This skill cannot be replaced!"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -21401,7 +21401,7 @@
 
     aget-object v1, v1, v2
 
-    const-string v2, "\u67e5\u770b\u5b75\u5316"
+    const-string v2, "View Hatching"
 
     invoke-virtual {v0, v1, v2}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -21478,7 +21478,7 @@
 
     aget-object v1, v1, v2
 
-    const-string v2, "\u9009\u62e9\u86cb"
+    const-string v2, "Choose Egg"
 
     invoke-virtual {v0, v1, v2}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -21508,7 +21508,7 @@
 
     aget-object v1, v1, v2
 
-    const-string v2, "\u79bb\u5f00"
+    const-string v2, "Leave"
 
     invoke-virtual {v0, v1, v2}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -21664,7 +21664,7 @@
 
     if-ne v0, v1, :cond_a
 
-    const-string v0, "\u5ba0\u7269\u7a7a\u95f4\u5df2\u6ee1"
+    const-string v0, "Pokémon space is full"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -21718,7 +21718,7 @@
 
     .line 1406
     :cond_b
-    const-string v0, "\u6750\u6599\u4e0d\u8db3\uff0c\u4e0d\u80fd\u5b75\u5316"
+    const-string v0, "Insufficient materials, cannot hatch"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -21858,7 +21858,7 @@
     :cond_2
     new-instance v0, Ljava/lang/StringBuffer;
 
-    const-string v1, "\u5929\u8d4b#n\u6280\u80fd"
+    const-string v1, "Talent#nSkill"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
@@ -21887,7 +21887,7 @@
 
     if-lez v1, :cond_3
 
-    const-string v1, "#n\u8fdb\u5316"
+    const-string v1, "#nEvolve"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21897,7 +21897,7 @@
 
     if-le v1, v6, :cond_4
 
-    const-string v1, "#n\u5b58\u653e#n\u5356\u5ba0"
+    const-string v1, "#nDeposit#nSell"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21935,7 +21935,7 @@
 
     if-nez v1, :cond_6
 
-    const-string v1, "#n\u53d6\u51fa#n\u5356\u5ba0"
+    const-string v1, "#nWithdraw#nSell"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21943,7 +21943,7 @@
 
     .line 2608
     :cond_6
-    const-string v1, "#n\u5356\u5ba0"
+    const-string v1, "#nSell"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21959,7 +21959,7 @@
 
     if-eqz v1, :cond_8
 
-    const-string v1, "#n\u53c2\u6218"
+    const-string v1, "#nParty"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21981,7 +21981,7 @@
 
     if-lez v1, :cond_9
 
-    const-string v1, "#n\u8fdb\u5316"
+    const-string v1, "#nEvolve"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -21991,7 +21991,7 @@
 
     if-le v1, v6, :cond_4
 
-    const-string v1, "#n\u653e\u751f"
+    const-string v1, "#nRelease"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -22023,7 +22023,7 @@
 
     if-eqz v1, :cond_c
 
-    const-string v1, "\u53c2\u6218#n\u6280\u80fd"
+    const-string v1, "Party#nSkills"
 
     sget v2, Lmain/Constants_H;->WIDTH:I
 
@@ -22037,7 +22037,7 @@
 
     .line 2622
     :cond_c
-    const-string v1, "\u6280\u80fd"
+    const-string v1, "Skills"
 
     sget v2, Lmain/Constants_H;->WIDTH:I
 
@@ -22205,7 +22205,7 @@
 
     .line 2648
     :cond_16
-    const-string v1, "\u5f53\u524d\u5ba0\u7269\u4e0d\u80fd\u53c2\u6218"
+    const-string v1, "Current Pokémon cannot participate in battle"
 
     invoke-virtual {p0, v1, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -22229,7 +22229,7 @@
 
     .line 2653
     :cond_18
-    const-string v1, "\u5f53\u524d\u5ba0\u7269\u4e0d\u80fd\u53c2\u6218"
+    const-string v1, "Current Pokémon cannot participate in battle"
 
     invoke-virtual {p0, v1, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -23079,7 +23079,7 @@
     iput-byte v8, p3, Ldm/Monster;->effect:B
 
     .line 644
-    const-string v2, "\u5c01\u95ed\u6548\u679c\uff0c\u5bf9\u5e7d\u6697\u9b3c\u738b\u4e0d\u8d77\u4f5c\u7528"
+    const-string v2, "Sealed effect: Does not affect Umbra King"
 
     const/4 v3, -0x1
 
@@ -23357,7 +23357,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u5df2\u7ecf\u6b7b\u4ea1\uff0c\u65e0\u6cd5\u4f7f\u7528\uff01"
+    const-string v1, "It's already dead and cannot be used!"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -23399,7 +23399,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u4e0d\u9700\u8981\u4f7f\u7528\u8fd9\u4e2a\u9053\u5177"
+    const-string v1, "This item is not needed"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -23834,7 +23834,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u83b7\u5f97\u7ecf\u9a8c\uff1a"
+    const-string v1, "Gained Experience:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -23848,7 +23848,7 @@
     .local v1, "s":Ljava/lang/String;
     const-string v0, "sk"
 
-    const-string v2, "\u83b7\u5f97\u7ecf\u9a8c"
+    const-string v2, "Gain Experience"
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -23939,7 +23939,7 @@
 
     move-result-object v2
 
-    const-string v3, "\u60a8\u7684\u5ba0\u7269\u5df2\u7ecf\u65e0\u6cd5\u83b7\u5f97\u7ecf\u9a8c"
+    const-string v3, "Your Pokémon can no longer gain experience"
 
     const/16 v4, 0xcc
 
@@ -23992,7 +23992,7 @@
     const/4 v3, 0x0
 
     .line 1132
-    const-string v1, "\u8fd4\u56de"
+    const-string v1, "Back"
 
     .line 1133
     .local v1, "ts":Ljava/lang/String;
@@ -24024,7 +24024,7 @@
     if-eqz v2, :cond_2
 
     .line 1135
-    const-string v1, "\u4f7f\u7528#n\u8fd4\u56de"
+    const-string v1, "Use#nBack"
 
     .line 1140
     :cond_1
@@ -24043,7 +24043,7 @@
     :cond_2
     if-ne p1, v4, :cond_3
 
-    const-string v1, "\u5b66\u4e60#n\u8fd4\u56de"
+    const-string v1, "Learn#nBack"
 
     goto :goto_0
 
@@ -24057,7 +24057,7 @@
 
     if-ne p1, v2, :cond_1
 
-    const-string v1, "\u5b75\u5316#n\u8fd4\u56de"
+    const-string v1, "Hatch#nBack"
 
     goto :goto_0
 .end method
@@ -24147,7 +24147,7 @@
 
     aget-object v6, v6, v7
 
-    const-string v7, "\u4f7f\u7528"
+    const-string v7, "Use"
 
     invoke-virtual {v5, v6, v7}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -24214,7 +24214,7 @@
 
     .line 1162
     :cond_4
-    const-string v5, "\u7279\u6b8a\u60c5\u51b5\uff0c\u65e0\u6cd5\u6355\u83b7\uff01"
+    const-string v5, "Cannot be caught due to special circumstances!"
 
     invoke-virtual {p0, v5, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -24248,7 +24248,7 @@
     .line 1172
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u4f7f\u7528"
+    const-string v6, "Use"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -24260,19 +24260,19 @@
 
     move-result-object v5
 
-    const-string v6, "\uff0c"
+    const-string v6, ","
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    const-string v6, "\u83b7\u5f97\u4e86"
+    const-string v6, "Obtained"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    const-string v6, "\u8eb2\u907f\u602a\u7269\u6548\u679c"
+    const-string v6, "Avoid Monster Effect"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -24298,7 +24298,7 @@
     if-ne v5, v8, :cond_1
 
     .line 1175
-    const-string v5, "\u5df2\u62e5\u6709\u8eb2\u907f\u602a\u7269\u6548\u679c"
+    const-string v5, "Already have Monster Evasion Effect"
 
     invoke-virtual {p0, v5, v9}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -24402,7 +24402,7 @@
     .line 1204
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u83b7\u5f97\uff1a"
+    const-string v6, "Obtained:"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -24515,7 +24515,7 @@
 
     .line 1206
     :cond_f
-    const-string v5, "\u8fd9\u4e2a\u5b9d\u7bb1\u662f\u7a7a\u7684\u3002"
+    const-string v5, "This treasure chest is empty."
 
     invoke-virtual {p0, v5, v9}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -24529,13 +24529,13 @@
     :cond_10
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u6ca1\u6709"
+    const-string v6, "No"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     if-ne v1, v11, :cond_11
 
-    const-string v6, "\u94a5\u5319\uff0c\u94a5\u5319\u5728\u5546\u5e97\u4e2d\u53ef\u4ee5\u8d2d\u4e70\u3002"
+    const-string v6, "Key, the key can be purchased in the store."
 
     :goto_8
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -24551,7 +24551,7 @@
     goto :goto_7
 
     :cond_11
-    const-string v6, "\u5b9d\u7bb1\uff0c\u5b9d\u7bb1\u5728\u6218\u6597\u540e\u4e00\u5b9a\u51e0\u7387\u83b7\u5f97\u3002"
+    const-string v6, "Treasure chest, the treasure chest has a certain chance to be obtained after battle."
 
     goto :goto_8
 
@@ -24567,7 +24567,7 @@
 
     aget-object v6, v6, v7
 
-    const-string v7, "\u5b66\u4e60"
+    const-string v7, "Learn"
 
     invoke-virtual {v5, v6, v7}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -24606,7 +24606,7 @@
 
     aget-object v6, v6, v7
 
-    const-string v7, "\u5b75\u5316"
+    const-string v7, "Hatch"
 
     invoke-virtual {v5, v6, v7}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -24662,7 +24662,7 @@
 
     .line 1225
     :cond_14
-    const-string v5, "\u5b75\u5316\u6240\u5df2\u7ecf\u6ca1\u6709\u7a7a\u4f4d\u4e86"
+    const-string v5, "There are no more empty slots in the hatchery"
 
     invoke-virtual {p0, v5, v9}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -24719,7 +24719,7 @@
     if-lt v0, v1, :cond_0
 
     .line 2702
-    const-string v0, "\u5ba0\u7269\u7a7a\u95f4\u5df2\u6ee1"
+    const-string v0, "Pokémon space is full"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -24742,7 +24742,7 @@
     if-nez v0, :cond_1
 
     .line 2704
-    const-string v0, "\u8eab\u4e0a\u5fc5\u987b\u643a\u5e26\u4e00\u53ea\u80fd\u53c2\u6218\u7684\u5ba0\u7269\uff01"
+    const-string v0, "You must carry at least one Pokémon that can battle!"
 
     invoke-virtual {p0, v0, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -25009,7 +25009,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\u5fe0\u8bda\u5ea6\u5df2\u6ee1"
+    const-string v2, "Loyalty is full"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -25170,7 +25170,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "\u6ca1\u6709\u6b7b\u4ea1\uff01"
+    const-string v1, "Not dead!"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -25439,7 +25439,7 @@
     iput-byte v7, v2, Ldm/Battle;->act_num:B
 
     .line 4854
-    const-string v2, "\u77f3\u5316\u6548\u679c\u65e0\u6cd5\u884c\u52a8\uff0c\u53d7\u5230\u7684\u4f24\u5bb3\u51cf\u5c1130%"
+    const-string v2, "Petrified effect: Cannot act, damage taken reduced by 30%"
 
     invoke-virtual {p0, v2, v10}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -25532,7 +25532,7 @@
     if-ge v2, v3, :cond_c
 
     .line 4879
-    const-string v2, "\u5fe0\u8bda\u5ea6\u8fc7\u4f4e\uff0c\u5ba0\u7269\u4e0d\u670d\u4ece\u4e3b\u4eba\u547d\u4ee4"
+    const-string v2, "Loyalty is too low, Pokémon is disobeying orders"
 
     invoke-virtual {p0, v2, v10}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -25562,7 +25562,7 @@
 
     if-eqz v2, :cond_6
 
-    const-string v1, "\u6495\u88c2\u6548\u679c\uff0c\u51cf\u5c11\u5f53\u524d\u8840\u91cf\u768410%"
+    const-string v1, "Tear effect: Reduces current HP by 10%"
 
     .line 4865
     :cond_5
@@ -25595,7 +25595,7 @@
 
     if-eqz v2, :cond_7
 
-    const-string v1, "\u9b45\u60d1\u6548\u679c\uff0c\u4e0d\u80fd\u9003\u8dd1\uff0c\u589e\u52a0\u6355\u83b7\u5ba0\u7269\u7684\u51e0\u7387"
+    const-string v1, "Charm effect: Cannot escape, increases Pokémon catch rate"
 
     goto :goto_3
 
@@ -25613,7 +25613,7 @@
 
     if-eqz v2, :cond_8
 
-    const-string v1, "\u7981\u9522\u6548\u679c\uff0c\u4e0d\u80fd\u9003\u8dd1\uff0c\u4e0d\u80fd\u6362\u602a\uff0c\u4e0d\u80fd\u4f7f\u7528\u9053\u5177"
+    const-string v1, "Imprison effect: Cannot escape, cannot switch Pokémon, cannot use items"
 
     goto :goto_3
 
@@ -25633,7 +25633,7 @@
 
     if-eqz v2, :cond_5
 
-    const-string v1, "\u8150\u8680\u6548\u679c\uff0c\u6bcf\u56de\u5408\u53d7\u5230\u4e00\u5b9a\u4f24\u5bb3"
+    const-string v1, "Corrosion effect: Receives damage every turn"
 
     goto :goto_3
 
@@ -25679,7 +25679,7 @@
     if-eqz v2, :cond_d
 
     .line 4881
-    const-string v2, "\u77f3\u5316\u6548\u679c\u65e0\u6cd5\u884c\u52a8\uff0c\u53d7\u5230\u7684\u4f24\u5bb3\u51cf\u5c1130%"
+    const-string v2, "Petrified effect: Cannot act, damage taken reduced by 30%"
 
     invoke-virtual {p0, v2, v10}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -26335,7 +26335,7 @@
     if-nez v0, :cond_1
 
     .line 4980
-    const-string v0, "\u643a\u5e26\u7684\u5ba0\u7269\u5168\u90fd\u727a\u7272\u4e86!"
+    const-string v0, "All Pokémon in your party have fainted!"
 
     const/4 v1, -0x1
 
@@ -26621,7 +26621,7 @@
     .line 4271
     if-gez v0, :cond_0
 
-    const-string v1, "\u5fe0\u8bda\u5ea6\u964d\u4f4e\uff0c\u653b\u51fb\u529b\u4e0b\u964d\uff0c\u8bf7\u53ca\u65f6\u8865\u5145\uff01"
+    const-string v1, "Loyalty decreased, attack power lowered. Please replenish it!"
 
     invoke-virtual {p0, v1, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -27477,7 +27477,7 @@
     .line 2984
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u751f\u547d\uff1a+"
+    const-string v4, "HP: +"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27498,13 +27498,13 @@
     move-result-object v3
 
     .line 2985
-    const-string v4, "\u80fd\u91cf"
+    const-string v4, "Energy"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, "\uff1a+"
+    const-string v4, ":"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -27527,13 +27527,13 @@
     move-result-object v3
 
     .line 2986
-    const-string v4, "\u8fdb\u5316"
+    const-string v4, "Evolve"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, "\uff1a"
+    const-string v4, ":"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -27561,7 +27561,7 @@
     .line 2987
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u529b\u91cf\uff1a+"
+    const-string v4, "Strength: +"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27582,13 +27582,13 @@
     move-result-object v3
 
     .line 2988
-    const-string v4, "\u9632\u5fa1"
+    const-string v4, "Defense"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, "\uff1a+"
+    const-string v4, ":"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -27613,13 +27613,13 @@
     move-result-object v3
 
     .line 2989
-    const-string v4, "\u654f\u6377"
+    const-string v4, "Agility"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, "\uff1a+"
+    const-string v4, ":"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -27766,7 +27766,7 @@
     .local v0, "sbuff":Ljava/lang/StringBuffer;
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u751f\u547d\uff1a"
+    const-string v2, "HP:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27809,7 +27809,7 @@
     .line 1424
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u80fd\u91cf\uff1a"
+    const-string v2, "Energy:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27852,7 +27852,7 @@
     .line 1425
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8fdb\u5316\uff1a"
+    const-string v2, "Evolve:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27893,7 +27893,7 @@
     .line 1428
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u529b\u91cf\uff1a"
+    const-string v2, "Strength:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27938,7 +27938,7 @@
     .line 1429
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u9632\u5fa1\uff1a"
+    const-string v2, "Defense:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -27979,7 +27979,7 @@
     .line 1430
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u654f\u6377\uff1a"
+    const-string v2, "Agility:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -28731,7 +28731,7 @@
 
     .line 2748
     :cond_0
-    const-string v0, "\u6240\u80fd\u643a\u5e26\u7684\u5ba0\u7269\u5df2\u7ecf\u8fbe\u5230\u4e0a\u9650\uff01"
+    const-string v0, "The number of Pokémon you can carry has reached the limit!"
 
     invoke-virtual {p0, v0, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -29142,7 +29142,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "\u6570\u91cf\u5df2\u5230\u4e0a\u9650"
+    const-string v3, "Quantity has reached the limit"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -29249,7 +29249,7 @@
     if-ne v0, v1, :cond_0
 
     .line 3580
-    const-string v0, "\u606d\u559c\u60a8\u628a\u6240\u6709\u7684\u5ba0\u7269\u90fd\u6536\u96c6\u9f50\u4e86"
+    const-string v0, "Congratulations on collecting all the Pokémon!"
 
     const/4 v1, 0x0
 
@@ -29305,7 +29305,7 @@
     if-lt v0, v1, :cond_0
 
     .line 6161
-    const-string v1, "\u60a8\u7684\u5ba0\u7269\u4e0d\u9700\u8981\u56de\u590d\uff01"
+    const-string v1, "Your Pokémon do not need healing!"
 
     invoke-virtual {p0, v1, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -29679,7 +29679,7 @@
     .line 3457
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u5931\u53bb\u5ba0\u7269\uff1a"
+    const-string v2, "Lost Pokémon:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -29706,7 +29706,7 @@
 
     .line 3460
     :cond_0
-    const-string v1, "\u8eab\u4e0a\u5fc5\u987b\u643a\u5e26\u4e00\u53ea\u80fd\u53c2\u6218\u7684\u5ba0\u7269\uff01"
+    const-string v1, "You must carry at least one Pokémon that can battle!"
 
     invoke-virtual {p0, v1, v3}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -30665,7 +30665,7 @@
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v6, "\u5347\u5230\u4e86"
+    const-string v6, "Leveled up to"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -30689,7 +30689,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u7ea7"
+    const-string v6, "Level"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -30781,7 +30781,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u4e60\u5f97\u6280\u80fd\uff1a"
+    const-string v6, "Learned skill:"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -30971,7 +30971,7 @@
     .line 2398
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u8fdb\u5316\u6210  "
+    const-string v6, "Evolve into "
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -31244,7 +31244,7 @@
 
     move-result-object v11
 
-    const-string v12, "\u57fa\u672c\u5c5e\u6027"
+    const-string v12, "Basic Attributes"
 
     const/16 v5, 0x4b
 
@@ -31278,7 +31278,7 @@
 
     move-result-object v11
 
-    const-string v12, "\u8fdb\u5316\u7d20\u6750"
+    const-string v12, "Evolution Materials"
 
     add-int/lit8 v5, v24, 0x4b
 
@@ -31419,7 +31419,7 @@
 
     move-result-object v11
 
-    const-string v12, "\u786e\u5b9a\u8fdb\u5316\u8be5\u5ba0\u7269\uff1f"
+    const-string v12, "Evolve this Pokémon?"
 
     const/16 v5, 0x19
 
@@ -31811,7 +31811,7 @@
 
     if-eqz p4, :cond_1
 
-    const-string v1, "\u5fbd\u7ae0"
+    const-string v1, "Badges"
 
     :goto_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -31896,7 +31896,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v1, "\u91d1"
+    const-string v1, "Gold"
 
     goto :goto_1
 
@@ -32413,7 +32413,7 @@
     .line 6314
     sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v2, "  \u6211\u7684mc.setSmsIsSetRun_state(true);"
+    const-string v2, "  My mc.setSmsIsSetRun_state(true);"
 
     invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -32944,7 +32944,7 @@
     .line 3617
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u83b7\u5f97\uff1a\u201c"
+    const-string v1, "Obtained: “"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -32958,7 +32958,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u201dx"
+    const-string v1, "”x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -33198,7 +33198,7 @@
     if-ne v1, v2, :cond_0
 
     .line 3527
-    const-string v1, "\u5ba0\u7269\u7a7a\u95f4\u5df2\u6ee1"
+    const-string v1, "Pokémon space is full"
 
     invoke-virtual {p0, v1, v3}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -33220,7 +33220,7 @@
     .line 3532
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u83b7\u5f97\u5ba0\u7269\uff1a"
+    const-string v2, "Obtained Pokémon:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -33253,7 +33253,7 @@
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u643a\u5e26\u5df2\u6ee1\uff0c"
+    const-string v2, "Party is full,"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -33269,7 +33269,7 @@
 
     move-result-object v1
 
-    const-string v2, "\u5df2\u8f6c\u5165\u5bc4\u653e\u5904"
+    const-string v2, "Transferred to the Deposit"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -33373,15 +33373,15 @@
 
     new-array v1, v1, [Ljava/lang/String;
 
-    const-string v2, "\u9053\u5177"
+    const-string v2, "Items"
 
     aput-object v2, v1, v3
 
-    const-string v2, "\u77ff\u77f3"
+    const-string v2, "Ores"
 
     aput-object v2, v1, v4
 
-    const-string v2, "\u5fbd\u7ae0"
+    const-string v2, "Badges"
 
     aput-object v2, v1, v6
 
@@ -33479,15 +33479,15 @@
     :cond_0
     new-array v1, v1, [Ljava/lang/String;
 
-    const-string v2, "\u9053\u5177"
+    const-string v2, "Items"
 
     aput-object v2, v1, v3
 
-    const-string v2, "\u8f85\u52a9"
+    const-string v2, "Support"
 
     aput-object v2, v1, v4
 
-    const-string v2, "\u5377\u8f74"
+    const-string v2, "Scrolls"
 
     aput-object v2, v1, v6
 
@@ -33904,35 +33904,35 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "\u8bfb\u53d6\u8fdb\u5ea6"
+    const-string v1, "Load Save"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u65b0\u6e38\u620f"
+    const-string v1, "New Game"
 
     aput-object v1, v0, v4
 
     const/4 v1, 0x2
 
-    const-string v2, "\u58f0\u97f3"
+    const-string v2, "Sound"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x3
 
-    const-string v2, "\u6e38\u620f\u5e2e\u52a9"
+    const-string v2, "Game Help"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
-    const-string v2, "\u5173   \u4e8e"
+    const-string v2, "About"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x5
 
-    const-string v2, "\u9000\u51fa\u6e38\u620f"
+    const-string v2, "Exit Game"
 
     aput-object v2, v0, v1
 
@@ -33982,7 +33982,7 @@
     iput-byte v0, p0, Lmain/GameRun;->mini_state:B
 
     .line 1303
-    const-string v0, "\u67e5\u770b\u5b75\u5316#n\u9009\u62e9\u86cb#n\u79bb\u5f00"
+    const-string v0, "View Hatching#nSelect Egg#nLeave"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
@@ -34015,7 +34015,7 @@
     sput v0, Lmain/GameRun;->run_state:I
 
     .line 1287
-    const-string v0, "\u5b58\u653e#n\u53d6\u51fa#n\u79bb\u5f00"
+    const-string v0, "Deposit#nWithdraw#nLeave"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
@@ -34091,14 +34091,14 @@
     iput-byte v3, p0, Lmain/GameRun;->mon_action:B
 
     .line 2780
-    const-string v0, "\u751f\u547d#n\u80fd\u91cf#n\u6863\u6b21"
+    const-string v0, "HP#nEnergy#nTier"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
     invoke-virtual {p0, v0, v1, v3}, Lmain/GameRun;->setStringB(Ljava/lang/String;II)V
 
     .line 2781
-    const-string v0, "\u529b\u91cf#n\u9632\u5fa1#n\u654f\u6377"
+    const-string v0, "Strength#nDefense#nAgility"
 
     sget v1, Lmain/Constants_H;->WIDTH:I
 
@@ -34224,7 +34224,7 @@
     iput-byte v1, p0, Lmain/GameRun;->buyOk:B
 
     .line 3863
-    const-string v0, "\u91d1\u5c5e\u514b\u91ce\u517d\uff0c\u91ce\u517d\u514b\u690d\u7269\uff0c\u690d\u7269\u514b\u98de\u884c\uff0c\u98de\u884c\u514b\u6d77\u6d0b\uff0c\u6d77\u6d0b\u514b\u91d1\u5c5e"
+    const-string v0, "Metal beats Beast, Beast beats Plant, Plant beats Flying, Flying beats Ocean, Ocean beats Metal"
 
     iput-object v0, p0, Lmain/GameRun;->gogoString:Ljava/lang/String;
 
@@ -34289,7 +34289,7 @@
     .line 3497
     if-eqz p1, :cond_0
 
-    const-string v1, "\u60a8\u643a\u5e26\u7684\u5ba0\u7269\u5df2\u56de\u590d\u3002"
+    const-string v1, "The Pokémon you carry has been healed."
 
     const/4 v2, 0x0
 
@@ -34978,7 +34978,7 @@
 
     .line 956
     :cond_0
-    const-string v0, "\u91d1\u94b1\u4e0d\u8db3\uff01"
+    const-string v0, "Not enough Gold!"
 
     invoke-virtual {p0, v0, v1}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -35008,7 +35008,7 @@
 
     .line 962
     :cond_2
-    const-string v0, "\u5fbd\u7ae0\u4e0d\u8db3\uff01"
+    const-string v0, "Not enough Badges!"
 
     invoke-virtual {p0, v0, v1}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -35043,7 +35043,7 @@
     if-le v0, v1, :cond_0
 
     .line 921
-    const-string v0, "\u6570\u91cf\u5df2\u5230\u4e0a\u9650"
+    const-string v0, "Quantity has reached the limit"
 
     invoke-virtual {p0, v0, v2}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -35093,7 +35093,7 @@
     if-ge v0, v1, :cond_2
 
     .line 935
-    const-string v0, "\u91d1\u94b1\u4e0d\u8db3\uff01"
+    const-string v0, "Not enough Gold!"
 
     invoke-virtual {p0, v0, v4, v2}, Lmain/GameRun;->say(Ljava/lang/String;II)V
 
@@ -35105,7 +35105,7 @@
 
     .line 938
     :cond_2
-    const-string v0, "\u80cc\u5305\u7a7a\u95f4\u4e0d\u8db3\u3002"
+    const-string v0, "Inventory space is insufficient."
 
     invoke-virtual {p0, v0, v2, v4}, Lmain/GameRun;->say(Ljava/lang/String;II)V
 
@@ -35148,7 +35148,7 @@
     if-ge v0, v1, :cond_5
 
     .line 945
-    const-string v0, "\u5fbd\u7ae0\u4e0d\u8db3\uff01"
+    const-string v0, "Not enough Badges!"
 
     invoke-virtual {p0, v0, v2}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -35156,7 +35156,7 @@
 
     .line 946
     :cond_5
-    const-string v0, "\u80cc\u5305\u7a7a\u95f4\u4e0d\u8db3\u3002"
+    const-string v0, "Inventory space is insufficient."
 
     invoke-virtual {p0, v0, v2}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -35728,11 +35728,11 @@
     .line 3123
     new-array v0, v2, [Ljava/lang/String;
 
-    const-string v1, "\u7ee7\u7eed"
+    const-string v1, "Continue"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u653e\u5f03"
+    const-string v1, "Give Up"
 
     aput-object v1, v0, v4
 
@@ -37213,7 +37213,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8bad\u7ec3\u5e08\u7b49\u7ea7\uff1a"
+    const-string v2, "Trainer Level:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -37312,7 +37312,7 @@
     if-eqz v0, :cond_6
 
     .line 512
-    const-string v12, "\u662f\u5426\u4fdd\u5b58\u6e38\u620f?"
+    const-string v12, "Save the game?"
 
     .line 513
     .local v12, "str":Ljava/lang/String;
@@ -37322,7 +37322,7 @@
 
     if-ne v0, v1, :cond_7
 
-    const-string v12, "\u662f\u5426\u8bfb\u53d6\u8fdb\u5ea6?"
+    const-string v12, "Load save?"
 
     .line 515
     :cond_5
@@ -37357,7 +37357,7 @@
 
     if-ne v0, v1, :cond_5
 
-    const-string v12, "\u4e4b\u524d\u672a\u4fdd\u5b58\u7684\u90e8\u5206\u5c06\u4f1a\u4e22\u5931\uff0c\u662f\u5426\u7ee7\u7eed\uff1f"
+    const-string v12, "Unsaved progress will be lost. Continue?"
 
     goto :goto_4
 
@@ -37369,7 +37369,7 @@
     invoke-virtual {v0}, Lmain/MainCanvas;->drawRectBG()V
 
     .line 527
-    const-string v0, "\u4f60\u8981\u7ee7\u7eed\u6e38\u620f\uff0c\u786e\u5b9a\u5417\uff1f"
+    const-string v0, "Are you sure you want to continue the game?"
 
     const/16 v1, 0x32
 
@@ -37413,7 +37413,7 @@
     invoke-virtual {v0}, Lmain/MainCanvas;->drawRectBG()V
 
     .line 533
-    const-string v0, "\u6218\u6597\u5931\u8d25\u4e86,\u8bad\u7ec3\u5e08\u7684\u68a6\u60f3\u4e0d\u80fd\u5b9e\u73b0\u4e86!"
+    const-string v0, "Battle failed, the Trainer's dream cannot be realized!"
 
     const/4 v1, 0x0
 
@@ -37458,7 +37458,7 @@
     invoke-virtual/range {v0 .. v5}, Ldm/Ui;->drawK1(IIIII)V
 
     .line 539
-    const-string v1, "\u6e38\u620f\u6682\u505c\uff0c\u70b9\u51fb\u5c4f\u5e55\u8fd4\u56de\u3002"
+    const-string v1, "Game paused, tap the screen to return."
 
     const/16 v0, 0x32
 
@@ -37493,7 +37493,7 @@
     iput-byte v0, p0, Lmain/GameRun;->b_c:B
 
     .line 553
-    const-string v0, "\u4fdd\u5b58\u6e38\u620f\u4e2d"
+    const-string v0, "Saving the game"
 
     const/16 v1, 0x14
 
@@ -37514,7 +37514,7 @@
     invoke-virtual {v0, p1, v1, v2}, Lmain/Map;->drawBlackSRC(Ljavax/microedition/lcdui/Graphics;IZ)V
 
     .line 559
-    const-string v0, "\u7ed3\u675f"
+    const-string v0, "End"
 
     const/16 v1, 0xa
 
@@ -37785,7 +37785,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u6280\u80fd"
+    const-string v3, "Skills"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -37804,7 +37804,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u5929\u8d4b"
+    const-string v3, "Talent"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -37873,7 +37873,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u6280\u80fd"
+    const-string v3, "Skills"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -37958,7 +37958,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u53c2\u6218"
+    const-string v3, "Party"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38188,7 +38188,7 @@
     .line 2882
     .end local v0    # "i":B
     :cond_f
-    const-string v1, "\u5f53\u524d\u5ba0\u7269\u4e0d\u80fd\u53c2\u6218"
+    const-string v1, "Current Pokémon cannot participate in battle"
 
     invoke-virtual {p0, v1, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -38206,7 +38206,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u8fdb\u5316"
+    const-string v3, "Evolve"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38266,7 +38266,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u653e\u751f"
+    const-string v3, "Release"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38288,7 +38288,7 @@
     if-nez v1, :cond_12
 
     .line 2893
-    const-string v1, "\u8eab\u4e0a\u5fc5\u987b\u643a\u5e26\u4e00\u53ea\u80fd\u53c2\u6218\u7684\u5ba0\u7269\uff01"
+    const-string v1, "You must carry at least one Pokémon that can battle!"
 
     invoke-virtual {p0, v1, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -38392,7 +38392,7 @@
     iput-byte v6, p0, Lmain/GameRun;->buyOk:B
 
     .line 2906
-    const-string v1, "\u653e\u751f\u7684\u5ba0\u7269\u5c06\u4f1a\u6d88\u5931\uff0c\u662f\u5426\u7ee7\u7eed\uff1f"
+    const-string v1, "The released Pokémon will disappear, continue?"
 
     iput-object v1, p0, Lmain/GameRun;->gogoString:Ljava/lang/String;
 
@@ -38410,7 +38410,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u5b58\u653e"
+    const-string v3, "Deposit"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38456,7 +38456,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u53d6\u51fa"
+    const-string v3, "Withdraw"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38500,7 +38500,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u5356\u5ba0"
+    const-string v3, "Sell Pokémon"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -38528,7 +38528,7 @@
     .line 2929
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u83b7\u5f97\u91d1\u94b1\uff1a"
+    const-string v2, "Obtained Gold:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -38581,7 +38581,7 @@
     if-nez v1, :cond_1c
 
     .line 2935
-    const-string v1, "\u8eab\u4e0a\u5fc5\u987b\u643a\u5e26\u4e00\u53ea\u80fd\u53c2\u6218\u7684\u5ba0\u7269\uff01"
+    const-string v1, "You must carry at least one Pokémon that can battle!"
 
     invoke-virtual {p0, v1, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -38614,7 +38614,7 @@
     .line 2939
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u83b7\u5f97\u91d1\u94b1\uff1a"
+    const-string v2, "Obtained Gold:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -38624,7 +38624,7 @@
 
     move-result-object v1
 
-    const-string v2, "\uff0c\u662f\u5426\u5356\u51fa\uff1f"
+    const-string v2, ", sell it?"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -38664,7 +38664,7 @@
 
     aget-object v2, v2, v3
 
-    const-string v3, "\u79bb\u5f00"
+    const-string v3, "Leave"
 
     invoke-virtual {v1, v2, v3}, Ldm/Ms;->equals(Ljava/lang/StringBuffer;Ljava/lang/String;)Z
 
@@ -39175,7 +39175,7 @@
     if-ne v9, v10, :cond_2
 
     .line 276
-    const-string v9, "\u6240\u80fd\u643a\u5e26\u7684\u5ba0\u7269\u5df2\u7ecf\u8fbe\u5230\u4e0a\u9650\uff01"
+    const-string v9, "The number of Pokémon you can carry has reached the limit!"
 
     const/4 v10, -0x1
 
@@ -39236,7 +39236,7 @@
     .line 285
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u6355\u83b7"
+    const-string v10, "Catch"
 
     invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -39260,7 +39260,7 @@
 
     move-result-object v9
 
-    const-string v10, "\u5df2\u6210\u529f\uff01"
+    const-string v10, "Successful!"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -39340,7 +39340,7 @@
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u6ca1\u6709\u6355\u83b7\u5230"
+    const-string v10, "Failed to catch"
 
     invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -39462,19 +39462,19 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "\u6d41\u7740\u6cea\u9003\u8dd1\u4e86\uff01"
+    const-string v10, "Ran away with tears in its eyes!"
 
     aput-object v10, v5, v9
 
     const/4 v9, 0x1
 
-    const-string v10, "\u62fc\u4e86\u547d\u7684\u9003\u8dd1\u4e86\uff01"
+    const-string v10, "Ran away desperately!"
 
     aput-object v10, v5, v9
 
     const/4 v9, 0x2
 
-    const-string v10, "\u76ef\u4e86\u4f60\u4e00\u773c\uff0c\u9003\u8d70\u4e86\uff01"
+    const-string v10, "Glared at you and ran away!"
 
     aput-object v10, v5, v9
 
@@ -39637,7 +39637,7 @@
     .line 321
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u751f\u547d;+"
+    const-string v10, "HP;+"
 
     invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -39664,7 +39664,7 @@
     move-result-object v9
 
     .line 322
-    const-string v10, "\u80fd\u91cf"
+    const-string v10, "Energy"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -39706,7 +39706,7 @@
     .line 323
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u529b\u91cf;+"
+    const-string v10, "Strength;+"
 
     invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -39733,7 +39733,7 @@
     move-result-object v9
 
     .line 324
-    const-string v10, "\u9632\u5fa1"
+    const-string v10, "Defense"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -39768,7 +39768,7 @@
     move-result-object v9
 
     .line 325
-    const-string v10, "\u654f\u6377"
+    const-string v10, "Agility"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -39869,7 +39869,7 @@
     .line 341
     if-eqz v1, :cond_8
 
-    const-string v9, "\u53ef\u4ee5\u8fdb\u5316\u4e86"
+    const-string v9, "Can evolve!"
 
     invoke-virtual {v6, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -39897,7 +39897,7 @@
     if-eqz v1, :cond_a
 
     .line 352
-    const-string v9, "\u7ecf\u9a8c\u5df2\u6ee1\uff0c\u53ef\u4ee5\u5b75\u5316\u4e86\u3002"
+    const-string v9, "Experience is full, you can hatch now."
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -40046,7 +40046,7 @@
 
     if-nez v9, :cond_e
 
-    const-string v9, "\u3001"
+    const-string v9, ","
 
     invoke-virtual {v6, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -40134,7 +40134,7 @@
 
     if-nez v9, :cond_13
 
-    const-string v9, "\u3001"
+    const-string v9, ","
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -40164,7 +40164,7 @@
 
     move-result-object v9
 
-    const-string v10, "\u7684\u5ba0\u7269\u86cb"
+    const-string v10, "'s Pokémon egg"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -40257,7 +40257,7 @@
     invoke-virtual {p0}, Lmain/GameRun;->saveGame()V
 
     .line 383
-    const-string v9, "\u6e38\u620f\u5df2\u4fdd\u5b58\u3002"
+    const-string v9, "Game saved."
 
     const/4 v10, 0x0
 
@@ -40467,11 +40467,11 @@
     invoke-static {v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 3929
-    const-string v0, "\u83dc\u5355\u952e"
+    const-string v0, "Menu Key"
 
     .line 3930
     .local v0, "soars":Ljava/lang/String;
-    const-string v1, "#7\u70b9\u51fb\u5c4f\u5e55\u6216\u7528\u5bfc\u822a\u952e#0\u63a7\u5236\u4e0a\u4e0b\u5de6\u53f3\u79fb\u52a8\u3002"
+    const-string v1, "#7Tap the screen or use the navigation keys#0 to control movement up, down, left, and right."
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -40480,7 +40480,7 @@
     if-eqz v1, :cond_1
 
     .line 3932
-    const-string p1, "#7\u70b9\u51fb\u5c4f\u5e55#0\u63a7\u5236\u4e0a\u4e0b\u5de6\u53f3\u79fb\u52a8\u3002"
+    const-string p1, "#7Tap the screen#0 to control movement up, down, left, and right."
 
     .line 3939
     :cond_0
@@ -40513,9 +40513,9 @@
     if-eqz v1, :cond_0
 
     .line 3935
-    const-string v1, "\u83dc\u5355\u952e"
+    const-string v1, "Menu Key"
 
-    const-string v2, "\u53f3\u4e0b\u65b9\u5de5\u5177\u6309\u94ae"
+    const-string v2, "Bottom right tool button"
 
     invoke-virtual {p1, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 

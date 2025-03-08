@@ -322,7 +322,7 @@
     aput-byte v3, v1, v2
 
     .line 67
-    const-string v1, "\u5ba0\u7269\u56fe\u9274\u5df2\u66f4\u65b0"
+    const-string v1, "Pokédex updated"
 
     invoke-virtual {p1, v1, v8}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 

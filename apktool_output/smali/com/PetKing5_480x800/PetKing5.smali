@@ -93,9 +93,9 @@
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 174
-    const-string v3, "\u6210\u529f"
+    const-string v3, "Success"
 
-    const-string v4, "\u6210\u529f"
+    const-string v4, "Success"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -486,13 +486,13 @@
     .local v15, "intent":Landroid/content/Intent;
     new-instance v3, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v4, "\u8d2d\u4e705000\u91d1"
+    const-string v4, "Buy 5000 Gold"
 
     const-string v5, "22"
 
     const-string v6, "01"
 
-    const-string v7, "\u8eab\u4e3a\u56db\u5927\u5bb6\u65cf\u4e4b\u9996\u7684\u8d35\u516c\u5b50\uff0c\u6ca1\u94b1\u53ef\u4e0d\u884c\uff01\u7acb\u523b\u62e5\u67095000\u91d1\u3002"
+    const-string v7, "As the young master of the leading family among the four great clans, you can't be without money! Get 5000 Gold now."
 
     const/16 v8, 0x14
 
@@ -543,13 +543,13 @@
     .local v16, "intent1":Landroid/content/Intent;
     new-instance v4, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v5, "\u8d2d\u4e7010\u5fbd\u7ae0"
+    const-string v5, "Buy 10 Badges"
 
     const-string v6, "22"
 
     const-string v7, "02"
 
-    const-string v8, "\u8d2d\u4e70\u8be5\u7279\u6b8a\u9053\u5177\uff0c\u7acb\u523b\u62e5\u670910\u5fbd\u7ae0\uff0c\u80fd\u8d2d\u4e70\u53cc\u500d\u7ecf\u9a8c\uff0c\u5ba0\u7269\u6280\u80fd\uff0c\u5f3a\u5927\u7684\u5ba0\u7269\u6355\u83b7\u7403\u7b49\u5404\u79cd\u795e\u5947\u7684\u9053\u5177\u3002"
+    const-string v8, "Buy this special item and immediately get 10 Badges, which can be used to purchase double experience, Pokémon skills, powerful Pokémon capture balls, and other amazing items."
 
     const/16 v9, 0x14
 
@@ -606,13 +606,13 @@
     .local v17, "intent2":Landroid/content/Intent;
     new-instance v5, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v6, "\u5ba0\u7269\u53475\u7ea7"
+    const-string v6, "Pokémon Level Up x5"
 
     const-string v7, "22"
 
     const-string v8, "03"
 
-    const-string v9, "\u8ba9\u60a8\u968f\u8eab\u643a\u5e26\u7684\u5168\u90e8\u5ba0\u7269\u7acb\u523b\u53475\u7ea7\uff08\u8d85\u8fc770\u7ea7\u5ba0\u7269\u4e0d\u80fd\u518d\u5347\u7ea7\uff09"
+    const-string v9, "Immediately level up all the Pokémon you carry by 5 levels (Pokémon above level 70 cannot be leveled up further)"
 
     const/16 v10, 0x14
 
@@ -669,13 +669,13 @@
     .local v18, "intent3":Landroid/content/Intent;
     new-instance v6, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v7, "\u8d2d\u4e70\u5947\u5f02\u517d"
+    const-string v7, "Buy Mystic Beast"
 
     const-string v8, "22"
 
     const-string v9, "04"
 
-    const-string v10, "\u8d2d\u4e70\u8be5\u7279\u6b8a\u9053\u5177\uff0c\u83b7\u5f97\u53ef\u7231\u7684\u5947\u5f02\u517d\uff0c\u79fb\u52a8\u901f\u5ea6\u53ef\u4ee5\u63d0\u9ad8\u4e00\u500d\uff0c\u4e14\u4e0d\u4f1a\u9047\u5230\u4efb\u4f55\u654c\u4eba\uff01\u65e0\u9650\u4f7f\u7528\uff0c\u5fc3\u52a8\u4e0d\u5982\u884c\u52a8\uff0c\u5feb\u8d2d\u4e70\u5427\uff01"
+    const-string v10, "Buy this special item to get the adorable Mystic Beast, which doubles your movement speed and prevents encounters with any enemies! Unlimited use, don't hesitate, buy it now!"
 
     const/16 v11, 0x14
 
@@ -732,13 +732,13 @@
     .local v19, "intent4":Landroid/content/Intent;
     new-instance v7, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v8, "\u6b63\u7248\u9a8c\u8bc1"
+    const-string v8, "Genuine Verification"
 
     const-string v9, "22"
 
     const-string v10, "05"
 
-    const-string v11, "\u6e38\u620f\u8bd5\u73a9\u7ed3\u675f\uff0c\u8d2d\u4e70\u6b64\u9879\u5c06\u5f00\u542f\u540e\u7eed\u6240\u6709\u6e38\u620f\u5185\u5bb9\u3001\u5730\u56fe\u3002\u540c\u65f6\u5c06\u514d\u8d39\u8d60\u9001\u60a85\u679a\u5fbd\u7ae0\uff08\u53ef\u8d2d\u4e70\u5f3a\u529b\u9053\u5177\uff09"
+    const-string v11, "The game demo is over. Purchasing this will unlock all subsequent game content and maps. You'll also receive 5 Badges for free (which can be used to purchase powerful items)."
 
     const/16 v12, 0x28
 
@@ -795,13 +795,13 @@
     .local v20, "intent5":Landroid/content/Intent;
     new-instance v8, Lcom/uc/paymentsdk/payment/PaymentInfo;
 
-    const-string v9, "\u5347\u7ea7\u590d\u6d3b"
+    const-string v9, "Level Up & Revive"
 
     const-string v10, "22"
 
     const-string v11, "06"
 
-    const-string v12, "\u8ba9\u60a8\u643a\u5e26\u7684\u6240\u6709\u5ba0\u7269\u5168\u6062\u590d\uff0c\u540c\u65f6\u7acb\u523b\u8ba9\u60a8\u643a\u5e26\u7684\u5ba0\u7269\u63d0\u53475\u7ea7\uff08\u8d85\u8fc770\u7ea7\u5ba0\u7269\u4e0d\u80fd\u518d\u5347\u7ea7\uff09\uff0c\u8ba9\u63a5\u4e0b\u6765\u7684\u6218\u6597\u53d8\u7684\u66f4\u8f7b\u677e\u3002"
+    const-string v12, "Fully heal all the Pokémon you carry, and immediately level them up by 5 levels (Pokémon above level 70 cannot be leveled up further), making the upcoming battles easier."
 
     const/16 v13, 0x14
 

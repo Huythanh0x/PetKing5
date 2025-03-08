@@ -6816,7 +6816,7 @@
 
     .line 468
     :pswitch_14
-    const-string v0, "\u8d2d\u4e70\u6210\u529f"
+    const-string v0, "Purchase successful"
 
     .line 469
     iget-object v1, p0, Lcom/uc/paymentsdk/payment/PaymentsActivity;->mSmsResultInfo:Ljava/lang/String;

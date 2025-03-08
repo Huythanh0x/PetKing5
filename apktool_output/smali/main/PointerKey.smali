@@ -1580,7 +1580,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u6309\u4e0b\u786e\u5b9a\u952e\u3002\u3002\u3002menu_state: "
+    const-string v2, "Pressing the OK key...menu_state: "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

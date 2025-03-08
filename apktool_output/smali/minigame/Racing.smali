@@ -323,7 +323,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u6e38\u620f\u89c4\u5219"
+    const-string v6, "Game Rules"
 
     add-int v8, p2, p4
 
@@ -428,7 +428,7 @@
 
     move-object v12, v0
 
-    const-string v13, "\u9009\u62e9\u4f60\u8ba4\u4e3a\u4f1a\u5f97\u7b2c\u4e00\u7684\u4e00\u53ea\u5ba0\u7269\u548c\u62bc\u6ce8\u7684\u5927\u5c0f\uff0c\u6ce8\u6570\u8d8a\u5927\u83b7\u80dc\u540e\u7684\u5956\u52b1\u8d8a\u4e30\u539a\uff01"
+    const-string v13, "Choose a Pokémon you think will come in first place and the size of your bet. The higher the bet, the greater the reward after winning!"
 
     shr-int/lit8 v5, v11, 0x1
 
@@ -520,7 +520,7 @@
 
     move-result-object v12
 
-    const-string v13, "\u8bf7\u9009\u62e9\u62bc\u6ce8\u5927\u5c0f\uff1a"
+    const-string v13, "Please choose your bet size:"
 
     add-int v5, p1, v11
 
@@ -937,7 +937,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u5174\u594b\u5ea6\uff1a"
+    const-string v1, "Excitement Level:"
 
     add-int/lit8 v2, p1, 0x19
 
@@ -975,7 +975,7 @@
     .line 142
     iget-object v0, p0, Lminigame/Racing;->gr:Lmain/GameRun;
 
-    const-string v1, "\u6bcf\u5582\u4e00\u4e2a\u5174\u594b\u83c7\u82b1\u8d3910\u91d1\uff0c\u53ef\u589e\u52a0\u4e00\u683c\u5174\u594b\u5ea6\u3002"
+    const-string v1, "Feeding one Excitement Mushroom costs 10 Gold and increases Excitement Level by one bar."
 
     add-int/lit8 v2, p2, 0x32
 
@@ -1003,7 +1003,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u8bf7\u9009\u62e9\u9053\u5177\uff1a"
+    const-string v1, "Please select an item:"
 
     add-int/lit8 v2, p1, 0x19
 
@@ -2052,7 +2052,7 @@
     .line 272
     iget-object v1, p0, Lminigame/Racing;->gr:Lmain/GameRun;
 
-    const-string v2, "\u4e00\u6ce8\uff1a#n\u6295\u5165100\u91d1\uff0c#n\u83b7\u80dc\u5f97120\u91d1\u3002#n\u4e8c\u6ce8\uff1a#n\u6295\u5165300\u91d1\uff0c#n\u83b7\u80dc\u5f97350\u91d1\u3002#n\u4e09\u6ce8\uff1a#n\u6295\u51651000\u91d1\uff0c#n\u83b7\u80dc\u5f971200\u91d1\u3002"
+    const-string v2, "One bet: #nBet 100 Gold, #nWin 120 Gold. #nTwo bets: #nBet 300 Gold, #nWin 350 Gold. #nThree bets: #nBet 1000 Gold, #nWin 1200 Gold."
 
     sget v3, Lmain/Constants_H;->WIDTH:I
 
@@ -2063,7 +2063,7 @@
     .line 273
     iget-object v1, p0, Lminigame/Racing;->gr:Lmain/GameRun;
 
-    const-string v2, "\u4e00\u6ce8100\u91d1#n\u4e8c\u6ce8300\u91d1#n\u4e09\u6ce81000\u91d1"
+    const-string v2, "One bet 100 Gold#nTwo bets 300 Gold#nThree bets 1000 Gold"
 
     sget v3, Lmain/Constants_H;->WIDTH:I
 
@@ -2806,7 +2806,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u83b7\u5f97\uff1a"
+    const-string v4, "Obtained:"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2826,7 +2826,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u91d1"
+    const-string v4, "Gold"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2876,7 +2876,7 @@
     :cond_9
     iget-object v2, p0, Lminigame/Racing;->gr:Lmain/GameRun;
 
-    const-string v3, "\u4e0d\u597d\u610f\u601d\uff0c\u6ca1\u6709\u731c\u5bf9\u3002"
+    const-string v3, "Sorry, you guessed wrong."
 
     invoke-virtual {v2, v3, v6}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 

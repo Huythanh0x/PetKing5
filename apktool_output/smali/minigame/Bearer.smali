@@ -564,7 +564,7 @@
 
     move-result-object v2
 
-    const-string v3, "\u6e38\u620f\u89c4\u5219"
+    const-string v3, "Game Rules"
 
     add-int/lit8 v4, p2, 0x19
 
@@ -666,7 +666,7 @@
 
     move-result-object v2
 
-    const-string v3, "\u7403\u7684\u5206\u6570\uff1a"
+    const-string v3, "Ball score:"
 
     add-int/lit8 v4, v16, 0xa
 
@@ -773,7 +773,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u9700\u8981\u7684\u53c2\u52a0\u8d39\uff1a"
+    const-string v3, "Entry fee:"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -795,7 +795,7 @@
 
     move-result-object v2
 
-    const-string v3, "\u91d1"
+    const-string v3, "Gold"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1258,7 +1258,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u5206\u6570\uff1a"
+    const-string v2, "Score:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1295,7 +1295,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u7403\u603b\u6570\uff1a"
+    const-string v2, "Total balls:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1926,7 +1926,7 @@
     .line 93
     iget-object v1, p0, Lminigame/Bearer;->gr:Lmain/GameRun;
 
-    const-string v2, "\u5728\u9650\u5b9a\u65f6\u95f4\u91cc\u63a5\u5c3d\u91cf\u591a\u7684\u7403\u5230\u6846\u91cc\uff0c\u6700\u540e\u6839\u636e\u6846\u91cc\u7403\u7684\u5206\u6570\u6765\u6362\u53d6\u91d1\u94b1\u3002"
+    const-string v2, "Catch as many balls as possible in the basket within the time limit. Exchange the score of the balls in the basket for money."
 
     const/16 v3, 0xa0
 
@@ -1935,7 +1935,7 @@
     .line 94
     iget-object v1, p0, Lminigame/Bearer;->gr:Lmain/GameRun;
 
-    const-string v2, "\u5f00\u59cb\u6e38\u620f#n\u79bb\u5f00\u6e38\u620f"
+    const-string v2, "Start Game#nLeave Game"
 
     sget v3, Lmain/Constants_H;->WIDTH:I
 
@@ -2490,7 +2490,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u83b7\u5f97\uff1a"
+    const-string v4, "Obtained:"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2500,7 +2500,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u91d1"
+    const-string v4, "Gold"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

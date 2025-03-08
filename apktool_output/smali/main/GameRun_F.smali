@@ -1076,7 +1076,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u83dc\u5355"
+    const-string v1, "Menu"
 
     shr-int/lit8 v2, p3, 0x1
 
@@ -1112,7 +1112,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u7cfb\u7edf"
+    const-string v1, "System"
 
     shr-int/lit8 v2, p3, 0x1
 
@@ -2017,7 +2017,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u70b9\u51fb\u5c4f\u5e55\u7ee7\u7eed"
+    const-string v1, "Tap the screen to continue"
 
     const/4 v6, 0x0
 
@@ -2050,7 +2050,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u70b9\u51fb\u5c4f\u5e55"
+    const-string v2, "Tap the screen"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4183,29 +4183,29 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "\u4fdd\u5b58\u6e38\u620f"
+    const-string v1, "Save Game"
 
     aput-object v1, v0, v2
 
-    const-string v1, "\u67e5\u770b\u5ba0\u7269"
+    const-string v1, "View Pokémon"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u4eba\u7269\u80cc\u5305"
+    const-string v1, "Trainer's Bag"
 
     aput-object v1, v0, v4
 
-    const-string v1, "\u5ba0\u7269\u56fe\u9274"
+    const-string v1, "Pokédex"
 
     aput-object v1, v0, v5
 
-    const-string v1, "\u67e5\u770b\u4efb\u52a1"
+    const-string v1, "View Quests"
 
     aput-object v1, v0, v6
 
     const/4 v1, 0x5
 
-    const-string v2, "\u8fd4\u56de\u6e38\u620f"
+    const-string v2, "Return to Game"
 
     aput-object v2, v0, v1
 
@@ -4219,19 +4219,19 @@
     :cond_0
     new-array v0, v6, [Ljava/lang/String;
 
-    const-string v1, "\u8bfb\u53d6\u8fdb\u5ea6"
+    const-string v1, "Load Save"
 
     aput-object v1, v0, v2
 
-    const-string v1, "\u58f0\u97f3"
+    const-string v1, "Sound"
 
     aput-object v1, v0, v3
 
-    const-string v1, "\u6e38\u620f\u5e2e\u52a9"
+    const-string v1, "Game Help"
 
     aput-object v1, v0, v4
 
-    const-string v1, "\u56de\u4e3b\u83dc\u5355"
+    const-string v1, "Return to Main Menu"
 
     aput-object v1, v0, v5
 

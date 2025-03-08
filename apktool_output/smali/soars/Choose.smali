@@ -120,7 +120,7 @@
     .line 22
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u6211\u7684"
+    const-string v1, "My"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 

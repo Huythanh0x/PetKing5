@@ -475,14 +475,14 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "\u786e\u8ba4\u9000\u51fa\uff1f"
+    const-string v1, "Confirm exit?"
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
     .line 239
-    const-string v1, "\u662f"
+    const-string v1, "Yes"
 
     new-instance v2, Ljavax/microedition/lcdui/CwaActivity$1;
 
@@ -493,7 +493,7 @@
     move-result-object v0
 
     .line 247
-    const-string v1, "\u5426"
+    const-string v1, "No"
 
     new-instance v2, Ljavax/microedition/lcdui/CwaActivity$2;
 

@@ -340,7 +340,7 @@
     :cond_1
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u6309\u952e\u5904\u7406\u8fd9\u91cc\u6267\u884c\u5417"
+    const-string v1, "Is the button processing executed here?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -1110,7 +1110,7 @@
     :cond_0
     iget-object v0, p0, Lmain/MainCanvas;->gr:Lmain/GameRun;
 
-    const-string v1, "\u5b58\u50a8\u7a7a\u95f4\u4e0d\u8db3\uff01"
+    const-string v1, "Storage space insufficient!"
 
     invoke-virtual {v0, v1, v3}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -1304,7 +1304,7 @@
     .line 716
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u5728\u8fd9\uff1f"
+    const-string v1, "Here?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -1370,7 +1370,7 @@
     .line 721
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u5728\u8fd9\uff1f\uff1f"
+    const-string v1, "Here??"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -1603,7 +1603,7 @@
     iget-object v0, p0, Lmain/MainCanvas;->gr:Lmain/GameRun;
 
     .line 1175
-    const-string v1, "\u5ba0\u7269\u738b\u56fd5-\u5f69\u8679#n\u5f00\u53d1\u5546\uff1a\u534e\u5a31\u65e0\u7ebf#n\u5ba2\u670d\u7535\u8bdd\uff1a#n010-88901665#n\u5ba2\u670dEmail:#ngeekan@imy.cn"
+    const-string v1, "Pokémon Kingdom 5 - Rainbow#nDeveloper: Huayu Wireless#nCustomer Service Phone: #n010-88901665#nCustomer Service Email:#ngeekan@imy.cn"
 
     .line 1188
     sget v2, Lmain/Constants_H;->WIDTH:I
@@ -1628,7 +1628,7 @@
     .line 1223
     const-string v0, "loading"
 
-    const-string v1, "\u6e38\u620f\u72b6\u6001\uff1aGAME_LOADING"
+    const-string v1, "Game state: GAME_LOADING"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1750,7 +1750,7 @@
     .line 1154
     iget-object v0, p0, Lmain/MainCanvas;->gr:Lmain/GameRun;
 
-    const-string v1, "\u6e38\u620f\u5e2e\u52a9#n\u73a9\u5bb6\u626e\u6f14\u4e00\u540d\u5ba0\u7269\u8bad\u7ec3\u5e08\uff0c\u4e3a\u4e86\u89e3\u51b3\u56fd\u5bb6\u7684\u5371\u673a\u800c\u8e0f\u4e0a\u4e86\u5192\u9669\u4e4b\u65c5\u3002#n\u64cd\u4f5c\u63d0\u793a#n\u70b9\u51fb\u4e3b\u7ebf\u4efb\u52a1\u56fe\u6807\uff1a\u4e3b\u7ebf\u4efb\u52a1#n\u70b9\u51fb\u652f\u7ebf\u4efb\u52a1\u56fe\u6807\uff1a\u652f\u7ebf\u4efb\u52a1#n\u70b9\u51fb\u5730\u56fe\u56fe\u6807\uff1a\u6e38\u620f\u5730\u56fe#n\u70b9\u51fb\u5c4f\u5e55\u63a7\u5236\u4e0a\u4e0b\u5de6\u53f3\u79fb\u52a8#n\u672c\u7248\u672c\u53ea\u652f\u6301\u6a2a\u5c4f\u6e38\u620f"
+    const-string v1, "Game Help#nYou play as a Pokémon Trainer embarking on an adventure to solve the nation's crisis.#nOperation Tips#nClick the main quest icon: Main Quest#nClick the side quest icon: Side Quest#nClick the map icon: Game Map#nTap the screen to control movement up, down, left, and right#nThis version only supports landscape mode"
 
     .line 1163
     sget v2, Lmain/Constants_H;->WIDTH:I
@@ -2156,7 +2156,7 @@
 
     move-object v5, v0
 
-    const-string v6, "\u6e38\u620f\u6682\u505c\uff0c\u70b9\u51fb\u5c4f\u5e55\u8fd4\u56de\u3002"
+    const-string v6, "Game paused, tap the screen to return."
 
     const/16 v7, 0x32
 
@@ -2220,7 +2220,7 @@
 
     move-result-object v10
 
-    const-string v11, "\u662f\u5426\u6253\u5f00\u97f3\u4e50?"
+    const-string v11, "Turn on music?"
 
     const/16 v5, 0x19
 
@@ -2241,7 +2241,7 @@
 
     move-result-object v10
 
-    const-string v11, "\uff08\u5173\u95ed\u58f0\u97f3\u6e38\u620f\u66f4\u6d41\u7545\uff09"
+    const-string v11, "(Turning off sound makes the game smoother)"
 
     const/4 v5, 0x1
 
@@ -2260,7 +2260,7 @@
 
     move-result-object v13
 
-    const-string v14, "\u662f"
+    const-string v14, "Yes"
 
     const/4 v15, 0x4
 
@@ -2282,7 +2282,7 @@
 
     move-result-object v13
 
-    const-string v14, "\u5426"
+    const-string v14, "No"
 
     const/4 v5, 0x4
 
@@ -2599,7 +2599,7 @@
 
     move-result-object v10
 
-    const-string v11, "\u70b9\u51fb\u5c4f\u5e55\u8df3\u8fc7"
+    const-string v11, "Tap the screen to skip"
 
     const/4 v5, 0x1
 
@@ -2766,7 +2766,7 @@
 
     move-object v5, v0
 
-    const-string v6, "\u5ba0\u7269\u738b\u56fd5-\u5f69\u8679#n\u5f00\u53d1\u5546\uff1a#n\u534e\u5a31\u65e0\u7ebf#n\u5ba2\u670d\u7535\u8bdd\uff1a#n010-88901665#n\u5ba2\u670dEmail:#ngeekan@imy.cn"
+    const-string v6, "Pokémon Kingdom 5 - Rainbow#nDeveloper: #nHuayu Wireless#nCustomer Service Phone: #n010-88901665#nCustomer Service Email:#ngeekan@imy.cn"
 
     .line 539
     const/16 v7, 0x32
@@ -3060,7 +3060,7 @@
     iput v0, p0, Lmain/MainCanvas;->game_state:I
 
     .line 1130
-    const-string v0, "\u662f\u5426\u6253\u5f00\u97f3\u4e50?"
+    const-string v0, "Turn on music?"
 
     iput-object v0, p0, Lmain/MainCanvas;->strTemp:Ljava/lang/String;
 
@@ -3534,7 +3534,7 @@
     .line 683
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u5728\u8fd9?"
+    const-string v1, "Here?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -3550,7 +3550,7 @@
     .line 687
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u8fd8\u662f\u5728\u8fd9?"
+    const-string v1, "Or here?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -3574,7 +3574,7 @@
     .line 692
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u4e0d\u4f1a\u5728\u8fd9\u5427\uff1f"
+    const-string v1, "Not here, right?"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
@@ -3647,7 +3647,7 @@
     .line 1378
     iget-object v0, p0, Lmain/MainCanvas;->gr:Lmain/GameRun;
 
-    const-string v1, "\u8fd9\u5c06\u6e05\u9664\u60a8\u4e4b\u524d\u7684\u6240\u6709\u8bb0\u5f55\uff0c\u662f\u5426\u7ee7\u7eed\uff1f"
+    const-string v1, "This will erase all your previous records, continue?"
 
     iput-object v1, v0, Lmain/GameRun;->gogoString:Ljava/lang/String;
 
