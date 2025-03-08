@@ -10,7 +10,7 @@ def extract_chinese_string_from_smali():
     # Configure paths
     smali_dir = "../../apktool_output"
     excluded_dir = "com/uc/paymentsdk"
-    output_dir = "out"
+    output_dir = "out_strings"
     
     # Initialize components
     logger = Logger().get_logger()
@@ -51,5 +51,5 @@ def inject_translations_to_smali():
     logger.info("Translation injection completed.")
 
 if __name__ == "__main__":
-    # extract_chinese_string_from_smali()
+    extract_chinese_string_from_smali()
     inject_translations_to_smali()
