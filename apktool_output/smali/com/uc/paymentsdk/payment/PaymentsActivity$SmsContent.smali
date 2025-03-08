@@ -1353,7 +1353,7 @@
     .line 1880
     const-string v6, "success"
 
-    const-string v7, "\u8d2d\u4e70\u6210\u529f"
+    const-string v7, "Purchase successful"
 
     move-object/from16 v0, v23
 

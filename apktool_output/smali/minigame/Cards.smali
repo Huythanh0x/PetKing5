@@ -674,7 +674,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u6e38\u620f\u5f00\u59cb"
+    const-string v4, "Start Game"
 
     const/4 v6, 0x4
 
@@ -693,7 +693,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u53ef\u9519\u6b21\u6570\uff1a"
+    const-string v1, "Allowed mistakes:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -708,7 +708,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u6b21"
+    const-string v1, "times"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -874,7 +874,7 @@
 
     move-result-object v2
 
-    const-string v3, "\u6e38\u620f\u89c4\u5219"
+    const-string v3, "Game Rules"
 
     add-int/lit8 v4, p2, 0x19
 
@@ -976,7 +976,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u9700\u8981\u7684\u53c2\u52a0\u8d39\uff1a"
+    const-string v4, "Entry fee:"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -990,7 +990,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u91d1"
+    const-string v4, "Gold"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1680,7 +1680,7 @@
     .line 46
     iget-object v0, p0, Lminigame/Cards;->gr:Lmain/GameRun;
 
-    const-string v1, "\u5f00\u59cb\u6e38\u620f#n\u79bb\u5f00\u6e38\u620f"
+    const-string v1, "Start Game#nLeave Game"
 
     sget v2, Lmain/Constants_H;->WIDTH:I
 
@@ -2143,7 +2143,7 @@
     .line 171
     iget-object v2, p0, Lminigame/Cards;->gr:Lmain/GameRun;
 
-    const-string v3, "\u6e38\u620f\u5931\u8d25\uff01\uff01\uff01"
+    const-string v3, "Game Over!!!"
 
     invoke-virtual {v2, v3, v5}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -2205,7 +2205,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u83b7\u5f97\u91d1\u94b1\uff1a"
+    const-string v4, "Obtained Gold:"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

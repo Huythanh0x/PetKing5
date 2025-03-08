@@ -201,7 +201,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u8fd9\u4e2a\u6e38\u620f\u7684\u7ba1\u7406\u5668\u7684\u6bd4\u4f8b\u503c\u662f"
+    const-string v3, "The scale value of this game's manager is"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -222,7 +222,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u8fd9\u4e2a\u6e38\u620f\u7684\u7ba1\u7406\u5668\u58f0\u97f3\u662f"
+    const-string v3, "The sound of this game's manager is"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -289,7 +289,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u8fd9\u4e2a\u6e38\u620f\u7684\u7ba1\u7406\u5668\u7684\u6bd4\u4f8b\u503c\u662f"
+    const-string v3, "The scale value of this game's manager is"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -310,7 +310,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u8fd9\u4e2a\u6e38\u620f\u7684\u7ba1\u7406\u5668\u58f0\u97f3\u662f"
+    const-string v3, "The sound of this game's manager is"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

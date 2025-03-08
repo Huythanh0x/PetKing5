@@ -312,7 +312,7 @@
     .line 86
     new-array v1, v5, [Ljava/lang/String;
 
-    const-string v2, "\u5546\u57ce"
+    const-string v2, "Shop"
 
     aput-object v2, v1, v4
 
@@ -321,7 +321,7 @@
     .line 87
     new-array v1, v6, [Ljava/lang/String;
 
-    const-string v2, "\u8d2d\u4e7030000\u91d1"
+    const-string v2, "Buy 30000 Gold"
 
     aput-object v2, v1, v4
 
@@ -334,11 +334,11 @@
     .line 88
     new-array v1, v6, [Ljava/lang/String;
 
-    const-string v2, "\u8d2d\u4e705000\u91d1"
+    const-string v2, "Buy 5000 Gold"
 
     aput-object v2, v1, v4
 
-    const-string v2, "\u8eab\u4e3a\u56db\u5927\u5bb6\u65cf\u4e4b\u9996\u7684\u8d35\u516c\u5b50\uff0c\u6ca1\u94b1\u53ef\u4e0d\u884c\uff01\u7acb\u523b\u62e5\u67095000\u91d1\u3002"
+    const-string v2, "As the young master of the leading family among the four great clans, you can't be without money! Get 5000 Gold now."
 
     aput-object v2, v1, v5
 
@@ -349,7 +349,7 @@
     .line 89
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u8d2d\u4e7050\u5fbd\u7ae0"
+    const-string v3, "Buy 50 Badges"
 
     aput-object v3, v2, v4
 
@@ -364,11 +364,11 @@
     .line 90
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u8d2d\u4e7010\u5fbd\u7ae0"
+    const-string v3, "Buy 10 Badges"
 
     aput-object v3, v2, v4
 
-    const-string v3, "\u8d2d\u4e70\u8be5\u7279\u6b8a\u9053\u5177\uff0c\u7acb\u523b\u62e5\u670910\u5fbd\u7ae0\uff0c\u80fd\u8d2d\u4e70\u53cc\u500d\u7ecf\u9a8c\uff0c\u5ba0\u7269\u6280\u80fd\uff0c\u5f3a\u5927\u7684\u5ba0\u7269\u6355\u83b7\u7403\u7b49\u5404\u79cd\u795e\u5947\u7684\u9053\u5177\u3002"
+    const-string v3, "Buy this special item and immediately get 10 Badges, which can be used to purchase double experience, Pokémon skills, powerful Pokémon capture balls, and other amazing items."
 
     aput-object v3, v2, v5
 
@@ -379,11 +379,11 @@
     .line 91
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u5ba0\u7269\u53475\u7ea7"
+    const-string v3, "Pokémon Level Up x5"
 
     aput-object v3, v2, v4
 
-    const-string v3, "\u8ba9\u60a8\u968f\u8eab\u643a\u5e26\u7684\u5168\u90e8\u5ba0\u7269\u7acb\u523b\u53475\u7ea7\uff08\u8d85\u8fc770\u7ea7\u5ba0\u7269\u4e0d\u80fd\u518d\u5347\u7ea7\uff09"
+    const-string v3, "Immediately level up all the Pokémon you carry by 5 levels (Pokémon above level 70 cannot be leveled up further)"
 
     aput-object v3, v2, v5
 
@@ -394,11 +394,11 @@
     .line 92
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u8d2d\u4e70\u5947\u5f02\u517d"
+    const-string v3, "Buy Mystic Beast"
 
     aput-object v3, v2, v4
 
-    const-string v3, "\u8d2d\u4e70\u8be5\u7279\u6b8a\u9053\u5177\uff0c\u83b7\u5f97\u53ef\u7231\u7684\u5947\u5f02\u517d\uff0c\u79fb\u52a8\u901f\u5ea6\u53ef\u4ee5\u63d0\u9ad8\u4e00\u500d\uff0c\u4e14\u4e0d\u4f1a\u9047\u5230\u4efb\u4f55\u654c\u4eba\uff01\u65e0\u9650\u4f7f\u7528\uff0c\u5fc3\u52a8\u4e0d\u5982\u884c\u52a8\uff0c\u5feb\u8d2d\u4e70\u5427\uff01"
+    const-string v3, "Buy this special item to get the adorable Mystic Beast, which doubles your movement speed and prevents encounters with any enemies! Unlimited use, don't hesitate, buy it now!"
 
     aput-object v3, v2, v5
 
@@ -409,11 +409,11 @@
     .line 93
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u6b63\u7248\u9a8c\u8bc1"
+    const-string v3, "Genuine Verification"
 
     aput-object v3, v2, v4
 
-    const-string v3, "\u6e38\u620f\u8bd5\u73a9\u7ed3\u675f\uff0c\u8d2d\u4e70\u6b64\u9879\u5c06\u5f00\u542f\u540e\u7eed\u6240\u6709\u6e38\u620f\u5185\u5bb9\u3001\u5730\u56fe\u3002\u540c\u65f6\u5c06\u514d\u8d39\u8d60\u9001\u60a85\u679a\u5fbd\u7ae0\uff08\u53ef\u8d2d\u4e70\u5f3a\u529b\u9053\u5177\uff09"
+    const-string v3, "The game demo is over. Purchasing this will unlock all subsequent game content and maps. You'll also receive 5 Badges for free (which can be used to purchase powerful items)."
 
     aput-object v3, v2, v5
 
@@ -424,11 +424,11 @@
     .line 94
     new-array v2, v6, [Ljava/lang/String;
 
-    const-string v3, "\u5347\u7ea7\u590d\u6d3b"
+    const-string v3, "Level Up & Revive"
 
     aput-object v3, v2, v4
 
-    const-string v3, "\u8ba9\u60a8\u643a\u5e26\u7684\u6240\u6709\u5ba0\u7269\u5168\u6062\u590d\uff0c\u540c\u65f6\u7acb\u523b\u8ba9\u60a8\u643a\u5e26\u7684\u5ba0\u7269\u63d0\u53475\u7ea7\uff08\u8d85\u8fc770\u7ea7\u5ba0\u7269\u4e0d\u80fd\u518d\u5347\u7ea7\uff09\uff0c\u8ba9\u63a5\u4e0b\u6765\u7684\u6218\u6597\u53d8\u7684\u66f4\u8f7b\u677e\u3002"
+    const-string v3, "Fully heal all the Pokémon you carry, and immediately level them up by 5 levels (Pokémon above level 70 cannot be leveled up further), making the upcoming battles easier."
 
     aput-object v3, v2, v5
 
@@ -600,7 +600,7 @@
 
     .line 433
     :cond_5
-    const-string v3, "\u8d2d\u4e70\u5df2\u6210\u529f\uff01"
+    const-string v3, "Purchase successful!"
 
     .line 436
     const/4 v1, 0x0
@@ -637,7 +637,7 @@
     if-ne v4, v5, :cond_7
 
     .line 439
-    const-string v3, "\u81ea\u52a8\u4fdd\u5b58\u6e38\u620f\u3002"
+    const-string v3, "Automatically saving game."
 
     .line 440
     const/4 v1, 0x0
@@ -653,7 +653,7 @@
     if-ge v4, v6, :cond_0
 
     .line 442
-    const-string v3, "\u4fdd\u5b58\u6e38\u620f\u6210\u529f\u3002"
+    const-string v3, "Game saved successfully."
 
     .line 443
     iget-byte v4, p0, Lmain/SMSSender;->sendSms:B
@@ -683,7 +683,7 @@
     .line 447
     sget-object v4, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v5, "\u8d2d\u4e70\u5df2\u6210\u529f\uff01\u6e38\u620f\u5df2\u4fdd\u5b58\u3002#n\u65b0\u6e38\u620f\u540e\u6b64\u529f\u80fd\u4e0d\u518d\u8981\u6c42\u4ed8\u8d39\u3002"
+    const-string v5, "Purchase successful! Game saved. #nThis feature will no longer require payment after starting a new game."
 
     invoke-virtual {v4, v5, v10}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -704,7 +704,7 @@
     .line 449
     sget-object v4, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v5, "\u8d2d\u4e70\u5df2\u6210\u529f\uff01\u83b7\u5f975\u679a\u5fbd\u7ae0(\u80cc\u5305\u7684\u5377\u8f74\u754c\u9762\u53ef\u67e5\u770b\uff09\u3002\u6e38\u620f\u5df2\u4fdd\u5b58\u3002#n\u65b0\u6e38\u620f\u540e\u6b64\u529f\u80fd\u4e0d\u518d\u8981\u6c42\u4ed8\u8d39\u3002"
+    const-string v5, "Purchase successful! Received 5 Badges (viewable in the Scroll interface of your bag). Game saved. #nThis feature will no longer require payment after starting a new game."
 
     const/4 v6, 0x0
 
@@ -732,7 +732,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\u60a8\u5df2\u53d1\u9001"
+    const-string v2, "You have sent"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -742,14 +742,14 @@
 
     move-result-object v1
 
-    const-string v2, "\u6761\u77ed\u4fe1\u3002"
+    const-string v2, "SMS messages."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     .line 462
-    const-string v2, "\u8d2d\u4e70\u6b64\u9879\uff0c\u8fd8\u9700\u53d1\u9001"
+    const-string v2, "Purchasing this requires sending"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -759,14 +759,14 @@
 
     move-result-object v1
 
-    const-string v2, "\u6761\u77ed\u4fe1\u3002"
+    const-string v2, "SMS messages."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     .line 463
-    const-string v2, "\u786e\u8ba4\u53d1\u9001\u77ed\u4fe1\u5417\uff1f"
+    const-string v2, "Confirm sending the SMS message?"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2058,7 +2058,7 @@
     .line 337
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u76ee\u524d\u6ca1\u6709\u53ef\u4ee5\u5347\u7ea7\u7684\u5ba0\u7269\uff01"
+    const-string v1, "There are currently no Pokémon that can be leveled up!"
 
     invoke-virtual {v0, v1, v3}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -2316,7 +2316,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u751f\u547d;+"
+    const-string v3, "HP;+"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2341,7 +2341,7 @@
     move-result-object v2
 
     .line 498
-    const-string v3, "\u80fd\u91cf"
+    const-string v3, "Energy"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2381,7 +2381,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u529b\u91cf;+"
+    const-string v3, "Strength;+"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2408,7 +2408,7 @@
     move-result-object v2
 
     .line 500
-    const-string v3, "\u9632\u5fa1"
+    const-string v3, "Defense"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2441,7 +2441,7 @@
     move-result-object v2
 
     .line 501
-    const-string v3, "\u654f\u6377"
+    const-string v3, "Agility"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2879,7 +2879,7 @@
     .line 709
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u8d2d\u4e705000\u91d1\u5e01"
+    const-string v1, "Buy 5000 Gold Coins"
 
     invoke-virtual {v0, v1, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -2908,7 +2908,7 @@
     .line 715
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u5728\u5377\u8f74\u5546\u5e97\u4e2d\u624d\u80fd\u770b\u5230\u5fbd\u7ae0\u6570\u91cf"
+    const-string v1, "The number of Badges can only be seen in the Scroll Shop"
 
     invoke-virtual {v0, v1, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -2937,7 +2937,7 @@
     .line 721
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u5728\u5377\u8f74\u5546\u5e97\u4e2d\u624d\u80fd\u770b\u5230\u5fbd\u7ae0\u6570\u91cf"
+    const-string v1, "The number of Badges can only be seen in the Scroll Shop"
 
     invoke-virtual {v0, v1, v4}, Lmain/GameRun;->say(Ljava/lang/String;I)V
 
@@ -2960,7 +2960,7 @@
     .line 728
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u643a\u5e26\u7684\u5ba0\u7269\u5168\u90e8\u53475\u7ea7,\u5ba0\u7269\u9875\u9762\u67e5\u770b\u65b0\u5c5e\u6027"
+    const-string v1, "All the Pokémon you carry are leveled up by 5 levels. Check the Pokémon page to see the new attributes."
 
     invoke-virtual {v0, v1, v6, v4}, Lmain/GameRun;->say(Ljava/lang/String;II)V
 
@@ -3008,7 +3008,7 @@
     .line 743
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u8d2d\u4e70\u540e\u6b64\u529f\u80fd\u4e0d\u518d\u8981\u6c42\u4ed8\u8d39"
+    const-string v1, "This feature will no longer require payment after purchase"
 
     invoke-virtual {v0, v1, v6, v4}, Lmain/GameRun;->say(Ljava/lang/String;II)V
 
@@ -3057,7 +3057,7 @@
     .line 753
     sget-object v0, Lmain/SMSSender;->gr:Lmain/GameRun;
 
-    const-string v1, "\u8d2d\u4e70\u540e\u6b64\u529f\u80fd\u4e0d\u518d\u8981\u6c42\u4ed8\u8d39"
+    const-string v1, "This feature will no longer require payment after purchase"
 
     invoke-virtual {v0, v1, v6, v4}, Lmain/GameRun;->say(Ljava/lang/String;II)V
 

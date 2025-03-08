@@ -144,7 +144,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u6e38\u620f\u89c4\u5219"
+    const-string v6, "Game Rules"
 
     const/4 v8, 0x4
 
@@ -304,7 +304,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u9700\u8981\u7684\u53c2\u52a0\u8d39\uff1a"
+    const-string v6, "Entry fee:"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -318,7 +318,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u91d1"
+    const-string v6, "Gold"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -661,7 +661,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v8, "\u80dc\u5229\u6b21\u6570\uff1a"
+    const-string v8, "Number of wins:"
 
     invoke-direct {v6, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1267,7 +1267,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u8bf7\u6307\u51fa"
+    const-string v6, "Please indicate"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1305,7 +1305,7 @@
 
     move-result-object v5
 
-    const-string v6, "\u6240\u5728\u7bb1\u5b50"
+    const-string v6, "the box"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1751,7 +1751,7 @@
 
     move-object v8, v0
 
-    const-string v9, "\u60a8\u771f\u5389\u5bb3\uff01"
+    const-string v9, "You're amazing!"
 
     add-int v5, v22, v21
 
@@ -1773,7 +1773,7 @@
 
     move-object v8, v0
 
-    const-string v9, "\u70b9\u51fb\u5c4f\u5e55\u7ee7\u7eed"
+    const-string v9, "Tap the screen to continue"
 
     add-int v5, v22, v21
 
@@ -1826,7 +1826,7 @@
 
     move-object v8, v0
 
-    const-string v9, "\u8bf4\u4e0d\u5b9a\u4e0b\u6b21\u5c31\u80fd\u884c\u7684\u3002"
+    const-string v9, "Maybe you'll get it next time."
 
     add-int v5, v22, v21
 
@@ -2299,7 +2299,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u83b7\u5f97\u91d1\u94b1\uff1a"
+    const-string v3, "Obtained Gold:"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2497,7 +2497,7 @@
     .line 369
     iget-object v0, p0, Lminigame/Guess;->gr:Lmain/GameRun;
 
-    const-string v1, "\u5f00\u59cb\u6e38\u620f#n\u79bb\u5f00\u6e38\u620f"
+    const-string v1, "Start Game#nLeave Game"
 
     sget v2, Lmain/Constants_H;->WIDTH:I
 

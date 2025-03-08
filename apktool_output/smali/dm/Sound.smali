@@ -339,7 +339,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8fd9\u4e2a\u6e38\u620f\u7684\u97f3\u4e50\u662f"
+    const-string v2, "The music of this game is"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -391,7 +391,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8fd9\u4e2a\u6e38\u620f\u7684\u97f3\u4e50\u662f"
+    const-string v2, "The music of this game is"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
