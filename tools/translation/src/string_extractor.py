@@ -6,7 +6,7 @@ class SmaliStringExtractor:
     def __init__(self):
         self.chinese_pattern = re.compile(r'[\u4e00-\u9fff]')
         self.unicode_string_pattern = re.compile(r'\\u[0-9a-fA-F]{4}')
-        self.string_field_pattern = re.compile(r'\.field.*?String.*?=\s*"(.*?)"')
+        self.string_field_pattern = re.compile(r'"(.*?)"')
         self.logger = Logger().get_logger()
     
     def extract_chinese_strings(self, smali_file: Path) -> list[tuple[str, str]]:
