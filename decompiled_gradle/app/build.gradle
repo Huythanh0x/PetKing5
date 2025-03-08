@@ -3,8 +3,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion 4
 
     defaultConfig {
         applicationId 'com.PetKing5_480x800'
@@ -31,10 +30,6 @@ android {
 
     lintOptions {
         abortOnError false
-    }
-
-    buildFeatures {
-        buildConfig = false
     }
 }
 
