@@ -22,6 +22,10 @@ class StringsXmlHandler:
         string_elem = ET.SubElement(self.root, 'string')
         string_elem.set('name', name)
         string_elem.text = value
+
+    def add_chinese_string(self, name: str, value: str):
+        """Add a Chinese string entry to the XML if the key is unique"""
+        self.add_string(name, value)
     
     def save(self, filename: str = 'strings.xml'):
         """Save the XML file with pretty formatting"""
