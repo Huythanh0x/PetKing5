@@ -288,7 +288,7 @@
 
 .field public static final TEXT_PAY_SMS_CHANCEL_CONFIRM:Ljava/lang/String; = "\u60a8\u5df2\u7ecf\u652f\u4ed8\u8fc7\u3010%d\u3011\u5143\u77ed\u4fe1\uff0c\u73b0\u5728\u53d6\u6d88\u53d1\u9001\u5c06\u4e0d\u80fd\u6210\u529f\u8d2d\u4e70\u3010%s\u3011\u3002\u5982\u53d6\u6d88\u53d1\u9001\u5df2\u4ed8\u91d1\u989d\u4e0d\u4f1a\u8fd4\u8fd8\uff0c\u53ea\u80fd\u8ba1\u7b97\u5230\u60a8\u4e0b\u6b21\u8d2d\u4e70\u3010%s\u3011\u4e2d\u3002\u8bf7\u518d\u6b21\u786e\u8ba4\u662f\u5426\u53d6\u6d88\u8fd9\u6b21\u652f\u4ed8\uff1f"
 
-.field public static final TEXT_PAY_SMS_CONFIRM_INDEXOF:Ljava/lang/String; = "\uff0c"
+.field public static final TEXT_PAY_SMS_CONFIRM_INDEXOF:Ljava/lang/String; = ","
 
 .field public static final TEXT_PAY_SMS_CONFRIM_RESULT_CONTAIN:Ljava/lang/String; = "\u901a\u4fe1\u8d26\u6237\u652f\u4ed8"
 

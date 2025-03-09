@@ -2225,7 +2225,7 @@
 
     move-result-object v0
 
-    const-string v4, "\u58f0\u97f3"
+    const-string v4, "Sound"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
