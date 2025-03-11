@@ -8,7 +8,7 @@ KEYSTORE="shell_script/mock_keystore.jks"
 KEY_ALIAS="mockkey"
 KEYSTORE_PASS="mockpassword"
 KEYSTORE_KEY_PASS="mockpassword"
-APK_SIGNER="apksigner"
+APK_SIGNER="/Users/thanh0x/Library/Android/sdk/build-tools/34.0.0/apksigner"
 
 # Repack smali files into an APK
 apktool b "$SMALI_DIR" -o "$OUTPUT_APK"
