@@ -808,7 +808,7 @@ public class Map implements Key_H {
                                 byte[][] bossStream = Ms.i().create2Array(data);
                                 int event_temp4 = this.event[i][this.event_now[i] + 1] >> 1;
                                 //todo error array[][]
-                                this.gr.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, event_temp4, 5);
+                                this.gr.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{event_temp4, 5});
                                 this.now_eV2 = (byte) 0;
                                 while (this.now_eV2 < event_temp4) {
                                     this.now_eV1 = this.event[i][this.event_now[i] + 2 + (this.now_eV2 * 2)];
@@ -2165,7 +2165,7 @@ public class Map implements Key_H {
             }
         }
         //todo unreachable statement
-        return i;
+//        return i;
     }
 
     private byte checkIfOther(byte[][] data, int ix, int iy) {
@@ -2992,7 +2992,7 @@ public class Map implements Key_H {
             Ms.i();
             this.rows = (byte) Ms.getNum(buff);
             //todo error array[][]
-            this.worldData = (short[][]) Array.newInstance((Class<?>) Short.TYPE, this.cols, this.rows);
+            this.worldData = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{this.cols, this.rows});
             for (byte i = 0; i < 3; i = (byte) (i + 1)) {
                 byte layerType = dis.readByte();
                 if (layerType != -1) {
@@ -3722,7 +3722,7 @@ public class Map implements Key_H {
                 this.imgCloud = Ms.i().createImage("data/cloud");
                 this.cloud = null;
                 //todo error array[][]
-                this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 4, 3);
+                this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{4, 3});
             }
             for (byte i = 0; i < this.cloud.length; i = (byte) (i + 1)) {
                 addCloud(i);

@@ -1048,17 +1048,17 @@ public class GameRun extends GameRun_F {
                                 }
                             }
                             //todo unreachable statement
-                            if (rId == 34 && findItem(-2, rId, true) > 0) {
-                                rId = -1;
-                            } else if (rId == -1 || findItem(-2, rId, true) >= 99) {
-                                rId = -1;
-                            }
-                            if (rId != -1) {
-                                addItem(rId, 1);
-                                say(Constants_H.MONEY_TXT_7 + getNameItem(rId) + "x1", 0);
-                            } else {
-                                say(Constants_H.MONEY_TXT_12, 0);
-                            }
+//                            if (rId == 34 && findItem(-2, rId, true) > 0) {
+//                                rId = -1;
+//                            } else if (rId == -1 || findItem(-2, rId, true) >= 99) {
+//                                rId = -1;
+//                            }
+//                            if (rId != -1) {
+//                                addItem(rId, 1);
+//                                say(Constants_H.MONEY_TXT_7 + getNameItem(rId) + "x1", 0);
+//                            } else {
+//                                say(Constants_H.MONEY_TXT_12, 0);
+//                            }
                         } else {
                             say(Constants_H.TXT_75 + (id == 32 ? Constants_H.TXT_76 : Constants_H.TXT_77), 0);
                         }
@@ -2433,7 +2433,7 @@ public class GameRun extends GameRun_F {
         }
         this.proReplace = null;
         //todo error array[][]
-        this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 1, 6);
+        this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{1, 6});
         this.proReplace[0][0] = (short) (getbuffRateV(monster, this.monster_pro[eid][0] + ((this.monster_pro[eid][7] * level) / 10)) - monster.monsterPro[2]);
         this.proReplace[0][1] = (short) ((this.monster_pro[eid][1] + ((this.monster_pro[eid][8] * level) / 10)) - monster.monsterPro[3]);
         this.proReplace[0][2] = (short) (-(b_e ? monster.monster[5] : (byte) 1));
@@ -4141,7 +4141,7 @@ public class GameRun extends GameRun_F {
                     break;
                 }
                 //todo unreachable statement
-                break;
+//                break;
             case -4:
                 if (this.say_c == 0) {
                     byte b2 = (byte) (this.cur_b + 1);
@@ -4572,6 +4572,7 @@ public class GameRun extends GameRun_F {
             action = this.magic[skill_mode].action(select, this.now_action_Magic[i], 0);
         }
         //todo decompiler error: not return expected value
+        return true;
     }
 
     private boolean setCartoonFrameMagic_C(int i, int skill_mode, int select, boolean mode) {
@@ -4654,7 +4655,7 @@ public class GameRun extends GameRun_F {
     public void goBattlePVC() {
         this.enemyList = null;
         //todo error array[][]
-        this.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 1, 2);
+        this.enemyList = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{1, 2});
         getEnemy(this.enemyList[0], -1, 0);
         Sound.i().setMusicId(6);
         Sound.i().setMusic(true);
@@ -4743,10 +4744,10 @@ public class GameRun extends GameRun_F {
         this.mon_in_battle = new byte[this.max_takes + 1];
         this.levelUp_in_battle = null;
         //todo error array[][]
-        this.levelUp_in_battle = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, this.max_takes, 2);
+        this.levelUp_in_battle = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{this.max_takes, 2});
         this.proReplace = null;
         //todo error array[][]
-        this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, this.myMonsters.length, 7);
+        this.proReplace = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{this.myMonsters.length, 7});
         this.myB = new Battle(this.myMonsters);
         enemy_init();
         for (byte i = 0; i < this.myMon_length; i = (byte) (i + 1)) {
@@ -4940,8 +4941,8 @@ public class GameRun extends GameRun_F {
                 }
             }
             //todo syntax error
-            if (i > 1) {
-            }
+//            if (i > 1) {
+//            }
         }
         this.enB.skill = this.enB.getMon().monster[this.enB.skill + 8];
     }

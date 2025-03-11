@@ -71,9 +71,9 @@ public class GameRun_F implements Key_H {
     public byte[] select_it = new byte[4];
     public byte[] select_st = new byte[4];
     //todo error array[][]
-    public byte[][] selectBag = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 4, 2);
+    public byte[][] selectBag = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{4, 2});
     //todo error array[][]
-    public byte[][] select = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 2, 2);
+    public byte[][] select = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{2, 2});
     public byte max_takes = 3;
     public byte max_monsters = 10;
     private byte brow5 = 0;
@@ -602,7 +602,7 @@ public class GameRun_F implements Key_H {
         int k = 0;
         for (int i2 = 0; i2 < this.items.length; i2++) {
             //todo error array[][]
-            this.items[i2] = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, this.len[i2], 2);
+            this.items[i2] = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{this.len[i2], 2});
             int j = 0;
             while (j < this.itemsLength[i2]) {
                 this.items[i2][j][0] = this.info[(k * 2) + 4];

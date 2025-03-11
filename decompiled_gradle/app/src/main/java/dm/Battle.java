@@ -19,7 +19,7 @@ public class Battle {
     public byte[] ceff = new byte[6];
     public short[] cThrow = new short[4];
     //todo error array[][]
-    public short[][] hit = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 3, 5);
+    public short[][] hit = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{3, 5});
     public boolean b_renascence = false;
     public byte act_num = 1;
 

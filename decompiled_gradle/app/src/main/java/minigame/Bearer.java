@@ -31,7 +31,7 @@ public class Bearer implements MiniGame_H {
     private short[][] ballDate = {new short[]{10, 20, 60, 10, 220}, new short[]{13, 40, 60, 12, Constants_H.FIRST_ROW}, new short[]{10, 40, 60, 10, 120}};
     private short[] money = {150, 200, 300, 450};
     //todo error array[][]
-    private final short[][] xy = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 40, 7);
+    private final short[][] xy = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{40, 7});
     private final short[] myxy = {0, 275, 67, 10, 0};
     private final byte[] ball_time = {20, 15, 10, 5};
 

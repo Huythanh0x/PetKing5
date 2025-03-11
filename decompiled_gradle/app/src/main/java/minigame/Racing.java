@@ -34,14 +34,14 @@ public class Racing implements MiniGame_H {
     private byte state;
     private byte time;
     //todo error array[][]
-    private byte[][] now_a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 4, 3);
+    private byte[][] now_a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, new int[]{4, 3});
 
     public Racing(GameRun gr_) {
         byte[] bArr = new byte[4];
         bArr[3] = -1;
         this.myDate = bArr;
         //todo error array[][]
-        this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, 10, 3);
+        this.cloud = (short[][]) Array.newInstance((Class<?>) Short.TYPE, new int[]{10, 3});
         this.monY = new short[4];
         this.money = new short[]{100, 120, 300, 350, 1000, 1200};
         this.gDate = new short[][]{new short[]{450, 3, 8}, new short[]{390, 4, 9}, new short[]{270, 7, 6}, new short[]{210, 6, 10}};
