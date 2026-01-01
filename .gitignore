@@ -37,3 +37,4 @@ captures/
 # Keystore files
 *.keystore
 *.jks
+smali_comparison/
