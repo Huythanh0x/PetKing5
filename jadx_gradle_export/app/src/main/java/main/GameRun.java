@@ -2644,57 +2644,12 @@ public class GameRun extends GameRun_F {
         System.out.println("loadGame 22222222222");
     }
 
-    /*  JADX ERROR: JadxRuntimeException in pass: InitCodeVariables
-        jadx.core.utils.exceptions.JadxRuntimeException: Several immutable types in one variable: [int, short], vars: [r20v0 ??, r20v1 ??, r20v2 ??, r20v3 ??]
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVarType(InitCodeVariables.java:107)
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVar(InitCodeVariables.java:83)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVar(InitCodeVariables.java:74)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVar(InitCodeVariables.java:57)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:45)
-        	at jadx.core.dex.visitors.InitCodeVariables.visit(InitCodeVariables.java:29)
-        */
-    private void drawMonsterHp(dm.Monster r14, int r15, int r16, int r17, int r18, int r19, 
-    /*  JADX ERROR: JadxRuntimeException in pass: InitCodeVariables
-        jadx.core.utils.exceptions.JadxRuntimeException: Several immutable types in one variable: [int, short], vars: [r20v0 ??, r20v1 ??, r20v2 ??, r20v3 ??]
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVarType(InitCodeVariables.java:107)
-        	at jadx.core.dex.visitors.InitCodeVariables.setCodeVar(InitCodeVariables.java:83)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVar(InitCodeVariables.java:74)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVar(InitCodeVariables.java:57)
-        	at jadx.core.dex.visitors.InitCodeVariables.initCodeVars(InitCodeVariables.java:45)
-        */
-    /*  JADX ERROR: Method generation error
-        jadx.core.utils.exceptions.JadxRuntimeException: Code variable not set in r20v0 ??
-        	at jadx.core.dex.instructions.args.SSAVar.getCodeVar(SSAVar.java:238)
-        	at jadx.core.codegen.MethodGen.addMethodArguments(MethodGen.java:223)
-        	at jadx.core.codegen.MethodGen.addDefinition(MethodGen.java:168)
-        	at jadx.core.codegen.ClassGen.addMethodCode(ClassGen.java:401)
-        	at jadx.core.codegen.ClassGen.addMethod(ClassGen.java:335)
-        	at jadx.core.codegen.ClassGen.lambda$addInnerClsAndMethods$3(ClassGen.java:301)
-        	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
-        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-        	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
-        	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
-        	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.end(ReferencePipeline.java:284)
-        	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:571)
-        	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
-        	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
-        	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
-        	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-        	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
-        	at jadx.core.codegen.ClassGen.addInnerClsAndMethods(ClassGen.java:297)
-        	at jadx.core.codegen.ClassGen.addClassBody(ClassGen.java:286)
-        	at jadx.core.codegen.ClassGen.addClassBody(ClassGen.java:270)
-        	at jadx.core.codegen.ClassGen.addClassCode(ClassGen.java:161)
-        	at jadx.core.codegen.ClassGen.makeClass(ClassGen.java:103)
-        	at jadx.core.codegen.CodeGen.wrapCodeGen(CodeGen.java:45)
-        	at jadx.core.codegen.CodeGen.generateJavaCode(CodeGen.java:34)
-        	at jadx.core.codegen.CodeGen.generate(CodeGen.java:22)
-        	at jadx.core.ProcessClass.process(ProcessClass.java:79)
-        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:117)
-        	at jadx.core.dex.nodes.ClassNode.generateClassCode(ClassNode.java:402)
-        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:390)
-        	at jadx.core.dex.nodes.ClassNode.getCode(ClassNode.java:340)
-        */
+    // JADX ERROR: Method decompilation failed - drawMonsterHp
+    // Method couldn't be decompiled by Jadx, replaced with stub
+    private void drawMonsterHp(Monster monster, int x, int y, int w, int mode, int type, int t2) {
+        // TODO: Implement this method based on smali code if needed
+        throw new RuntimeException("Method decompilation failed");
+    }
 
     private short getMonsterExp(Monster monster) {
         return (short) (((monster.monster[2] * 210) / 10) - 2);
