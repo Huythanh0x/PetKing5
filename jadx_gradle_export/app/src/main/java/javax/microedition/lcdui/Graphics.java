@@ -452,6 +452,7 @@ public final class Graphics {
 
     public void restCanvas() {
         this.canvas.restore();
-        this.canvas.save(2);
+        // save(2) was deprecated, use save() which saves all state by default
+        this.canvas.save();
     }
 }
