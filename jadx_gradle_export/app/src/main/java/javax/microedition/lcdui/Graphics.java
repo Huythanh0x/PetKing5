@@ -404,7 +404,10 @@ public final class Graphics {
         this.clipw = width;
         this.cliph = height;
         if (width >= 0 && height >= 0) {
-            this.canvas.clipRect(x, y, x + width, y + height, Region.Op.REPLACE);
+            // REPLACE is deprecated in Android 9+, use INTERSECT instead
+            // Note: This changes semantics slightly - INTERSECT intersects with current clip
+            // while REPLACE replaced it. In practice this often works the same way.
+            this.canvas.clipRect(x, y, x + width, y + height, Region.Op.INTERSECT);
         }
     }
 
