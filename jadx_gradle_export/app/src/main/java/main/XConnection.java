@@ -14,15 +14,19 @@ public final class XConnection extends MIDlet {
 
     @Override // javax.microedition.midlet.MIDlet
     public void startApp() {
-        if (this.gamecanvas != null) {
-            this.gamecanvas.showNotify();
+        MainCanvas canvas = this.gamecanvas;
+        if (canvas != null) {
+            canvas = this.gamecanvas;
+            canvas.showNotify();
         }
     }
 
     @Override // javax.microedition.midlet.MIDlet
     public void pauseApp() {
-        if (this.gamecanvas != null) {
-            this.gamecanvas.hideNotify();
+        MainCanvas canvas = this.gamecanvas;
+        if (canvas != null) {
+            canvas = this.gamecanvas;
+            canvas.hideNotify();
         }
     }
 
