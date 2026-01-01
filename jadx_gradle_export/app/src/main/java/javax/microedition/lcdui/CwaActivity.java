@@ -12,7 +12,7 @@ import android.os.Process;
 import android.util.Log;
 import android.view.KeyEvent;
 import com.uc.paymentsdk.util.Constants;
-import dalvik.system.VMRuntime;
+// import dalvik.system.VMRuntime; // Internal API, not available in regular Android SDK
 import java.util.List;
 import javax.microedition.lcdui.game.GameCanvas;
 import javax.microedition.midlet.MIDlet;
@@ -73,8 +73,10 @@ public class CwaActivity extends Activity {
     }
 
     private void initActivity() {
-        VMRuntime.getRuntime().setMinimumHeapSize(12582912L);
-        VMRuntime.getRuntime().setTargetHeapUtilization(TARGET_HEAP_UTILIZATION);
+        // VMRuntime methods are internal APIs and not available in regular Android SDK
+        // These heap size settings are deprecated and handled automatically by the system
+        // VMRuntime.getRuntime().setMinimumHeapSize(12582912L);
+        // VMRuntime.getRuntime().setTargetHeapUtilization(TARGET_HEAP_UTILIZATION);
         getWindow().setFlags(128, 128);
     }
 
