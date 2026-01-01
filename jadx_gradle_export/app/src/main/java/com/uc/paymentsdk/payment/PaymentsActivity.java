@@ -273,7 +273,7 @@ public class PaymentsActivity extends Activity implements View.OnClickListener, 
     }
 
     private boolean initPayment() {
-        String str;
+        String str = null;
         this.mPaymentInfo = (PaymentInfo) getIntent().getSerializableExtra(EXTRA_KEY_PAYMENTINFO);
         if (this.mPaymentInfo == null) {
             throw new IllegalArgumentException("PaymentInfo必须设置");
@@ -321,7 +321,7 @@ public class PaymentsActivity extends Activity implements View.OnClickListener, 
         } catch (NullPointerException e2) {
             showDialog(22);
         }
-        if (!Pattern.matches(Constants.CPID_PATTERN, str)) {
+        if (str == null || !Pattern.matches(Constants.CPID_PATTERN, str)) {
             showDialog(22);
             return false;
         }
@@ -795,7 +795,7 @@ public class PaymentsActivity extends Activity implements View.OnClickListener, 
                 showDialog(20);
             } else if (!this.mIsSynced) {
                 showDialog(19);
-                new SyncSmsInfoHandler(getApplicationContext(), new Handler.OnFinishListener(waitTextView, beforeSendText, smsPayCount, cancelButton, submitBtn, relativeLayout) { // from class: com.uc.paymentsdk.payment.PaymentsActivity.3
+                new SyncSmsInfoHandler(getApplicationContext(), new Handler.OnFinishListener() { // from class: com.uc.paymentsdk.payment.PaymentsActivity.3
                     Button cancelBtn;
                     RelativeLayout contentPanel;
                     Button okBtn;
@@ -1095,7 +1095,6 @@ public class PaymentsActivity extends Activity implements View.OnClickListener, 
                             buildPaymentView();
                             break;
                         }
-                        break;
                     case 5:
                         showDialog(23);
                         break;

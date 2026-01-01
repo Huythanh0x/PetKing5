@@ -1037,13 +1037,12 @@ public class GameRun extends GameRun_F {
                             }
                             Ms.i();
                             byte rand2 = (byte) Ms.getRandom(100);
-                            while (true) {
-                                if (d < this.itemMine[type].length) {
-                                    if (rand2 >= this.itemMine[type][d]) {
-                                        d = (byte) (d + 2);
-                                    } else {
-                                        rId = this.itemMine[type][d - 1];
-                                    }
+                            while (d < this.itemMine[type].length) {
+                                if (rand2 >= this.itemMine[type][d]) {
+                                    d = (byte) (d + 2);
+                                } else {
+                                    rId = this.itemMine[type][d - 1];
+                                    break;
                                 }
                             }
                             if (rId == 34 && findItem(-2, rId, true) > 0) {
@@ -4008,7 +4007,6 @@ public class GameRun extends GameRun_F {
                     this.myB.cexp = Ms.i().mathSpeedN(this.myB.cexp, this.myMonsters[id].monsterPro[4], 8, false);
                     break;
                 }
-                break;
             case -4:
                 if (this.say_c == 0) {
                     byte b2 = (byte) (this.cur_b + 1);

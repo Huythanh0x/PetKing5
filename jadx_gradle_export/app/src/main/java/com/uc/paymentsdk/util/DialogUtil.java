@@ -211,7 +211,8 @@ public class DialogUtil {
     public static Dialog createOKWarningDialogSupportLink(final Context paramContext, final int paramInt, String paramString1, String paramString2, final WarningDialogListener paramWarningDialogListener) {
         TextView localTextView = new TextView(paramContext);
         localTextView.setPadding(10, 10, 10, 10);
-        localTextView.setTextAppearance(paramContext, R.style.TextAppearance.Medium.Inverse);
+        // Use Android built-in style (TextAppearance.Medium.Inverse doesn't exist)
+        localTextView.setTextAppearance(android.R.style.TextAppearance_Medium);
         localTextView.setBackgroundColor(-1);
         localTextView.setLinkTextColor(Constants.COLOR_LINK_TEXT);
         localTextView.setMovementMethod(LinkMovementMethod.getInstance());

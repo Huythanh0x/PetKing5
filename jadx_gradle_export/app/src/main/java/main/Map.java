@@ -2101,12 +2101,13 @@ public class Map implements Key_H {
             if (i > -1) {
                 if (!Ms.i().isRect(ix, iy, 19, 19, npc[i].x, npc[i].y, 20, 20) || (npc[i].other[4] != 1 && npc[i].other[4] != 3)) {
                     length = i - 1;
+                } else {
+                    return i;
                 }
             } else {
                 return (byte) -1;
             }
         }
-        return i;
     }
 
     private byte checkIfOther(byte[][] data, int ix, int iy) {

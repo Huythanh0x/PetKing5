@@ -350,10 +350,10 @@ public class Utils {
 
     private static String getIpAddress() {
         try {
-            Enumeration localEnumeration1 = NetworkInterface.getNetworkInterfaces();
+            Enumeration<NetworkInterface> localEnumeration1 = NetworkInterface.getNetworkInterfaces();
             while (localEnumeration1.hasMoreElements()) {
                 NetworkInterface localNetworkInterface = localEnumeration1.nextElement();
-                Enumeration localEnumeration2 = localNetworkInterface.getInetAddresses();
+                Enumeration<InetAddress> localEnumeration2 = localNetworkInterface.getInetAddresses();
                 while (localEnumeration2.hasMoreElements()) {
                     InetAddress localInetAddress = localEnumeration2.nextElement();
                     if (!localInetAddress.isLoopbackAddress()) {
@@ -484,10 +484,7 @@ public class Utils {
                 try {
                     String str = localBufferedReader.readLine();
                     if (str == null) {
-                        try {
-                            break;
-                        } catch (IOException localIOException4) {
-                        }
+                        break;
                     } else {
                         localStringBuilder.append(str);
                     }

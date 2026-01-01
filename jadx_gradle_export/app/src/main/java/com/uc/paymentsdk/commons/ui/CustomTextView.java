@@ -21,7 +21,8 @@ public class CustomTextView extends TextView {
         }
         setGravity(16);
         setPadding(6, 0, 0, 0);
-        setTextAppearance(paramContext, R.style.TextAppearance.Large.Inverse);
+        // Use Android built-in style (TextAppearance.Large.Inverse doesn't exist)
+        setTextAppearance(android.R.style.TextAppearance_Large);
         StateListDrawable localStateListDrawable = new StateListDrawable();
         localStateListDrawable.addState(View.PRESSED_ENABLED_STATE_SET, new ColorDrawable(Constants.COLOR_PRESSED));
         if (1 != paramInt % 2) {
