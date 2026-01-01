@@ -83,16 +83,29 @@ public final class MainCanvas extends FullCanvas implements Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        while (!this.quitGame) {
+        while (true) {
+            try {
+                boolean quitGame = this.quitGame;
+                if (quitGame) {
+                    break;
+                }
+            } catch (Exception ex) {
+                // Exception handling for quitGame check - will be caught by outer catch
+            }
             try {
                 this.starttime = System.currentTimeMillis();
-                if (!SMSSender.isWorking) {
+                boolean isWorking = SMSSender.isWorking;
+                if (isWorking) {
+                    // Skip to timetaken calculation
+                } else {
                     AndroidUtil.cv.block();
                     AndroidUtil.cv.close();
-                    if (this.game_state != 98) {
+                    int game_state = this.game_state;
+                    if (game_state != 98) {
                         Sound.i().soundPlay();
                     }
-                    switch (this.game_state) {
+                    game_state = this.game_state;
+                    switch (game_state) {
                         case 20:
                             if (this.gr.createOver == -1) {
                                 this.gr.time_count = (byte) 60;
@@ -118,15 +131,18 @@ public final class MainCanvas extends FullCanvas implements Runnable {
                             }
                     }
                     Ms.i();
-                    if (Ms.keyRepeat) {
+                    boolean keyRepeat = Ms.keyRepeat;
+                    if (keyRepeat) {
                         keyProcess();
                     }
                     Ms.i().runDelay();
                     paint();
                 }
                 this.timetaken = System.currentTimeMillis() - this.starttime;
-                if (Ms.i().getSleep() > 0) {
-                    Thread.sleep(Ms.i().getSleep());
+                int sleep = Ms.i().getSleep();
+                if (sleep > 0) {
+                    sleep = Ms.i().getSleep();
+                    Thread.sleep((long) sleep);
                     Ms.i().sleep(0);
                 } else {
                     long useTime = 60 - this.timetaken;
@@ -351,9 +367,11 @@ public final class MainCanvas extends FullCanvas implements Runnable {
 
     @Override // javax.microedition.lcdui.Canvas
     public void pointerPressed(int x, int y) {
-        if (!SMSSender.isWorking) {
-            this.pkey.process(x, y);
+        boolean isWorking = SMSSender.isWorking;
+        if (isWorking) {
+            return;
         }
+        this.pkey.process(x, y);
     }
 
     @Override // javax.microedition.lcdui.Canvas
@@ -512,32 +530,49 @@ public final class MainCanvas extends FullCanvas implements Runnable {
     }
 
     protected void paintMobileLogo() {
+        int zero = 0;
+        int thirtySeven = 37;
+        int nineteen = 19;
+        int one = 1;
         int WIDTH = Constants_H.WIDTH__;
         int HEIGHT = Constants_H.HEIGHT__;
         int WIDTH_H = Constants_H.WIDTH__ / 2;
         int HEIGHT_H = Constants_H.HEIGHT__ / 2;
-        if (this.load_c < 0) {
-            this.load_c = 0;
+        if (this.load_c < zero) {
+            this.load_c = zero;
             return;
         }
-        g.setClip(0, 0, WIDTH, HEIGHT);
-        if (this.load_c >= 0 && this.load_c < 18) {
-            g.setClip(0, 0, WIDTH, HEIGHT);
-            Ui.i().fillRect(16777215, 0, 0, WIDTH, HEIGHT);
-            if (this.load_c == 0) {
-                GameRun.g = g;
-                this.image_logo = Ms.i().createImage("qq/qqlogo");
+        g.setClip(zero, zero, WIDTH, HEIGHT);
+        int load_c_temp = this.load_c;
+        if (load_c_temp >= zero) {
+            load_c_temp = this.load_c;
+            if (load_c_temp < 18) {
+                g.setClip(zero, zero, WIDTH, HEIGHT);
+                Ui.i().fillRect(16777215, zero, zero, WIDTH, HEIGHT);
+                if (this.load_c == zero) {
+                    GameRun.g = g;
+                    this.image_logo = Ms.i().createImage("qq/qqlogo");
+                }
+                int anchor = one | 2;
+                g.drawImage(this.image_logo, WIDTH_H, HEIGHT_H, anchor);
+            } else {
+                int load_c_temp2 = this.load_c;
+                if (load_c_temp2 >= nineteen) {
+                    load_c_temp2 = this.load_c;
+                    if (load_c_temp2 < thirtySeven) {
+                        if (this.load_c == nineteen) {
+                            this.image_logo = null;
+                            this.image_logo = Ms.i().createImage("cwa");
+                        }
+                        g.setColor(zero);
+                        Ui.i().fillRect(zero, zero, zero, WIDTH, HEIGHT);
+                        int anchor2 = one | 2;
+                        g.drawImage(this.image_logo, WIDTH_H, HEIGHT_H, anchor2);
+                    }
+                }
             }
-            g.drawImage(this.image_logo, WIDTH_H, HEIGHT_H, 1 | 2);
-        } else if (this.load_c >= 19 && this.load_c < 37) {
-            if (this.load_c == 19) {
-                this.image_logo = null;
-                this.image_logo = Ms.i().createImage("cwa");
-            }
-            g.setColor(0);
-            Ui.i().fillRect(0, 0, 0, WIDTH, HEIGHT);
-            g.drawImage(this.image_logo, WIDTH_H, HEIGHT_H, 1 | 2);
-        } else if (this.load_c > 37) {
+        }
+        if (this.load_c > thirtySeven) {
             this.image_logo = null;
             this.gr.popMenu = (byte) 0;
             this.game_state = 10;
