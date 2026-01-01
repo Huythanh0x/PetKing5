@@ -33,3 +33,7 @@ captures/
 *.iml
 .idea/
 .idea/*
+
+# Keystore files
+*.keystore
+*.jks
