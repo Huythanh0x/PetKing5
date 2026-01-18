@@ -25,9 +25,20 @@ ui/
   - SuggestionPanel.kt  # LLM suggestion display with accept button
 ```
 
+## Prerequisites
+
+- **JDK 17** (required for building - Gradle 8.9 has compatibility issues with JDK 25)
+- The project targets JVM 17 (`jvmToolchain(17)`)
+
 ## Build
 
 ```bash
+./gradlew build
+```
+
+**Note:** If you encounter build errors with JDK 25, switch to JDK 17 for building:
+```bash
+export JAVA_HOME=/path/to/jdk17
 ./gradlew build
 ```
 
