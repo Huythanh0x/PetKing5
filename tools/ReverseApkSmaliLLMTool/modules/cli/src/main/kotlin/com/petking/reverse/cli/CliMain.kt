@@ -33,6 +33,7 @@ fun printUsage() {
     println("Usage:")
     println("  check-deps                            - Check if apktool and jadx are available")
     println("  decompile <apk_file> <output_dir>     - Decompile APK to Java/Gradle using jadx")
+    println("  decompile <apk_file> <output_dir> --overwrite - Decompile and overwrite existing output")
     println("  disassemble <apk_file> <output_dir>   - Disassemble APK to smali using apktool")
     println("  compare <smali1> <smali2>             - Compare two smali files")
     println("  diff <original_apk> <compiled_apk>    - Disassemble both APKs and compare")
@@ -58,11 +59,13 @@ fun handleCheckDeps() {
 fun handleDecompile(args: Array<String>) {
     if (args.size < 3) {
         println("Error: decompile requires <apk_file> <output_dir>")
+        println("Optional: add '--overwrite' flag to overwrite existing output directory")
         return
     }
     
     val apkFile = File(args[1])
     val outputDir = File(args[2])
+    val overwriteExisting = args.contains("--overwrite")
     
     // Quick fail: check dependencies first
     if (!DependencyChecker.isJadxAvailable()) {
@@ -82,9 +85,13 @@ fun handleDecompile(args: Array<String>) {
     }
     
     val wrapper = JadxWrapper()
-    println("Decompiling ${apkFile.name} to ${outputDir.absolutePath}...")
+    if (overwriteExisting) {
+        println("Decompiling ${apkFile.name} to ${outputDir.absolutePath} (overwriting existing)...")
+    } else {
+        println("Decompiling ${apkFile.name} to ${outputDir.absolutePath}...")
+    }
     
-    when (val result = wrapper.decompileToGradle(apkFile, outputDir)) {
+    when (val result = wrapper.decompileToGradle(apkFile, outputDir, overwriteExisting = overwriteExisting)) {
         is JadxResult.Success -> {
             println("✅ Decompilation complete!")
             println("Output directory: ${result.outputDir.absolutePath}")
@@ -94,7 +101,7 @@ fun handleDecompile(args: Array<String>) {
             println("Gradle project: ${if (result.gradleProject) "Yes" else "No"}")
         }
         is JadxResult.Error -> {
-            println("❌ Decompilation failed: ${result.message}")
+            println("❌ Decompilation failed:\n${result.message}")
         }
     }
 }

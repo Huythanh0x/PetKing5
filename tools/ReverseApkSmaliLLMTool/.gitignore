@@ -3,9 +3,16 @@
 build/
 out/
 *.iml
+*.ipr
+*.iws
+
+# Kotlin
+*.kt.swp
+*.kt~
 
 # IDE
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
@@ -14,6 +21,12 @@ out/
 .DS_Store
 Thumbs.db
 
+# Tool output directories (generated files)
+original_decompiled_smali/
+jadx_gradle_exported/
+recompiled_smali/
+new_compiled.apk
+*.apk
+
 # Logs
 *.log
-
