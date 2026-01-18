@@ -20,6 +20,7 @@ fun main(args: Array<String>) {
     
     when (args[0]) {
         "disassemble" -> handleDisassemble(args)
+        "reassemble" -> handleReassemble(args)
         "decompile" -> handleDecompile(args)
         "compare" -> handleCompare(args)
         "diff" -> handleDiff(args)
@@ -145,6 +146,47 @@ fun handleDisassemble(args: Array<String>) {
         }
         is ApktoolResult.Error -> {
             println("❌ Disassembly failed: ${result.message}")
+        }
+    }
+}
+
+fun handleReassemble(args: Array<String>) {
+    if (args.size < 3) {
+        println("Error: reassemble requires <smali_dir> <output_apk>")
+        return
+    }
+    
+    val smaliDir = File(args[1])
+    val outputApk = File(args[2])
+    
+    // Quick fail: check dependencies first
+    if (!DependencyChecker.isApktoolAvailable()) {
+        println("❌ Error: apktool not found. Run 'check-deps' to verify dependencies.")
+        return
+    }
+    
+    // Quick fail: validate smali directory
+    when (val validation = DependencyChecker.validateDirectory(smaliDir)) {
+        is ValidationResult.Error -> {
+            println("❌ Error: ${validation.message}")
+            return
+        }
+        is ValidationResult.Success -> {
+            // Continue
+        }
+    }
+    
+    val wrapper = ApktoolWrapper()
+    println("Reassembling ${smaliDir.name} to ${outputApk.name}...")
+    
+    when (val result = wrapper.reassemble(smaliDir, outputApk)) {
+        is ApktoolResult.Success -> {
+            println("✅ Reassembly complete!")
+            println("Output APK: ${outputApk.absolutePath}")
+            println("APK size: ${outputApk.length() / 1024} KB")
+        }
+        is ApktoolResult.Error -> {
+            println("❌ Reassembly failed: ${result.message}")
         }
     }
 }
