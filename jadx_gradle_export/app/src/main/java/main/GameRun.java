@@ -209,173 +209,628 @@ public class GameRun extends GameRun_F {
     }
 
     public void run_gameRun() {
-        switch (run_state) {
+        int run_state_val = run_state;
+        switch (run_state_val) {
             case -86:
-            case -15:
-                if (this.b_c == 0) {
-                    if (this.levelUp_in_battle[this.myB.getMon().monster[1]][0] == 1) {
-                        this.levelUp_in_battle[this.myB.getMon().monster[1]][0] = 0;
-                        this.b_c = (byte) 1;
-                        this.say_s = 52;
-                        levelPro(this.myB.now_id, true);
-                        setStringB("生命;+" + ((int) this.proReplace[this.myB.now_id][0]) + "#n" + Constants_H.PRO_TXT_1 + ";+" + ((int) this.proReplace[this.myB.now_id][1]), Constants_H.WIDTH, 0);
-                        setStringB("力量;+" + ((int) this.proReplace[this.myB.now_id][3]) + "#n" + Constants_H.PRO_TXT_4 + ";+" + ((int) this.proReplace[this.myB.now_id][4]) + "#n" + Constants_H.PRO_TXT_5 + ";+" + ((int) this.proReplace[this.myB.now_id][5]), Constants_H.WIDTH, 1);
-                        initMonStream(2, this.mList_id[this.myB.getMon().monster[0]][0], 1);
+            case -15: {
+                int zero_86 = 0;
+                byte b_c_val_86 = this.b_c;
+                if (b_c_val_86 == zero_86) {
+                    byte[][] levelUp_in_battle_86 = this.levelUp_in_battle;
+                    Battle myB_86 = this.myB;
+                    Monster myB_mon_86 = myB_86.getMon();
+                    byte[] myB_mon_monster_86 = myB_mon_86.monster;
+                    int one_86 = 1;
+                    byte myB_mon_monster_1_86 = myB_mon_monster_86[one_86];
+                    byte[][] levelUp_in_battle2_86 = this.levelUp_in_battle;
+                    Battle myB2_86 = this.myB;
+                    Monster myB2_mon_86 = myB2_86.getMon();
+                    byte[] myB2_mon_monster_86 = myB2_mon_86.monster;
+                    int one2_86 = 1;
+                    byte myB2_mon_monster_1_86 = myB2_mon_monster_86[one2_86];
+                    byte[] levelUp_in_battle_mon_86 = levelUp_in_battle2_86[myB2_mon_monster_1_86];
+                    int zero2_86 = 0;
+                    byte levelUp_in_battle_val_86 = levelUp_in_battle_mon_86[zero2_86];
+                    if (levelUp_in_battle_val_86 == one2_86) {
+                        byte[][] levelUp_in_battle3 = this.levelUp_in_battle;
+                        Battle myB3 = this.myB;
+                        Monster myB3_mon = myB3.getMon();
+                        byte[] myB3_mon_monster = myB3_mon.monster;
+                        int one3 = 1;
+                        byte myB3_mon_monster_1 = myB3_mon_monster[one3];
+                        byte[] levelUp_in_battle_mon2 = levelUp_in_battle3[myB3_mon_monster_1];
+                        int zero3 = 0;
+                        int zero4 = 0;
+                        levelUp_in_battle_mon2[zero3] = (byte) zero4;
+                        int one4 = 1;
+                        this.b_c = (byte) one4;
+                        int fiftyTwo = 52;
+                        this.say_s = fiftyTwo;
+                        Battle myB4 = this.myB;
+                        byte myB4_now_id = myB4.now_id;
+                        boolean one5 = true;
+                        levelPro(myB4_now_id, one5);
+                        StringBuilder sb = new StringBuilder("生命;+");
+                        short[][] proReplace = this.proReplace;
+                        Battle myB5 = this.myB;
+                        byte myB5_now_id = myB5.now_id;
+                        short[] proReplace_now_id = proReplace[myB5_now_id];
+                        int zero5 = 0;
+                        short proReplace_0 = proReplace_now_id[zero5];
+                        sb.append((int) proReplace_0);
+                        sb.append("#n");
+                        sb.append(Constants_H.PRO_TXT_1);
+                        sb.append(";+");
+                        short[][] proReplace2 = this.proReplace;
+                        Battle myB6 = this.myB;
+                        byte myB6_now_id = myB6.now_id;
+                        short[] proReplace_now_id2 = proReplace2[myB6_now_id];
+                        int one6 = 1;
+                        short proReplace_1 = proReplace_now_id2[one6];
+                        sb.append((int) proReplace_1);
+                        String sb_str = sb.toString();
+                        int WIDTH_val = Constants_H.WIDTH;
+                        int zero6 = 0;
+                        setStringB(sb_str, WIDTH_val, zero6);
+                        StringBuilder sb2 = new StringBuilder("力量;+");
+                        short[][] proReplace3 = this.proReplace;
+                        Battle myB7 = this.myB;
+                        byte myB7_now_id = myB7.now_id;
+                        short[] proReplace_now_id3 = proReplace3[myB7_now_id];
+                        int three = 3;
+                        short proReplace_3 = proReplace_now_id3[three];
+                        sb2.append((int) proReplace_3);
+                        sb2.append("#n");
+                        sb2.append(Constants_H.PRO_TXT_4);
+                        sb2.append(";+");
+                        short[][] proReplace4 = this.proReplace;
+                        Battle myB8 = this.myB;
+                        byte myB8_now_id = myB8.now_id;
+                        short[] proReplace_now_id4 = proReplace4[myB8_now_id];
+                        int four = 4;
+                        short proReplace_4 = proReplace_now_id4[four];
+                        sb2.append((int) proReplace_4);
+                        sb2.append("#n");
+                        sb2.append(Constants_H.PRO_TXT_5);
+                        sb2.append(";+");
+                        short[][] proReplace5 = this.proReplace;
+                        Battle myB9 = this.myB;
+                        byte myB9_now_id = myB9.now_id;
+                        short[] proReplace_now_id5 = proReplace5[myB9_now_id];
+                        int five = 5;
+                        short proReplace_5 = proReplace_now_id5[five];
+                        sb2.append((int) proReplace_5);
+                        String sb2_str = sb2.toString();
+                        int WIDTH_val2 = Constants_H.WIDTH;
+                        int one7 = 1;
+                        setStringB(sb2_str, WIDTH_val2, one7);
+                        int two = 2;
+                        byte[][] mList_id = this.mList_id;
+                        Battle myB10 = this.myB;
+                        Monster myB10_mon = myB10.getMon();
+                        byte[] myB10_mon_monster = myB10_mon.monster;
+                        int zero7 = 0;
+                        byte myB10_mon_monster_0 = myB10_mon_monster[zero7];
+                        byte[][] mList_id2 = this.mList_id;
+                        byte[] mList_id_mon = mList_id2[myB10_mon_monster_0];
+                        int zero8 = 0;
+                        byte mList_id_0 = mList_id_mon[zero8];
+                        int one8 = 1;
+                        initMonStream(two, mList_id_0, one8);
                     } else {
-                        Battle battle = this.myB;
-                        battle.now_id = (byte) (battle.now_id + 1);
+                        Battle myB11 = this.myB;
+                        byte myB11_now_id = myB11.now_id;
+                        int one9 = 1;
+                        byte now_id_new = (byte) (myB11_now_id + one9);
+                        myB11.now_id = now_id_new;
                     }
-                    if (this.myB.now_id >= this.myMon_length) {
+                    Battle myB12 = this.myB;
+                    byte myB12_now_id = myB12.now_id;
+                    byte myMon_length_val = this.myMon_length;
+                    if (myB12_now_id >= myMon_length_val) {
+                        int zero9 = 0;
+                        byte i = (byte) zero9;
                         boolean b = false;
                         StringBuffer sbuf = new StringBuffer("");
-                        for (byte i = 0; i < this.myMon_length; i = (byte) (i + 1)) {
-                            if (this.myMonsters[i].monster[5] > 0 && this.evolve[i] && isEvolveKind(this.myMonsters[i].monster[4], this.myMonsters[i].monster[2]) == -1) {
-                                if (!Ms.i().equals(sbuf, "")) {
-                                    sbuf.append("、");
+                        byte myMon_length_val2 = this.myMon_length;
+                        while (i < myMon_length_val2) {
+                            Monster[] myMonsters = this.myMonsters;
+                            byte i_val = i;
+                            Monster myMonsters_i = myMonsters[i_val];
+                            byte[] myMonsters_i_monster = myMonsters_i.monster;
+                            int five2 = 5;
+                            byte myMonsters_i_monster_5 = myMonsters_i_monster[five2];
+                            int zero10 = 0;
+                            if (myMonsters_i_monster_5 > zero10) {
+                                boolean[] evolve = this.evolve;
+                                byte i_val2 = i;
+                                boolean evolve_i = evolve[i_val2];
+                                if (evolve_i) {
+                                    Monster[] myMonsters2 = this.myMonsters;
+                                    byte i_val3 = i;
+                                    Monster myMonsters_i2 = myMonsters2[i_val3];
+                                    byte[] myMonsters_i2_monster = myMonsters_i2.monster;
+                                    int four2 = 4;
+                                    byte myMonsters_i2_monster_4 = myMonsters_i2_monster[four2];
+                                    Monster[] myMonsters3 = this.myMonsters;
+                                    byte i_val4 = i;
+                                    Monster myMonsters_i3 = myMonsters3[i_val4];
+                                    byte[] myMonsters_i3_monster = myMonsters_i3.monster;
+                                    int two2 = 2;
+                                    byte myMonsters_i3_monster_2 = myMonsters_i3_monster[two2];
+                                    int isEvolveKind_result = isEvolveKind(myMonsters_i2_monster_4, myMonsters_i3_monster_2);
+                                    int minusOne = -1;
+                                    if (isEvolveKind_result == minusOne) {
+                                        Ms ms = Ms.i();
+                                        StringBuffer sbuf_val = sbuf;
+                                        String empty_str = "";
+                                        boolean equals_result = ms.equals(sbuf_val, empty_str);
+                                        if (!equals_result) {
+                                            sbuf.append("、");
+                                        }
+                                        Monster[] myMonsters4 = this.myMonsters;
+                                        byte i_val5 = i;
+                                        Monster myMonsters_i4 = myMonsters4[i_val5];
+                                        byte[] myMonsters_i4_monster = myMonsters_i4.monster;
+                                        int zero11 = 0;
+                                        byte myMonsters_i4_monster_0 = myMonsters_i4_monster[zero11];
+                                        String nameMon = getNameMon(myMonsters_i4_monster_0);
+                                        sbuf.append(nameMon);
+                                        boolean[] evolve2 = this.evolve;
+                                        byte i_val6 = i;
+                                        evolve2[i_val6] = false;
+                                        b = true;
+                                    }
                                 }
-                                sbuf.append(getNameMon(this.myMonsters[i].monster[0]));
-                                this.evolve[i] = false;
-                                b = true;
                             }
+                            byte i_val7 = i;
+                            int one10 = 1;
+                            i = (byte) (i_val7 + one10);
                         }
                         if (b) {
                             sbuf.append(Constants_H.BATTLE_TXT_17);
                         }
                         StringBuffer sbuf0 = new StringBuffer("");
                         boolean b2 = false;
-                        for (byte i2 = 0; i2 < 5; i2 = (byte) (i2 + 1)) {
-                            if (getRid(i2) != -2 && getNexp(i2, 1) == getNexp(i2, 3)) {
-                                if (!Ms.i().equals(sbuf0, "")) {
-                                    sbuf0.append("、");
+                        int zero12 = 0;
+                        byte i2 = (byte) zero12;
+                        int five3 = 5;
+                        while (i2 < five3) {
+                            byte i2_val = i2;
+                            int getRid_result = getRid(i2_val);
+                            int minusTwo = -2;
+                            if (getRid_result != minusTwo) {
+                                byte i2_val2 = i2;
+                                int one11 = 1;
+                                short getNexp_1 = getNexp(i2_val2, one11);
+                                byte i2_val3 = i2;
+                                int three2 = 3;
+                                short getNexp_3 = getNexp(i2_val3, three2);
+                                if (getNexp_1 == getNexp_3) {
+                                    Ms ms2 = Ms.i();
+                                    StringBuffer sbuf0_val = sbuf0;
+                                    String empty_str2 = "";
+                                    boolean equals_result2 = ms2.equals(sbuf0_val, empty_str2);
+                                    if (!equals_result2) {
+                                        sbuf0.append("、");
+                                    }
+                                    byte i2_val4 = i2;
+                                    byte getNid_result = getNid(i2_val4);
+                                    byte[][] monster_pro = this.monster_pro;
+                                    byte[][] monster_pro2 = this.monster_pro;
+                                    byte[] monster_pro_nid = monster_pro2[getNid_result];
+                                    int six = 6;
+                                    byte monster_pro_6 = monster_pro_nid[six];
+                                    StringBuffer[] monsterT = this.monsterT;
+                                    StringBuffer monsterT_val = monsterT[monster_pro_6];
+                                    sbuf0.append(monsterT_val);
+                                    sbuf0.append(Constants_H.TXT_96);
+                                    b2 = true;
                                 }
-                                sbuf0.append(((Object) this.monsterT[this.monster_pro[getNid(i2)][6]]) + Constants_H.TXT_96);
-                                b2 = true;
                             }
+                            byte i2_val5 = i2;
+                            int one12 = 1;
+                            i2 = (byte) (i2_val5 + one12);
                         }
                         if (b2) {
                             sbuf0.append(Constants_H.TXT_106);
-                            if (!Ms.i().equals(sbuf, "")) {
+                            Ms ms3 = Ms.i();
+                            StringBuffer sbuf_val2 = sbuf;
+                            String empty_str3 = "";
+                            boolean equals_result3 = ms3.equals(sbuf_val2, empty_str3);
+                            if (!equals_result3) {
                                 sbuf.append("#n");
                             }
-                            sbuf.append(sbuf0.toString());
+                            String sbuf0_str = sbuf0.toString();
+                            sbuf.append(sbuf0_str);
                         }
-                        if (!Ms.i().equals(sbuf, "")) {
-                            say(sbuf.toString(), -1);
+                        Ms ms4 = Ms.i();
+                        StringBuffer sbuf_val3 = sbuf;
+                        String empty_str4 = "";
+                        boolean equals_result4 = ms4.equals(sbuf_val3, empty_str4);
+                        if (!equals_result4) {
+                            String sbuf_str = sbuf.toString();
+                            int minusOne2 = -1;
+                            say(sbuf_str, minusOne2);
                         }
+                        StringBuffer sbuf_null = null;
+                        StringBuffer sbuf0_null = null;
                         setNullBattle();
                         goGO_RUNINMAP();
                         break;
                     }
-                } else if (this.b_c == 1) {
-                    this.say_s = Ms.i().mathSpeedDown(this.say_s, 4, true);
-                    break;
+                } else {
+                    byte b_c_val2 = this.b_c;
+                    int one13 = 1;
+                    if (b_c_val2 == one13) {
+                        int say_s_val = this.say_s;
+                        Ms ms5 = Ms.i();
+                        int four3 = 4;
+                        boolean one14 = true;
+                        int mathSpeedDown_result = ms5.mathSpeedDown(say_s_val, four3, one14);
+                        this.say_s = mathSpeedDown_result;
+                        break;
+                    }
                 }
                 break;
+            }
             case -50:
                 runMonsterAppear();
                 break;
             case -31:
                 runBattleState();
                 break;
-            case -30:
-                if (this.createOver == -1) {
-                    byte b3 = (byte) (this.b_c + 1);
+            case -30: {
+                byte createOver_val = this.createOver;
+                int minusOne = -1;
+                if (createOver_val == minusOne) {
+                    byte b_c_val30 = this.b_c;
+                    int one30 = 1;
+                    byte b3 = (byte) (b_c_val30 + one30);
                     this.b_c = b3;
-                    if (b3 >= 8) {
+                    int eight = 8;
+                    if (b3 >= eight) {
                         goMontsterAppear();
                         break;
                     }
                 }
                 break;
-            case -21:
-                SMSSender.i(this).runLevel();
+            }
+            case -21: {
+                SMSSender smsSender21 = SMSSender.i(this);
+                smsSender21.runLevel();
                 break;
-            case -20:
-                SMSSender.i(this).run();
+            }
+            case -20: {
+                SMSSender smsSender20 = SMSSender.i(this);
+                smsSender20.run();
                 break;
+            }
             case -19:
-                if (this.cThrowX == 0 && this.b_c == 0) {
-                    byte id = this.items[this.selectx][this.select[0][0]][0];
-                    deleteItems(id, 1);
-                    byte[] CatchBall = {1, 3, 14};
-                    short getRate = (short) (((7 - ((this.enB.getMon().monster[5] - 1) * 2)) * ((short) (((((CatchBall[id - 9] * 30) + 50) - this.enB.getMon().monster[2]) + (60 / this.enB.getMon().monster[2])) - ((this.enB.getMon().monsterPro[0] * 100) / this.enB.getMon().monsterPro[2])))) / 10);
-                    if (this.enB.getMon().isEffect(3)) {
-                        getRate = (short) (getRate + 30);
-                    }
-                    if (this.cMon_count == this.max_monsters && this.myMon_length == this.max_takes) {
-                        say(Constants_H.TXT_43, -1);
-                        this.enB.act_num = (byte) 1;
-                        this.myB.act_num = (byte) 0;
-                        run_state = -31;
-                        this.battle_state = (byte) 9;
-                        break;
-                    } else {
-                        Ms.i();
-                        if (Ms.getRandom(100) < getRate) {
-                            this.enB.action = (byte) 2;
-                            this.enB.dead = (byte) 1;
-                            say("捕获" + getNameMon(this.enB.getMon().monster[0]) + Constants_H.BATTLE_TXT_8, 0);
-                            if (getMonster(this.enB.getMon(), -1, false) == 0) {
-                                this.myMonsters[this.myMon_length - 1].monster[1] = (byte) (this.myMon_length - 1);
+                int zero = 0;
+                short cThrowX_val = this.cThrowX;
+                if (cThrowX_val == zero) {
+                    byte b_c_val = this.b_c;
+                    if (b_c_val == zero) {
+                        byte[][][] items = this.items;
+                        byte selectx_val = this.selectx;
+                        byte[][][] items2 = this.items;
+                        byte[][] items_selectx = items2[selectx_val];
+                        byte[][] select = this.select;
+                        byte[][] select2 = this.select;
+                        int zero2 = 0;
+                        byte[] select_0 = select2[zero2];
+                        int zero3 = 0;
+                        byte select_0_0 = select_0[zero3];
+                        byte[][] items_selectx2 = items_selectx;
+                        byte[] items_selectx_select_0_0 = items_selectx2[select_0_0];
+                        int zero4 = 0;
+                        byte id = items_selectx_select_0_0[zero4];
+                        int one = 1;
+                        deleteItems(id, one);
+                        int three = 3;
+                        byte[] CatchBall = new byte[three];
+                        CatchBall[0] = (byte) one;
+                        CatchBall[1] = (byte) three;
+                        int fourteen = 14;
+                        CatchBall[2] = (byte) fourteen;
+                        int nine = 9;
+                        int id_minus_nine = id - nine;
+                        byte CatchBall_id_minus_nine = CatchBall[id_minus_nine];
+                        int thirty = 30;
+                        int calc1 = CatchBall_id_minus_nine * thirty;
+                        int fifty = 50;
+                        int calc2 = calc1 + fifty;
+                        Battle enB = this.enB;
+                        Monster enB_mon = enB.getMon();
+                        byte[] enB_mon_monster = enB_mon.monster;
+                        int two = 2;
+                        byte enB_mon_monster_2 = enB_mon_monster[two];
+                        int calc3 = calc2 - enB_mon_monster_2;
+                        int sixty = 60;
+                        Battle enB2 = this.enB;
+                        Monster enB2_mon = enB2.getMon();
+                        byte[] enB2_mon_monster = enB2_mon.monster;
+                        int two2 = 2;
+                        byte enB2_mon_monster_2 = enB2_mon_monster[two2];
+                        int calc4 = sixty / enB2_mon_monster_2;
+                        int calc5 = calc3 + calc4;
+                        Battle enB3 = this.enB;
+                        Monster enB3_mon = enB3.getMon();
+                        short[] enB3_mon_monsterPro = enB3_mon.monsterPro;
+                        int zero5 = 0;
+                        short enB3_mon_monsterPro_0 = enB3_mon_monsterPro[zero5];
+                        int oneHundred = 100;
+                        int calc6 = enB3_mon_monsterPro_0 * oneHundred;
+                        Battle enB4 = this.enB;
+                        Monster enB4_mon = enB4.getMon();
+                        short[] enB4_mon_monsterPro = enB4_mon.monsterPro;
+                        int two3 = 2;
+                        short enB4_mon_monsterPro_2 = enB4_mon_monsterPro[two3];
+                        int calc7 = calc6 / enB4_mon_monsterPro_2;
+                        int calc8 = calc5 - calc7;
+                        short getRate = (short) calc8;
+                        int seven = 7;
+                        Battle enB5 = this.enB;
+                        Monster enB5_mon = enB5.getMon();
+                        byte[] enB5_mon_monster = enB5_mon.monster;
+                        int five = 5;
+                        byte enB5_mon_monster_5 = enB5_mon_monster[five];
+                        int one2 = 1;
+                        int calc9 = enB5_mon_monster_5 - one2;
+                        int two4 = 2;
+                        int calc10 = calc9 * two4;
+                        int calc11 = seven - calc10;
+                        int calc12 = calc11 * getRate;
+                        int ten = 10;
+                        int calc13 = calc12 / ten;
+                        getRate = (short) calc13;
+                        Battle enB6 = this.enB;
+                        Monster enB6_mon = enB6.getMon();
+                        int three2 = 3;
+                        boolean enB6_mon_isEffect3 = enB6_mon.isEffect(three2);
+                        if (enB6_mon_isEffect3) {
+                            int thirty2 = 30;
+                            int calc14 = getRate + thirty2;
+                            getRate = (short) calc14;
+                        }
+                        byte[] CatchBall2 = null;
+                        byte cMon_count_val = this.cMon_count;
+                        byte max_monsters_val = this.max_monsters;
+                        if (cMon_count_val == max_monsters_val) {
+                            byte myMon_length_val = this.myMon_length;
+                            byte max_takes_val = this.max_takes;
+                            if (myMon_length_val == max_takes_val) {
+                                say(Constants_H.TXT_43, -1);
+                                Battle enB7 = this.enB;
+                                int one3 = 1;
+                                enB7.act_num = (byte) one3;
+                                Battle myB = this.myB;
+                                int zero6 = 0;
+                                myB.act_num = (byte) zero6;
+                                int minusThirtyOne = -31;
+                                run_state = minusThirtyOne;
+                                int nine2 = 9;
+                                this.battle_state = (byte) nine2;
+                                break;
                             }
-                            run_state = -31;
+                        }
+                        Ms.i();
+                        int oneHundred2 = 100;
+                        int random_val = Ms.getRandom(oneHundred2);
+                        short getRate2 = getRate;
+                        if (random_val < getRate2) {
+                            Battle enB8 = this.enB;
+                            int two5 = 2;
+                            enB8.action = (byte) two5;
+                            Battle enB9 = this.enB;
+                            int one4 = 1;
+                            enB9.dead = (byte) one4;
+                            StringBuilder sb = new StringBuilder("捕获");
+                            Battle enB10 = this.enB;
+                            Monster enB10_mon = enB10.getMon();
+                            byte[] enB10_mon_monster = enB10_mon.monster;
+                            int zero7 = 0;
+                            byte enB10_mon_monster_0 = enB10_mon_monster[zero7];
+                            String nameMon = getNameMon(enB10_mon_monster_0);
+                            sb.append(nameMon);
+                            sb.append(Constants_H.BATTLE_TXT_8);
+                            String say_str = sb.toString();
+                            int zero8 = 0;
+                            say(say_str, zero8);
+                            Battle enB11 = this.enB;
+                            Monster enB11_mon = enB11.getMon();
+                            int minusOne = -1;
+                            int zero9 = 0;
+                            byte getMonster_result = getMonster(enB11_mon, minusOne, false);
+                            if (getMonster_result == zero9) {
+                                Monster[] myMonsters = this.myMonsters;
+                                byte myMon_length_val2 = this.myMon_length;
+                                int one5 = 1;
+                                int index = myMon_length_val2 - one5;
+                                Monster[] myMonsters2 = this.myMonsters;
+                                Monster myMonsters_index = myMonsters2[index];
+                                byte[] myMonsters_index_monster = myMonsters_index.monster;
+                                int one6 = 1;
+                                byte myMon_length_val3 = this.myMon_length;
+                                int one7 = 1;
+                                byte index2 = (byte) (myMon_length_val3 - one7);
+                                myMonsters_index_monster[one6] = index2;
+                            }
+                            int minusThirtyOne2 = -31;
+                            run_state = minusThirtyOne2;
+                            int zero10 = 0;
                             goBattleExp(false);
                             break;
                         } else {
-                            this.b_c = (byte) 1;
-                            StringBuffer str = new StringBuffer(Constants_H.BATTLE_TXT_9 + getNameMon(this.enB.getMon().monster[0]));
-                            if (this.myB.getMon().isMonReel(41) || this.enB.getMon().isEffect(4) || this.enB.getMon().isEffect(3)) {
-                                this.enB.act_num = (byte) 1;
-                                this.myB.act_num = (byte) 0;
-                                run_state = -31;
-                                this.battle_state = (byte) 9;
+                            int one8 = 1;
+                            this.b_c = (byte) one8;
+                            StringBuffer str = new StringBuffer();
+                            StringBuilder sb2 = new StringBuilder(Constants_H.BATTLE_TXT_9);
+                            Battle enB12 = this.enB;
+                            Monster enB12_mon = enB12.getMon();
+                            byte[] enB12_mon_monster = enB12_mon.monster;
+                            int zero11 = 0;
+                            byte enB12_mon_monster_0 = enB12_mon_monster[zero11];
+                            String nameMon2 = getNameMon(enB12_mon_monster_0);
+                            sb2.append(nameMon2);
+                            String sb2_str = sb2.toString();
+                            str = new StringBuffer(sb2_str);
+                            Battle myB2 = this.myB;
+                            Monster myB2_mon = myB2.getMon();
+                            int fortyOne = 41;
+                            boolean myB2_mon_isMonReel41 = myB2_mon.isMonReel(fortyOne);
+                            if (!myB2_mon_isMonReel41) {
+                                // cond_5: set act_num/battle_state/run_state
+                                Battle enB15 = this.enB;
+                                int one9 = 1;
+                                enB15.act_num = (byte) one9;
+                                Battle myB3 = this.myB;
+                                int zero12 = 0;
+                                myB3.act_num = (byte) zero12;
+                                int minusThirtyOne3 = -31;
+                                run_state = minusThirtyOne3;
+                                int nine3 = 9;
+                                this.battle_state = (byte) nine3;
                             } else {
-                                String[] s = {Constants_H.TXT_55, Constants_H.TXT_56, Constants_H.TXT_57};
-                                StringBuilder append = new StringBuilder("#n").append(getNameMon(this.enB.getMon().monster[0]));
-                                Ms.i();
-                                str.append(append.append(s[Ms.getRandom(3)]).toString());
+                                Battle enB13 = this.enB;
+                                Monster enB13_mon = enB13.getMon();
+                                int four = 4;
+                                boolean enB13_mon_isEffect4 = enB13_mon.isEffect(four);
+                                if (!enB13_mon_isEffect4) {
+                                    // cond_5: set act_num/battle_state/run_state
+                                    Battle enB15 = this.enB;
+                                    int one9 = 1;
+                                    enB15.act_num = (byte) one9;
+                                    Battle myB3 = this.myB;
+                                    int zero12 = 0;
+                                    myB3.act_num = (byte) zero12;
+                                    int minusThirtyOne3 = -31;
+                                    run_state = minusThirtyOne3;
+                                    int nine3 = 9;
+                                    this.battle_state = (byte) nine3;
+                                } else {
+                                    Battle enB14 = this.enB;
+                                    Monster enB14_mon = enB14.getMon();
+                                    int three3 = 3;
+                                    boolean enB14_mon_isEffect3 = enB14_mon.isEffect(three3);
+                                    if (enB14_mon_isEffect3) {
+                                        // cond_6: build string array and append
+                                        int three4 = 3;
+                                        String[] s = new String[three4];
+                                        int zero13 = 0;
+                                        s[zero13] = Constants_H.TXT_55;
+                                        int one10 = 1;
+                                        s[one10] = Constants_H.TXT_56;
+                                        int two6 = 2;
+                                        s[two6] = Constants_H.TXT_57;
+                                        StringBuilder sb3 = new StringBuilder("#n");
+                                        Battle enB16 = this.enB;
+                                        Monster enB16_mon = enB16.getMon();
+                                        byte[] enB16_mon_monster = enB16_mon.monster;
+                                        int zero14 = 0;
+                                        byte enB16_mon_monster_0 = enB16_mon_monster[zero14];
+                                        String nameMon3 = getNameMon(enB16_mon_monster_0);
+                                        sb3.append(nameMon3);
+                                        Ms.i();
+                                        int three5 = 3;
+                                        int random_idx = Ms.getRandom(three5);
+                                        String[] s2 = s;
+                                        String s_random_idx = s2[random_idx];
+                                        sb3.append(s_random_idx);
+                                        String sb3_str = sb3.toString();
+                                        str.append(sb3_str);
+                                    } else {
+                                        // cond_5: set act_num/battle_state/run_state
+                                        Battle enB15 = this.enB;
+                                        int one9 = 1;
+                                        enB15.act_num = (byte) one9;
+                                        Battle myB3 = this.myB;
+                                        int zero12 = 0;
+                                        myB3.act_num = (byte) zero12;
+                                        int minusThirtyOne3 = -31;
+                                        run_state = minusThirtyOne3;
+                                        int nine3 = 9;
+                                        this.battle_state = (byte) nine3;
+                                    }
+                                }
                             }
-                            say(str.toString(), 0);
+                            // :goto_1: call say()
+                            String str_str = str.toString();
+                            int zero16 = 0;
+                            say(str_str, zero16);
                             break;
                         }
                     }
-                } else if (this.b_c == 1 && this.say_c == 0) {
-                    arangeMonster();
-                    setNullBattle();
-                    goGO_RUNINMAP();
-                    break;
+                }
+                byte b_c_val2 = this.b_c;
+                int one12 = 1;
+                if (b_c_val2 == one12) {
+                    byte say_c_val = this.say_c;
+                    int zero17 = 0;
+                    if (say_c_val == zero17) {
+                        arangeMonster();
+                        setNullBattle();
+                        goGO_RUNINMAP();
+                        break;
+                    }
                 }
                 break;
             case -11:
                 goRUN_IN_MAP(false);
                 break;
-            case -10:
-                this.map.run_map();
+            case -10: {
+                Map map_val = this.map;
+                map_val.run_map();
                 break;
-            case 35:
-                byte b4 = (byte) (this.mon_action_c + 1);
+            }
+            case 35: {
+                byte mon_action_c_val = this.mon_action_c;
+                int one35 = 1;
+                byte b4 = (byte) (mon_action_c_val + one35);
                 this.mon_action_c = b4;
-                if (b4 > 50) {
-                    this.mon_action_c = (byte) 0;
-                    this.mon_action = (byte) 1;
+                int fifty = 50;
+                if (b4 > fifty) {
+                    int zero35 = 0;
+                    this.mon_action_c = (byte) zero35;
+                    int one35_2 = 1;
+                    this.mon_action = (byte) one35_2;
                 }
-                if (this.cur_c == 2 && this.b_c == -1 && this.say_s == 0) {
-                    goView();
-                    break;
+                byte cur_c_val = this.cur_c;
+                int two35 = 2;
+                if (cur_c_val == two35) {
+                    byte b_c_val35 = this.b_c;
+                    int minusOne35 = -1;
+                    if (b_c_val35 == minusOne35) {
+                        int say_s_val35 = this.say_s;
+                        int zero35_2 = 0;
+                        if (say_s_val35 == zero35_2) {
+                            goView();
+                            break;
+                        }
+                    }
                 }
                 break;
-            case 69:
-                Mg.i().run();
+            }
+            case 69: {
+                Mg mg = Mg.i();
+                mg.run();
                 break;
-            case 100:
-                if (this.b_c == 1) {
+            }
+            case 100: {
+                byte b_c_val100 = this.b_c;
+                int one100 = 1;
+                if (b_c_val100 == one100) {
                     saveGame();
                     say("游戏已保存。", 0);
-                    this.b_c = (byte) 0;
-                    goRUN_IN_MAP(true);
+                    int zero100 = 0;
+                    this.b_c = (byte) zero100;
+                    boolean one100_bool = true;
+                    goRUN_IN_MAP(one100_bool);
                     break;
                 }
                 break;
+            }
         }
     }
 
@@ -969,17 +1424,31 @@ public class GameRun extends GameRun_F {
     }
 
     private void popBagMenu(int selectx, int select_i) {
+        int zero = 0;
+        int two = 2;
+        int three = 3;
+        int thirtyTwo = 32;
+        int thirtyThree = 33;
         String ts = Constants_H.POP_TXT_4;
-        byte id = this.items[selectx][select_i][0];
-        if ((selectx == 0 || id == 32 || id == 33) && isBagUse(id)) {
+        byte[][][] items = this.items;
+        byte[][] items_selectx = items[selectx];
+        byte[] items_selectx_select_i = items_selectx[select_i];
+        byte id = items_selectx_select_i[zero];
+        int selectx_val = selectx;
+        if ((selectx_val == zero || id == thirtyTwo || id == thirtyThree) && isBagUse(id)) {
             ts = "使用#n返回";
-        } else if (selectx == 2) {
+        } else {
+            if (selectx_val == two) {
             ts = "学习#n返回";
-        } else if (this.view_state == 2 && selectx == 3) {
+            } else {
+                byte view_state = this.view_state;
+                if (view_state == two && selectx_val == three) {
             ts = "孵化#n返回";
         }
-        setStringB(ts, Constants_H.WIDTH, 0);
-        this.popMenu = (byte) 0;
+            }
+        }
+        setStringB(ts, Constants_H.WIDTH, zero);
+        this.popMenu = (byte) zero;
     }
 
     private boolean isBagUse(int id) {
@@ -1038,10 +1507,10 @@ public class GameRun extends GameRun_F {
                             Ms.i();
                             byte rand2 = (byte) Ms.getRandom(100);
                             while (d < this.itemMine[type].length) {
-                                if (rand2 >= this.itemMine[type][d]) {
-                                    d = (byte) (d + 2);
-                                } else {
-                                    rId = this.itemMine[type][d - 1];
+                                    if (rand2 >= this.itemMine[type][d]) {
+                                        d = (byte) (d + 2);
+                                    } else {
+                                        rId = this.itemMine[type][d - 1];
                                     break;
                                 }
                             }
@@ -1172,12 +1641,370 @@ public class GameRun extends GameRun_F {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private void drawNidus(int r23, int r24) {
-        /*
-            Method dump skipped, instructions count: 978
-            To view this dump change 'Code comments level' option to 'DEBUG'
-        */
-        throw new UnsupportedOperationException("Method not decompiled: main.GameRun.drawNidus(int, int):void");
+    private void drawNidus(int x, int w) {
+        int HEIGHT = 360;
+        int WIDTH_H = 320;
+        int HEIGHT_H = 180;
+        byte mini_state = this.mini_state;
+        int sixteen = 16;
+        if (mini_state == sixteen) {
+            StringBuffer[] about_d = this.about_d;
+            int seventyFive = 75;
+            int x1 = WIDTH_H - seventyFive;
+            StringBuffer[] about_d2 = this.about_d;
+            int about_d_len = about_d2.length;
+            int one = 1;
+            int half_len = about_d_len >> one;
+            int twentyFive = 25;
+            int calc = half_len * twentyFive;
+            int y1 = HEIGHT_H - calc;
+            int oneHundredFifty = 150;
+            int one2 = 1;
+            int zero = 0;
+            byte popMenu = this.popMenu;
+            drawSelectMenu(about_d, x1, y1, oneHundredFifty, one2, zero, popMenu);
+            return;
+        }
+        Ui ui = Ui.i();
+        ui.fillRectB();
+        byte bg_c = this.bg_c;
+        int x_plus_one = x + 1;
+        int oneHundredEight = 108;
+        int zero2 = 0;
+        drawBG0(bg_c, x_plus_one, oneHundredEight, zero2, w);
+        Log.e("sk", "drawNidus");
+        Ui ui2 = Ui.i();
+        byte popMenu2 = this.popMenu;
+        int popMenu_plus_one = popMenu2 + 1;
+        String popMenu_str = String.valueOf(popMenu_plus_one);
+        StringBuilder sb = new StringBuilder(popMenu_str);
+        sb.append("/");
+        int five = 5;
+        sb.append(five);
+        String page_str = sb.toString();
+        int x_plus_ten = x + 10;
+        int oneHundredSix = 106;
+        int thirtySix = 36;
+        int zero3 = 0;
+        int two = 2;
+        ui2.drawString(page_str, x_plus_ten, oneHundredSix, thirtySix, zero3, two);
+        Ui ui3 = Ui.i();
+        byte popMenu3 = this.popMenu;
+        byte rid = getRid(popMenu3);
+        int minusTwo = -2;
+        String status_str;
+        if (rid == minusTwo) {
+            status_str = "此位置目前是空的";
+        } else {
+            StringBuffer[] monsterT = this.monsterT;
+            byte[][] monster_pro = this.monster_pro;
+            byte popMenu4 = this.popMenu;
+            byte nid = getNid(popMenu4);
+            byte[][] monster_pro2 = this.monster_pro;
+            byte[] monster_pro_nid = monster_pro2[nid];
+            int six = 6;
+            byte monster_pro_6 = monster_pro_nid[six];
+            StringBuffer monsterT_val = monsterT[monster_pro_6];
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(monsterT_val);
+            sb2.append("的宠物蛋");
+            status_str = sb2.toString();
+        }
+        int x_plus_twenty = x + 20;
+        int oneHundredTen = 110;
+        int zero4 = 0;
+        int one3 = 1;
+        int zero5 = 0;
+        ui3.drawString(status_str, x_plus_twenty, oneHundredTen, zero4, one3, zero5);
+        byte popMenu5 = this.popMenu;
+        byte rid2 = getRid(popMenu5);
+        int minusTwo2 = -2;
+        if (rid2 != minusTwo2) {
+            byte b_c = this.b_c;
+            int two2 = 2;
+            if (b_c < two2) {
+                int one4 = 1;
+                int one5 = 1;
+                byte mon_action = this.mon_action;
+                int threeSeventySeven = 377;
+                int ninetySeven = 97;
+                byte b_c2 = this.b_c;
+                int one6 = 1;
+                int dir;
+                if (b_c2 == one6) {
+                    dir = 0;
+                } else {
+                    dir = 1;
+                }
+                int zero6 = 0;
+                boolean drawn = drawCartoonOne(one4, one5, mon_action, threeSeventySeven, ninetySeven, dir == 0, zero6);
+                if (drawn) {
+                    int two3 = 2;
+                    byte[][] mList_id = this.mList_id;
+                    byte popMenu6 = this.popMenu;
+                    byte nid2 = getNid(popMenu6);
+                    byte[][] mList_id2 = this.mList_id;
+                    byte[] mList_id_nid = mList_id2[nid2];
+                    int zero7 = 0;
+                    byte mList_id_0 = mList_id_nid[zero7];
+                    int one7 = 1;
+                    initMonStream(two3, mList_id_0, one7);
+                    int two4 = 2;
+                    this.b_c = (byte) two4;
+                }
+            } else {
+                byte b_c3 = this.b_c;
+                int one8 = 1;
+                if (b_c3 > one8) {
+                    byte b_c4 = this.b_c;
+                    int fourteen = 14;
+                    if (b_c4 < fourteen) {
+                        byte[][] mList_id3 = this.mList_id;
+                        byte popMenu7 = this.popMenu;
+                        byte nid3 = getNid(popMenu7);
+                        byte[][] mList_id4 = this.mList_id;
+                        byte[] mList_id_nid2 = mList_id4[nid3];
+                        int one9 = 1;
+                        byte mList_id_1 = mList_id_nid2[one9];
+                        int one10 = 1;
+                        int threeSeventySeven2 = 377;
+                        int ninetySeven2 = 97;
+                        int eighty = 80;
+                        int seventySeven = 77;
+                        int fifteen = 15;
+                        byte b_c5 = this.b_c;
+                        int two5 = 2;
+                        int action_id = b_c5 - two5;
+                        int zero8 = 0;
+                        drawClipPic(action_id, mList_id_1, one10, threeSeventySeven2, ninetySeven2, eighty, seventySeven, fifteen, zero8);
+                        byte b_c6 = this.b_c;
+                        int one11 = 1;
+                        byte b_c_new = (byte) (b_c6 + one11);
+                        this.b_c = b_c_new;
+                        int fourteen2 = 14;
+                        if (b_c_new == fourteen2) {
+                            int minusOne = -1;
+                            this.b_c = (byte) minusOne;
+                        }
+                        byte[][] mList_id5 = this.mList_id;
+                        byte popMenu8 = this.popMenu;
+                        byte nid4 = getNid(popMenu8);
+                        byte[][] mList_id6 = this.mList_id;
+                        byte[] mList_id_nid3 = mList_id6[nid4];
+                        int one12 = 1;
+                        byte mList_id_1_2 = mList_id_nid3[one12];
+                        int three2 = 3;
+                        byte mon_action_new = (byte) (mList_id_1_2 * three2);
+                        this.mon_action = mon_action_new;
+                    }
+                }
+            }
+        }
+        byte b_c7 = this.b_c;
+        int minusOne2 = -1;
+        if (b_c7 != minusOne2) {
+            int forty = 40;
+            short barW = (short) (w - forty);
+            byte popMenu9 = this.popMenu;
+            int one13 = 1;
+            short nexp1 = getNexp(popMenu9, one13);
+            String nexp1_str = String.valueOf(nexp1);
+            StringBuilder sb3 = new StringBuilder(nexp1_str);
+            sb3.append("/");
+            byte popMenu10 = this.popMenu;
+            int three3 = 3;
+            short nexp2 = getNexp(popMenu10, three3);
+            sb3.append(nexp2);
+            String exp_str = sb3.toString();
+            this.str_cur = exp_str;
+            Ui ui4 = Ui.i();
+            int x_plus_twenty2 = x + 20;
+            int oneHundredFiftyEight = 158;
+            Ms ms = Ms.i();
+            byte popMenu11 = this.popMenu;
+            int one14 = 1;
+            short nexp1_2 = getNexp(popMenu11, one14);
+            int two6 = 2;
+            int barW_minus_two = barW - two6;
+            byte popMenu12 = this.popMenu;
+            int three4 = 3;
+            short nexp2_2 = getNexp(popMenu12, three4);
+            short percent1 = ms.mathPercent(nexp1_2, barW_minus_two, nexp2_2);
+            Ms ms2 = Ms.i();
+            byte popMenu13 = this.popMenu;
+            int one15 = 1;
+            short nexp1_3 = getNexp(popMenu13, one15);
+            int two7 = 2;
+            int barW_minus_two2 = barW - two7;
+            byte popMenu14 = this.popMenu;
+            int three5 = 3;
+            short nexp2_3 = getNexp(popMenu14, three5);
+            short percent2 = ms2.mathPercent(nexp1_3, barW_minus_two2, nexp2_3);
+            int two8 = 2;
+            ui4.drawBarOne(x_plus_twenty2, oneHundredFiftyEight, barW, percent1, percent2, two8);
+            Ui ui5 = Ui.i();
+            String str_cur = this.str_cur;
+            int x_plus_twenty3 = x + 20;
+            String str_cur2 = this.str_cur;
+            int str_cur_len = str_cur2.length();
+            int eight = 8;
+            int calc2 = str_cur_len * eight;
+            int barW_minus_calc = barW - calc2;
+            int one16 = 1;
+            int x_offset = (barW_minus_calc >> one16) + x_plus_twenty3;
+            int oneHundredSixtyFour = 164;
+            int zero9 = 0;
+            int zero10 = 0;
+            ui5.drawNum(str_cur, x_offset, oneHundredSixtyFour, zero9, zero10);
+            Ui ui6 = Ui.i();
+            byte popMenu15 = this.popMenu;
+            int one17 = 1;
+            short nexp1_4 = getNexp(popMenu15, one17);
+            byte popMenu16 = this.popMenu;
+            int three6 = 3;
+            short nexp2_4 = getNexp(popMenu16, three6);
+            String status_text;
+            if (nexp1_4 == nexp2_4) {
+                status_text = "孵化已完成";
+            } else {
+                status_text = "孵化中...";
+            }
+            int x_plus_twenty4 = x + 20;
+            int barW_half = barW >> 1;
+            int x_offset2 = x_plus_twenty4 + barW_half;
+            int oneHundredSixtyFour2 = 164;
+            int seventeen = 17;
+            int three7 = 3;
+            int one18 = 1;
+            ui6.drawString(status_text, x_offset2, oneHundredSixtyFour2, seventeen, three7, one18);
+            Ui ui7 = Ui.i();
+            String material_str = "孵化所需材料";
+            int x_plus_twenty5 = x + 20;
+            int barW_half2 = barW >> 1;
+            int x_offset3 = x_plus_twenty5 + barW_half2;
+            int twoHundredEight = 208;
+            int seventeen2 = 17;
+            int three8 = 3;
+            int one19 = 1;
+            ui7.drawString(material_str, x_offset3, twoHundredEight, seventeen2, three8, one19);
+            byte popMenu17 = this.popMenu;
+            byte nid5 = getNid(popMenu17);
+            int x_plus_twenty_five = x + 25;
+            int twoHundredThirtyNine = 239;
+            int twentyEight = 28;
+            drawEvolveMake(nid5, x_plus_twenty_five, twoHundredThirtyNine, twentyEight);
+            byte popMenu18 = this.popMenu;
+            int one20 = 1;
+            short nexp1_5 = getNexp(popMenu18, one20);
+            byte popMenu19 = this.popMenu;
+            int three9 = 3;
+            short nexp2_5 = getNexp(popMenu19, three9);
+            if (nexp1_5 == nexp2_5) {
+                Ui ui8 = Ui.i();
+                String complete_str = "按确定键完成孵化";
+                int x_plus_twenty6 = x + 20;
+                int twentyFive2 = 25;
+                int calc3 = HEIGHT - twentyFive2;
+                int twentyOne = 21;
+                int y_offset = calc3 - twentyOne;
+                int zero11 = 0;
+                int zero12 = 0;
+                int zero13 = 0;
+                ui8.drawString(complete_str, x_plus_twenty6, y_offset, zero11, zero12, zero13);
+            }
+        } else {
+            Ui ui9 = Ui.i();
+            StringBuffer[] about_a = this.about_a;
+            int x_plus_twenty_six = x + 26;
+            int oneHundredFiftyFive = 155;
+            int zero14 = 0;
+            int three10 = 3;
+            int thirty = 30;
+            int three11 = 3;
+            int zero15 = 0;
+            ui9.drawStringY(about_a, x_plus_twenty_six, oneHundredFiftyFive, zero14, three10, thirty, three11, zero15);
+            Ui ui10 = Ui.i();
+            StringBuffer[] about_b = this.about_b;
+            int x_plus_one_hundred_twenty_six = x + 126;
+            int oneHundredFiftyFive2 = 155;
+            int zero16 = 0;
+            int three12 = 3;
+            int thirty2 = 30;
+            int three13 = 3;
+            int zero17 = 0;
+            ui10.drawStringY(about_b, x_plus_one_hundred_twenty_six, oneHundredFiftyFive2, zero16, three12, thirty2, three13, zero17);
+            Ui ui11 = Ui.i();
+            String level_str = "档次：";
+            int x_plus_twenty7 = x + 20;
+            int calc4 = x_plus_twenty7 + 50;
+            int twoHundredFiftyEight = 258;
+            int zero18 = 0;
+            int three14 = 3;
+            int one21 = 1;
+            ui11.drawString(level_str, calc4, twoHundredFiftyEight, zero18, three14, one21);
+            byte[][] monster_pro3 = this.monster_pro;
+            byte popMenu20 = this.popMenu;
+            byte nid6 = getNid(popMenu20);
+            byte[][] monster_pro4 = this.monster_pro;
+            byte[] monster_pro_nid2 = monster_pro4[nid6];
+            int five2 = 5;
+            byte monster_pro_5 = monster_pro_nid2[five2];
+            int x_plus_twenty_three = x + 23;
+            int calc5 = x_plus_twenty_three + 100;
+            int calc6 = calc5 + 10;
+            int twoHundredSixtyThree = 263;
+            int zero19 = 0;
+            drawMonKind(monster_pro_5, calc6, twoHundredSixtyThree, zero19);
+        }
+        byte b_c8 = this.b_c;
+        int minusTwo3 = -2;
+        if (b_c8 == minusTwo3) {
+            Ui ui12 = Ui.i();
+            int oneHundredTwenty = 120;
+            int oneHundredFifty2 = 150;
+            boolean one22 = true;
+            boolean one23 = true;
+            ui12.drawTriangle(WIDTH_H, oneHundredTwenty, oneHundredFifty2, one22, one23);
+        }
+        Ui ui13 = Ui.i();
+        byte popMenu21 = this.popMenu;
+        byte rid3 = getRid(popMenu21);
+        int minusTwo4 = -2;
+        boolean yes;
+        if (rid3 == minusTwo4) {
+            yes = false;
+        } else {
+            yes = true;
+        }
+        byte popMenu22 = this.popMenu;
+        byte rid4 = getRid(popMenu22);
+        int minusOne3 = -1;
+        boolean no;
+        if (rid4 == minusOne3) {
+            no = true;
+        } else {
+            no = false;
+        }
+        ui13.drawYesNo(yes, no);
+        PointerKey pkey = this.pkey;
+        int two9 = 2;
+        int zero20 = 0;
+        int zero21 = 0;
+        byte t = pkey.selectMenuX(two9, zero20, zero21, WIDTH_H, HEIGHT);
+        int minusOne4 = -1;
+        if (t != minusOne4) {
+            int zero22 = 0;
+            int key_val;
+            if (t == zero22) {
+                key_val = -3;
+            } else {
+                key_val = -4;
+            }
+            Ms.key = key_val;
+            int one24 = 1;
+            Ms.keyRepeat = true;
+            return;
+        }
     }
 
     private void keyNidus() {
@@ -1266,22 +2093,89 @@ public class GameRun extends GameRun_F {
     }
 
     public void exitNidus() {
-        run_state = -10;
-        this.mon[1] = null;
-        initNidusMap(1);
+        int minusTen = -10;
+        run_state = minusTen;
+        int one = 1;
+        int zero = 0;
+        Sprite[] mon = this.mon;
+        Object null_val = null;
+        mon[one] = (Sprite) null_val;
+        initNidusMap(one);
     }
 
     private void setNidusPro(int i, int level) {
+        int eleven = 11;
+        int four = 4;
+        int one = 1;
+        int zero = 0;
         StringBuffer sbuff = new StringBuffer();
-        sbuff.append("生命：" + (this.monster_pro[i][0] + ((this.monster_pro[i][7] * level) / 10)) + "#n");
-        sbuff.append("能量：" + (this.monster_pro[i][1] + ((this.monster_pro[i][8] * level) / 10)) + "#n");
-        sbuff.append("进化：" + ((int) this.monster_pro[i][12]));
-        setStringB(sbuff.toString(), Constants_H.WIDTH, 0);
-        sbuff.delete(0, sbuff.length());
-        sbuff.append("力量：" + (this.monster_pro[i][3] + ((this.monster_pro[i][10] * level) / 10)) + "#n");
-        sbuff.append("防御：" + (this.monster_pro[i][4] + ((this.monster_pro[i][11] * level) / 10)) + "#n");
-        sbuff.append("敏捷：" + (this.monster_pro[i][4] + ((this.monster_pro[i][11] * level) / 10)));
-        setStringB(sbuff.toString(), Constants_H.WIDTH, 1);
+        StringBuilder sb1 = new StringBuilder("生命：");
+        byte[][] monster_pro2 = this.monster_pro;
+        byte[] monster_pro_i = monster_pro2[i];
+        byte val0 = monster_pro_i[zero];
+        byte[][] monster_pro3 = this.monster_pro;
+        byte[] monster_pro_i2 = monster_pro3[i];
+        int val7 = (monster_pro_i2[7] * level) / 10;
+        int sum0 = val0 + val7;
+        sb1.append(sum0);
+        sb1.append("#n");
+        sbuff.append(sb1.toString());
+        StringBuilder sb2 = new StringBuilder("能量：");
+        byte[][] monster_pro4 = this.monster_pro;
+        byte[] monster_pro_i3 = monster_pro4[i];
+        byte val1 = monster_pro_i3[one];
+        byte[][] monster_pro5 = this.monster_pro;
+        byte[] monster_pro_i4 = monster_pro5[i];
+        int val8 = (monster_pro_i4[8] * level) / 10;
+        int sum1 = val1 + val8;
+        sb2.append(sum1);
+        sb2.append("#n");
+        sbuff.append(sb2.toString());
+        StringBuilder sb3 = new StringBuilder("进化：");
+        byte[][] monster_pro6 = this.monster_pro;
+        byte[] monster_pro_i5 = monster_pro6[i];
+        int val12 = (int) monster_pro_i5[12];
+        sb3.append(val12);
+        sbuff.append(sb3.toString());
+        String str1 = sbuff.toString();
+        setStringB(str1, Constants_H.WIDTH, zero);
+        int len = sbuff.length();
+        sbuff.delete(zero, len);
+        StringBuilder sb4 = new StringBuilder("力量：");
+        byte[][] monster_pro7 = this.monster_pro;
+        byte[] monster_pro_i6 = monster_pro7[i];
+        byte val3 = monster_pro_i6[3];
+        byte[][] monster_pro8 = this.monster_pro;
+        byte[] monster_pro_i7 = monster_pro8[i];
+        int val10 = (monster_pro_i7[10] * level) / 10;
+        int sum3 = val3 + val10;
+        sb4.append(sum3);
+        sb4.append("#n");
+        sbuff.append(sb4.toString());
+        StringBuilder sb5 = new StringBuilder("防御：");
+        byte[][] monster_pro9 = this.monster_pro;
+        byte[] monster_pro_i8 = monster_pro9[i];
+        byte val4 = monster_pro_i8[four];
+        byte[][] monster_pro10 = this.monster_pro;
+        byte[] monster_pro_i9 = monster_pro10[i];
+        int val11 = (monster_pro_i9[eleven] * level) / 10;
+        int sum4 = val4 + val11;
+        sb5.append(sum4);
+        sb5.append("#n");
+        sbuff.append(sb5.toString());
+        StringBuilder sb6 = new StringBuilder("敏捷：");
+        byte[][] monster_pro11 = this.monster_pro;
+        byte[] monster_pro_i10 = monster_pro11[i];
+        byte val4_2 = monster_pro_i10[four];
+        byte[][] monster_pro12 = this.monster_pro;
+        byte[] monster_pro_i11 = monster_pro12[i];
+        int val11_2 = (monster_pro_i11[eleven] * level) / 10;
+        int sum4_2 = val4_2 + val11_2;
+        sb6.append(sum4_2);
+        sbuff.append(sb6.toString());
+        String str2 = sbuff.toString();
+        setStringB(str2, Constants_H.WIDTH, one);
+        int unused = zero;
     }
 
     public void initNidusMap(int mode) {
@@ -1408,11 +2302,20 @@ public class GameRun extends GameRun_F {
     }
 
     private byte getSelInfo() {
-        return this.select[0][0];
+        int zero = 0;
+        byte[][] select = this.select;
+        byte[] select_0 = select[zero];
+        byte result = select_0[zero];
+        return result;
     }
 
     private byte getMonInfo_dir() {
-        return this.monInfo_dir[this.cur_a][getSelInfo()];
+        byte[][] monInfo_dir = this.monInfo_dir;
+        byte cur_a = this.cur_a;
+        byte[] monInfo_dir_cur_a = monInfo_dir[cur_a];
+        byte selInfo = getSelInfo();
+        byte result = monInfo_dir_cur_a[selInfo];
+        return result;
     }
 
     public void keyLIST_INFO() {
@@ -2187,10 +3090,13 @@ public class GameRun extends GameRun_F {
     }
 
     private void goGO_RUNINMAP() {
-        this.b_c = (byte) 0;
-        this.popMenu = (byte) -1;
+        int zero = 0;
+        this.b_c = (byte) zero;
+        int minusOne = -1;
+        this.popMenu = (byte) minusOne;
         System.gc();
-        run_state = -11;
+        int minusEleven = -11;
+        run_state = minusEleven;
     }
 
     private void goMY_BAG(int type) {
@@ -2217,12 +3123,58 @@ public class GameRun extends GameRun_F {
     }
 
     public void popState() {
-        if (this.buyOk == 0 && Ms.i().key_Up_Down()) {
-            this.popMenu = Ms.i().select(this.popMenu, 0, this.about_d.length - 1);
-            return;
+        int zero = 0;
+        byte buyOk_val = this.buyOk;
+        if (buyOk_val == zero) {
+            Ms ms = Ms.i();
+            boolean key_Up_Down_result = ms.key_Up_Down();
+            if (key_Up_Down_result) {
+                Ms ms2 = Ms.i();
+                byte popMenu_val = this.popMenu;
+                int zero2 = 0;
+                StringBuffer[] about_d = this.about_d;
+                int about_d_len = about_d.length;
+                int one = 1;
+                int about_d_len_minus_one = about_d_len - one;
+                byte select_result = ms2.select(popMenu_val, zero2, about_d_len_minus_one);
+                this.popMenu = select_result;
+                return;
+            }
         }
-        if (Ms.i().key_S1_Num5()) {
-            if (Ms.i().equals(this.about_d[this.popMenu], Constants_H.POP_TXT_0) || Ms.i().equals(this.about_d[this.popMenu], Constants_H.POP_TXT_15)) {
+        Ms ms3 = Ms.i();
+        boolean key_S1_Num5_result = ms3.key_S1_Num5();
+        if (key_S1_Num5_result) {
+            Ms ms4 = Ms.i();
+            StringBuffer[] about_d2 = this.about_d;
+            byte popMenu_val2 = this.popMenu;
+            StringBuffer about_d_popMenu = about_d2[popMenu_val2];
+            boolean equals_result1 = ms4.equals(about_d_popMenu, Constants_H.POP_TXT_0);
+            if (!equals_result1) {
+                Ms ms5 = Ms.i();
+                StringBuffer[] about_d3 = this.about_d;
+                byte popMenu_val3 = this.popMenu;
+                StringBuffer about_d_popMenu2 = about_d3[popMenu_val3];
+                boolean equals_result2 = ms5.equals(about_d_popMenu2, Constants_H.POP_TXT_15);
+                if (!equals_result2) {
+                    // Skip to next condition - continue to next if statement
+                } else {
+                    // cond_2/cond_8: do initSkillList logic (equals POP_TXT_15 is true)
+                    boolean shouldDoInitSkillList = true;
+                }
+            } else {
+                // equals POP_TXT_0 is true, do initSkillList logic
+                boolean shouldDoInitSkillList = true;
+            }
+            boolean shouldDoInitSkillList = equals_result1;
+            if (!equals_result1) {
+                Ms ms5 = Ms.i();
+                StringBuffer[] about_d3 = this.about_d;
+                byte popMenu_val3 = this.popMenu;
+                StringBuffer about_d_popMenu2 = about_d3[popMenu_val3];
+                boolean equals_result2 = ms5.equals(about_d_popMenu2, Constants_H.POP_TXT_15);
+                shouldDoInitSkillList = equals_result2;
+            }
+            if (shouldDoInitSkillList) {
                 initSkillList(this.mini_state == 6 ? this.cMonsters[this.select[0][0]] : this.myMonsters[this.select[0][0]]);
                 if (this.view_state > 0) {
                     this.bg_c = this.mini_state == 6 ? this.cMonsters[this.select[0][0]].monster[3] : this.myMonsters[this.select[0][0]].monster[3];
@@ -2643,15 +3595,75 @@ public class GameRun extends GameRun_F {
         System.out.println("loadGame 22222222222");
     }
 
-    // JADX ERROR: Method decompilation failed - drawMonsterHp
-    // Method couldn't be decompiled by Jadx, replaced with stub
     private void drawMonsterHp(Monster monster, int x, int y, int w, int mode, int type, int t2) {
-        // TODO: Implement this method based on smali code if needed
-        throw new RuntimeException("Method decompilation failed");
+        int two = 2;
+        short t0;
+        short t1;
+        if (mode < two) {
+            short[] monsterPro = monster.monsterPro;
+            int mode_plus_zero = mode + 0;
+            t0 = monsterPro[mode_plus_zero];
+            short[] monsterPro2 = monster.monsterPro;
+            int mode_plus_two = mode + two;
+            t1 = monsterPro2[mode_plus_two];
+        } else {
+            int t2_val = t2;
+            int zero = 0;
+            if (t2_val == zero) {
+                short[] monsterPro3 = monster.monsterPro;
+                int four = 4;
+                t2_val = (int) monsterPro3[four];
+            }
+            t0 = (short) t2_val;
+            t1 = getMonsterExp(monster);
+        }
+        Ui ui = Ui.i();
+        Ms ms = Ms.i();
+        int w_minus_two = w - two;
+        int t2_final = t2;
+        short percent1 = ms.mathPercent(t2_final, w_minus_two, t1);
+        Ms ms2 = Ms.i();
+        int w_minus_two2 = w - two;
+        short percent2 = ms2.mathPercent(t0, w_minus_two2, t1);
+        ui.drawBarOne(x, y, w, percent1, percent2, mode);
+        int two2 = two;
+        if (type != two2) {
+            String t0_str = String.valueOf(t0);
+            StringBuilder sb = new StringBuilder(t0_str);
+            sb.append("/");
+            sb.append(t1);
+            String s = sb.toString();
+            Ui ui2 = Ui.i();
+            int s_len = s.length();
+            int eight = 8;
+            int calc = (s_len * eight);
+            int w_minus_calc = w - calc;
+            int one = 1;
+            int x_offset = (w_minus_calc >> one) + x;
+            int one2 = 1;
+            int y_offset;
+            if (type == one2) {
+                int five = 5;
+                y_offset = five + y;
+            } else {
+                int zero2 = 0;
+                y_offset = zero2 + y;
+            }
+            int zero3 = 0;
+            int zero4 = 0;
+            ui2.drawNum(s, x_offset, y_offset, zero3, zero4);
+        }
     }
 
     private short getMonsterExp(Monster monster) {
-        return (short) (((monster.monster[2] * 210) / 10) - 2);
+        int twoHundredTen = 210;
+        int ten = 10;
+        int two = 2;
+        byte[] monster_array = monster.monster;
+        int monster_2 = monster_array[2];
+        int calc = (monster_2 * twoHundredTen) / ten;
+        int result = calc - two;
+        return (short) result;
     }
 
     private boolean level_up(int no, int mode) {
@@ -2767,8 +3779,13 @@ public class GameRun extends GameRun_F {
     }
 
     private void paintBATTLE_OVER() {
-        if (this.b_c == 1) {
-            drawEvolveUI(0, this.myB.now_id, false);
+        int zero = 0;
+        int one = 1;
+        byte b_c = this.b_c;
+        if (b_c == one) {
+            Battle myB = this.myB;
+            byte now_id = myB.now_id;
+            drawEvolveUI(zero, now_id, false);
         }
     }
 
@@ -2936,14 +3953,29 @@ public class GameRun extends GameRun_F {
     }
 
     public void deleteItems(int item_id, int count) {
+        int one = 1;
         byte item_type = findItemType(item_id);
+        int zero = 0;
         byte item_no = findItem(item_type, item_id, false);
-        if (item_no != -1) {
-            if (this.items[item_type][item_no][1] >= count) {
-                byte[] bArr = this.items[item_type][item_no];
-                bArr[1] = (byte) (bArr[1] - count);
+        int minusOne = -1;
+        if (item_no != minusOne) {
+            byte[][][] items = this.items;
+            byte[][] items_type = items[item_type];
+            byte[] items_type_no = items_type[item_no];
+            byte count_val = items_type_no[one];
+            if (count_val >= count) {
+                items = this.items;
+                items_type = items[item_type];
+                items_type_no = items_type[item_no];
+                byte count_val2 = items_type_no[one];
+                int new_count = count_val2 - count;
+                items_type_no[one] = (byte) new_count;
             }
-            if (this.items[item_type][item_no][1] == 0) {
+            items = this.items;
+            items_type = items[item_type];
+            items_type_no = items_type[item_no];
+            byte count_val3 = items_type_no[one];
+            if (count_val3 == zero) {
                 dItemIn(item_type, item_no);
             }
         }
@@ -3139,30 +4171,45 @@ public class GameRun extends GameRun_F {
     }
 
     public String getNameMonsterInfo(int id) {
-        return this.monsterInfo[id].toString();
+        StringBuffer[] monsterInfo = this.monsterInfo;
+        StringBuffer buffer = monsterInfo[id];
+        return buffer.toString();
     }
 
     public String getNameItem(int item_id) {
-        return this.item_name[item_id].toString();
+        StringBuffer[] item_name = this.item_name;
+        StringBuffer buffer = item_name[item_id];
+        return buffer.toString();
     }
 
     public String getNameCity(int id) {
-        return this.city_name[id].toString();
+        StringBuffer[] city_name = this.city_name;
+        StringBuffer buffer = city_name[id];
+        return buffer.toString();
     }
 
     public String getNameMon(int mon_id) {
-        return this.NAME[mon_id].toString();
+        StringBuffer[] NAME = this.NAME;
+        StringBuffer buffer = NAME[mon_id];
+        return buffer.toString();
     }
 
     private String getNameSkill(byte skill_id) {
-        return this.skill_name[skill_id].toString();
+        StringBuffer[] skill_name = this.skill_name;
+        StringBuffer buffer = skill_name[skill_id];
+        return buffer.toString();
     }
 
     private String getNameBuff(int buff_id) {
-        if (buff_id < 1) {
-            buff_id = 0;
+        int one = 1;
+        int zero = 0;
+        int buff_id_val = buff_id;
+        if (buff_id_val < one) {
+            buff_id_val = zero;
         }
-        return this.buff_name[buff_id].toString();
+        StringBuffer[] buff_name = this.buff_name;
+        StringBuffer buffer = buff_name[buff_id_val];
+        return buffer.toString();
     }
 
     public void say(String string, int flag) {
@@ -3178,15 +4225,25 @@ public class GameRun extends GameRun_F {
     }
 
     public void doSayOverSms() {
-        int temp = this.sayOverSms;
+        int zero = 0;
+        int one = 1;
+        int four = 4;
+        int three = 3;
+        byte sayOverSms_val = this.sayOverSms;
+        int temp = (int) sayOverSms_val;
         System.out.println("doSayOverSms() sayOverSms= " + ((int) this.sayOverSms));
-        this.sayOverSms = (byte) -1;
-        if (temp == 0) {
+        int minusOne = -1;
+        this.sayOverSms = (byte) minusOne;
+        if (temp == zero) {
             isSay = true;
-            SMSSender.i(this).go(4, true);
+            SMSSender sender = SMSSender.i(this);
+            sender.go(four, true);
             isSay = false;
-        } else if (temp == 1) {
-            SMSSender.i(this).go(3, true);
+        } else {
+            if (temp == one) {
+                SMSSender sender2 = SMSSender.i(this);
+                sender2.go(three, true);
+            }
         }
     }
 
@@ -3334,11 +4391,16 @@ public class GameRun extends GameRun_F {
     }
 
     private void goCatchMonster() {
-        run_state = -19;
-        this.cThrowX = (short) 131;
-        this.cThrowY = (short) -20;
-        this.cThrowS = (short) 176;
-        this.b_c = (byte) 0;
+        int minusNineteen = -19;
+        run_state = minusNineteen;
+        int oneHundredThirtyOne = 131;
+        this.cThrowX = (short) oneHundredThirtyOne;
+        int minusTwenty = -20;
+        this.cThrowY = (short) minusTwenty;
+        int oneHundredSeventySix = 176;
+        this.cThrowS = (short) oneHundredSeventySix;
+        int zero = 0;
+        this.b_c = (byte) zero;
     }
 
     private void drawClipPic(int action_id, int id, int x, int y, int w, int h, int piece, int cc, int dir) {
@@ -3363,10 +4425,14 @@ public class GameRun extends GameRun_F {
     }
 
     private void goMontsterAppear() {
-        run_state = -50;
-        this.battle_state = (byte) 0;
-        this.enemyOff = 63;
-        setAimBattle(1);
+        int minusFifty = -50;
+        run_state = minusFifty;
+        int zero = 0;
+        this.battle_state = (byte) zero;
+        int sixtyThree = 63;
+        this.enemyOff = sixtyThree;
+        int one = 1;
+        setAimBattle(one);
     }
 
     private void setEnemyThrow() {
@@ -3468,29 +4534,63 @@ public class GameRun extends GameRun_F {
     }
 
     private void runMonsterAppear() {
-        switch (this.battle_state) {
+        int two = 2;
+        int one = 1;
+        int minusTwo = -2;
+        int zero = 0;
+        byte battle_state = this.battle_state;
+        switch (battle_state) {
             case 0:
-                if (this.myB.throw_state == 2 && this.myB.throw_state == 2) {
-                    if (this.view_state == -2) {
-                        setAimBattle(0);
-                        this.myB.act_num = (byte) 0;
-                        this.enB.act_num = (byte) 0;
+                byte throw_state = this.myB.throw_state;
+                if (throw_state == two) {
+                    throw_state = this.myB.throw_state;
+                    if (throw_state == two) {
+                        byte view_state = this.view_state;
+                        if (view_state == minusTwo) {
+                            setAimBattle(zero);
+                            this.myB.act_num = (byte) zero;
+                            this.enB.act_num = (byte) zero;
                     }
                     this.view_state = (byte) -1;
                     goBattleState();
-                    if (this.t_battle_state == -3 || this.t_battle_state == -2) {
-                        this.battle_state = this.t_battle_state;
-                        this.t_battle_state = (byte) 0;
-                        getHitCoefficient(this.enB, this.enB.getMon(), this.myB.getMon());
+                        byte t_battle_state = this.t_battle_state;
+                        if (t_battle_state == -3) {
+                            t_battle_state = this.t_battle_state;
+                            this.battle_state = t_battle_state;
+                            this.t_battle_state = (byte) zero;
+                            Battle enB = this.enB;
+                            Monster enMon = enB.getMon();
+                            Battle myB = this.myB;
+                            Monster myMon = myB.getMon();
+                            getHitCoefficient(enB, enMon, myMon);
+                        } else {
+                            t_battle_state = this.t_battle_state;
+                            if (t_battle_state == minusTwo) {
+                                this.battle_state = t_battle_state;
+                                this.t_battle_state = (byte) zero;
+                                Battle enB2 = this.enB;
+                                Monster enMon2 = enB2.getMon();
+                                Battle myB2 = this.myB;
+                                Monster myMon2 = myB2.getMon();
+                                getHitCoefficient(enB2, enMon2, myMon2);
                     } else {
                         goSelectAction(this.mini_state);
                     }
-                    if (this.first_battle == 0) {
-                        this.first_battle = (byte) 1;
+                        }
+                        byte first_battle = this.first_battle;
+                        if (first_battle == zero) {
+                            this.first_battle = (byte) one;
                         byte coe = (byte) (this.myB.getMon().monster[6] - 99);
-                        if (((byte) (coe > 1 ? 20 : (coe / 20) * 20)) < 0) {
-                            say(Constants_H.BATTLE_TXT_15, 0);
+                            byte coe_result;
+                            if (coe > one) {
+                                coe_result = 20;
+                            } else {
+                                coe_result = (byte) ((coe / 20) * 20);
+                            }
+                            if (coe_result < 0) {
+                                say(Constants_H.BATTLE_TXT_15, zero);
                             break;
+                            }
                         }
                     }
                 }
@@ -3603,12 +4703,151 @@ public class GameRun extends GameRun_F {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private void damage(dm.Battle r18, dm.Battle r19, dm.Monster r20, dm.Monster r21, int r22, int r23) {
-        /*
-            Method dump skipped, instructions count: 278
-            To view this dump change 'Code comments level' option to 'DEBUG'
-        */
-        throw new UnsupportedOperationException("Method not decompiled: main.GameRun.damage(dm.Battle, dm.Battle, dm.Monster, dm.Monster, int, int):void");
+    private void damage(Battle amB, Battle dmB, Monster am, Monster dm, int skill_no, int mini) {
+        byte[] am_monster = am.monster;
+        int two = 2;
+        int LevelA = (int) am_monster[two];
+        byte[] dm_monster = dm.monster;
+        int LevelB = (int) dm_monster[two];
+        int zero = 0;
+        int DebuffB = zero;
+        short[] am_monsterPro = am.monsterPro;
+        int six = 6;
+        int StrA = (int) am_monsterPro[six];
+        short[] dm_monsterPro = dm.monsterPro;
+        int seven = 7;
+        int DefB = (int) dm_monsterPro[seven];
+        byte[][] skill_array = this.skill;
+        byte[] skill_row = skill_array[skill_no];
+        int SkillDam = (int) skill_row[zero];
+        int LevelCha = LevelA - LevelB;
+        int oneHundred = 100;
+        byte buff = (byte) oneHundred;
+        int oneThousand = 1000;
+        int five = 5;
+        int ten = 10;
+        int calc1 = StrA * SkillDam;
+        int calc2 = oneThousand - (DefB * five);
+        int calc3 = calc1 * calc2;
+        int tenThousand = 10000;
+        int calc4 = calc3 / tenThousand;
+        int calc5 = DefB / ten;
+        int calc6 = calc4 - calc5;
+        int calc7 = SkillDam * two;
+        int calc8 = LevelA / calc7;
+        int hit = calc6 - calc8;
+        int six2 = 6;
+        int one = 1;
+        int calc9 = hit + six2;
+        int calc10 = (LevelA - one) / ten;
+        hit = calc9 - calc10;
+        int ten2 = 10;
+        if (LevelCha > ten2) {
+            LevelCha = ten2;
+        } else {
+            int minusTen = -10;
+            if (LevelCha < minusTen) {
+                LevelCha = minusTen;
+            }
+        }
+        int four = 4;
+        int calc11 = (LevelCha * four) + oneHundred;
+        hit = (calc11 * hit) / oneHundred;
+        byte dm_effect = dm.effect;
+        if (dm_effect == zero) {
+            int minusThirty = -30;
+            DebuffB = minusThirty;
+        }
+        byte[] amB_countS = amB.countS;
+        int one2 = 1;
+        int calc12 = (int) amB_countS[one2] + DebuffB + oneHundred;
+        hit = (calc12 * hit) / oneHundred;
+        byte baoji = (byte) one;
+        int nine = 9;
+        boolean am_isBuffRate9 = am.isBuffRate(nine);
+        if (am_isBuffRate9) {
+            Ms.i();
+            int rand1 = Ms.getRandom(oneHundred);
+            byte[] inhesion_array = this.inhesion;
+            int inhesion9 = (int) inhesion_array[nine];
+            if (rand1 >= inhesion9) {
+                // Skip
+            } else {
+                int fortyEight = 48;
+                boolean dm_isMonReel48 = dm.isMonReel(fortyEight);
+                if (dm_isMonReel48) {
+                    Ms.i();
+                    int rand2 = Ms.getRandom(oneHundred);
+                    byte[][] skill_array2 = this.skill;
+                    byte[] skill_row2 = skill_array2[fortyEight];
+                    int skill48_0 = (int) skill_row2[zero];
+                    if (rand2 < skill48_0) {
+                        hit = hit >> 1;
+                    }
+                }
+            }
+        } else {
+            int fortyEight2 = 48;
+            boolean dm_isMonReel48_2 = dm.isMonReel(fortyEight2);
+            if (dm_isMonReel48_2) {
+                Ms.i();
+                int rand3 = Ms.getRandom(oneHundred);
+                byte[][] skill_array3 = this.skill;
+                byte[] skill_row3 = skill_array3[fortyEight2];
+                int skill48_0_2 = (int) skill_row3[zero];
+                if (rand3 < skill48_0_2) {
+                    hit = hit >> 1;
+                } else {
+                    int ten3 = 10;
+                    boolean am_isBuffRate10 = am.isBuffRate(ten3);
+                    if (am_isBuffRate10) {
+                        Ms.i();
+                        int rand4 = Ms.getRandom(oneHundred);
+                        byte[] inhesion_array2 = this.inhesion;
+                        int inhesion10 = (int) inhesion_array2[ten3];
+                        if (rand4 < inhesion10) {
+                            int fifteen = 15;
+                            hit = (hit * fifteen) / ten;
+                            int two2 = 2;
+                            baoji = (byte) two2;
+                        }
+                    }
+                }
+            } else {
+                int ten4 = 10;
+                boolean am_isBuffRate10_2 = am.isBuffRate(ten4);
+                if (am_isBuffRate10_2) {
+                    Ms.i();
+                    int rand5 = Ms.getRandom(oneHundred);
+                    byte[] inhesion_array3 = this.inhesion;
+                    int inhesion10_2 = (int) inhesion_array3[ten4];
+                    if (rand5 < inhesion10_2) {
+                        int fifteen2 = 15;
+                        hit = (hit * fifteen2) / ten;
+                        int two3 = 2;
+                        baoji = (byte) two3;
+                    }
+                }
+            }
+        }
+        byte[] dm_monster2 = dm.monster;
+        int three = 3;
+        byte dm_monster3 = dm_monster2[three];
+        if (dm_monster3 == one) {
+            int thirtyThree = 33;
+            boolean dm_isMonReel33 = dm.isMonReel(thirtyThree);
+            if (dm_isMonReel33) {
+                byte[][] skill_array4 = this.skill;
+                byte[] skill_row4 = skill_array4[thirtyThree];
+                buff = skill_row4[zero];
+            }
+        }
+        hit = (hit * (int) buff) / oneHundred;
+        if (hit < one) {
+            hit = one;
+        }
+        int zero2 = 0;
+        dmB.addHit(hit, (int) baoji, zero2);
     }
 
     private byte isShuXing(Monster am, Monster dm2) {
@@ -3713,15 +4952,32 @@ public class GameRun extends GameRun_F {
     }
 
     private void goBattleItem() {
-        this.battle_state = (byte) -4;
-        this.cur_b = (byte) -1;
+        int one = 1;
+        int thirtyTwo = 32;
+        int minusFour = -4;
+        this.battle_state = (byte) minusFour;
+        int minusOne = -1;
+        this.cur_b = (byte) minusOne;
         StringBuffer sbuff = new StringBuffer();
         Ms.i();
-        if (Ms.getRandom(100) < 50 && findItem(-2, 32, true) < 99) {
-            addItem(32, 1);
-            sbuff.append(Constants_H.MONEY_TXT_7 + getNameItem(32) + "x1");
+        int hundred = 100;
+        int random = Ms.getRandom(hundred);
+        int fifty = 50;
+        if (random < fifty) {
+            int minusTwo = -2;
+            byte findResult = findItem(minusTwo, thirtyTwo, true);
+            int ninetyNine = 99;
+            if (findResult < ninetyNine) {
+                addItem(thirtyTwo, one);
+                StringBuilder sb = new StringBuilder("获得：");
+                String itemName = getNameItem(thirtyTwo);
+                sb.append(itemName);
+                sb.append("x1");
+                sbuff.append(sb.toString());
+            }
         }
-        setStringB(sbuff.toString(), Constants.PAYMENT_JIFENGQUAN_MAX, 0);
+        String result = sbuff.toString();
+        setStringB(result, Constants.PAYMENT_JIFENGQUAN_MAX, 0);
     }
 
     private void goBattleExp(boolean half) {
@@ -3745,16 +5001,18 @@ public class GameRun extends GameRun_F {
     }
 
     private void setNullBattle() {
-        this.proReplace = null;
-        this.effectImage = null;
-        this.imgBattle = null;
-        this.levelUp_in_battle = null;
-        this.myB = null;
-        this.enB = null;
+        Object null_val = null;
+        this.proReplace = (short[][]) null_val;
+        this.effectImage = (Image[]) null_val;
+        this.imgBattle = (Image[]) null_val;
+        this.levelUp_in_battle = (byte[][]) null_val;
+        this.myB = (Battle) null_val;
+        this.enB = (Battle) null_val;
     }
 
     public void goGameOver() {
-        run_state = 60;
+        int state = 60;
+        run_state = state;
     }
 
     private void drawAnimationBattle(Battle amB, int mini_am) {
@@ -3779,7 +5037,15 @@ public class GameRun extends GameRun_F {
     }
 
     private boolean isSkillToMe(int skill) {
-        return skill == 27 || skill == 28;
+        int twentySeven = 27;
+        int twentyEight = 28;
+        if (skill == twentySeven) {
+            return true;
+        }
+        if (skill == twentyEight) {
+            return true;
+        }
+        return false;
     }
 
     private int getBXY(int state, int skill, boolean bb) {
@@ -3959,8 +5225,23 @@ public class GameRun extends GameRun_F {
     }
 
     private void runBattleState() {
-        this.myB.countS[0] = (byte) Ms.i().mathSpeedN(this.myB.countS[0], this.myB.countS[1], 1, false);
-        this.enB.countS[0] = (byte) Ms.i().mathSpeedN(this.enB.countS[0], this.enB.countS[1], 1, false);
+        int minusOne = -1;
+        int four = 4;
+        int two = 2;
+        int one = 1;
+        int zero = 0;
+        byte[] myB_countS = this.myB.countS;
+        myB_countS = this.myB.countS;
+        byte myB_countS_0 = myB_countS[zero];
+        byte[] myB_countS2 = this.myB.countS;
+        byte myB_countS_1 = myB_countS2[one];
+        this.myB.countS[zero] = (byte) Ms.i().mathSpeedN(myB_countS_0, myB_countS_1, one, false);
+        byte[] enB_countS = this.enB.countS;
+        enB_countS = this.enB.countS;
+        byte enB_countS_0 = enB_countS[zero];
+        byte[] enB_countS2 = this.enB.countS;
+        byte enB_countS_1 = enB_countS2[one];
+        this.enB.countS[zero] = (byte) Ms.i().mathSpeedN(enB_countS_0, enB_countS_1, one, false);
         switch (this.battle_state) {
             case -5:
                 if (this.b_c == 0 && this.cur_c >= this.mon_in_battle[0]) {
@@ -4183,12 +5464,17 @@ public class GameRun extends GameRun_F {
     }
 
     public void setMagic(int pro) {
-        if (pro > 5) {
-            pro = 5;
+        short zero = 0;
+        int five = 5;
+        int pro_val = pro;
+        if (pro_val > five) {
+            pro_val = five;
         }
-        initMagicStream(pro);
-        this.now_action_Magic[pro] = 0;
-        this.now_time_Magic[pro] = 0;
+        initMagicStream(pro_val);
+        short[] now_action_Magic = this.now_action_Magic;
+        now_action_Magic[pro_val] = zero;
+        short[] now_time_Magic = this.now_time_Magic;
+        now_time_Magic[pro_val] = zero;
     }
 
     private void keyBattleState() {
@@ -4337,20 +5623,127 @@ public class GameRun extends GameRun_F {
     }
 
     private void drawEnemy() {
-        drawEffectImage(this.enB.getMon(), 435, 40);
-        if (this.enB.getMon().monsterPro[0] >= 1 || this.enB.dead != 1) {
-            if (drawCartoonOne(0, 0, (this.mList_id[this.enB.getMon().monster[0]][1] * 3) + this.enB.action, (this.enB.ceff[0] != 0 ? 3 : 0) + 377, (this.enB.ceff[0] != 0 ? -3 : 0) + 97, this.enB.action == 0, 0)) {
-                if (this.enB.getMon().monsterPro[0] < 1) {
-                    this.enB.action = (byte) 2;
-                    this.enB.dead = (byte) 1;
-                } else if (this.enB.dead != 1) {
-                    this.enB.action = (byte) 0;
+        int zero = 0;
+        int one = 1;
+        int fourHundredThirtyFive = 435;
+        int forty = 40;
+        Battle enB = this.enB;
+        Monster enB_mon = enB.getMon();
+        drawEffectImage(enB_mon, fourHundredThirtyFive, forty);
+        Battle enB2 = this.enB;
+        Monster enB2_mon = enB2.getMon();
+        short[] enB2_mon_monsterPro = enB2_mon.monsterPro;
+        short enB2_mon_monsterPro_0 = enB2_mon_monsterPro[zero];
+        if (enB2_mon_monsterPro_0 < one) {
+            Battle enB3 = this.enB;
+            byte enB3_dead = enB3.dead;
+            if (enB3_dead == one) {
+                return;
+            }
+        }
+        byte[][] mList_id = this.mList_id;
+        Battle enB4 = this.enB;
+        Monster enB4_mon = enB4.getMon();
+        byte[] enB4_mon_monster = enB4_mon.monster;
+        byte enB4_mon_monster_0 = enB4_mon_monster[zero];
+        byte[][] mList_id2 = this.mList_id;
+        byte[] mList_id_enB4_mon_monster_0 = mList_id2[enB4_mon_monster_0];
+        byte mList_id_1 = mList_id_enB4_mon_monster_0[one];
+        int three = 3;
+        int calc1 = mList_id_1 * three;
+        Battle enB5 = this.enB;
+        byte enB5_action = enB5.action;
+        int action_id = calc1 + enB5_action;
+        Battle enB6 = this.enB;
+        byte[] enB6_ceff = enB6.ceff;
+        byte enB6_ceff_0 = enB6_ceff[zero];
+        int x_offset;
+        if (enB6_ceff_0 != zero) {
+            int three2 = 3;
+            x_offset = three2 + 377;
+        } else {
+            int zero2 = 0;
+            x_offset = zero2 + 377;
+        }
+        Battle enB7 = this.enB;
+        byte[] enB7_ceff = enB7.ceff;
+        byte enB7_ceff_0 = enB7_ceff[zero];
+        int y_offset;
+        if (enB7_ceff_0 != zero) {
+            int minusThree = -3;
+            y_offset = minusThree + 97;
+        } else {
+            int zero3 = 0;
+            y_offset = zero3 + 97;
+        }
+        Battle enB8 = this.enB;
+        byte enB8_action = enB8.action;
+        boolean dir;
+        if (enB8_action == zero) {
+            dir = true;
+        } else {
+            dir = false;
+        }
+        int zero4 = 0;
+        boolean drawn = drawCartoonOne(zero4, zero4, action_id, x_offset, y_offset, dir, zero4);
+        if (drawn) {
+            Battle enB9 = this.enB;
+            Monster enB9_mon = enB9.getMon();
+            short[] enB9_mon_monsterPro = enB9_mon.monsterPro;
+            short enB9_mon_monsterPro_0 = enB9_mon_monsterPro[zero];
+            if (enB9_mon_monsterPro_0 < one) {
+                Battle enB10 = this.enB;
+                int two = 2;
+                enB10.action = (byte) two;
+                Battle enB11 = this.enB;
+                enB11.dead = (byte) one;
+            } else {
+                Battle enB12 = this.enB;
+                byte enB12_dead = enB12.dead;
+                if (enB12_dead != one) {
+                    Battle enB13 = this.enB;
+                    enB13.action = (byte) zero;
                 }
             }
-            this.enB.ceff[0] = (byte) Ms.i().mathSpeedN(this.enB.ceff[0], 0, 1, true);
-            drawMonsterHp(this.enB.getMon(), 352, 97, 50, 0, 1, this.enB.chp);
-            this.enB.chp = Ms.i().mathSpeedN(this.enB.chp, this.enB.getMon().monsterPro[0], this.enB.chp < this.enB.getMon().monsterPro[0] ? 20 : 6, true);
         }
+        Battle enB14 = this.enB;
+        byte[] enB14_ceff = enB14.ceff;
+        byte enB14_ceff_0 = enB14_ceff[zero];
+        Ms ms = Ms.i();
+        int zero5 = 0;
+        int one2 = 1;
+        int mathSpeedN_result = ms.mathSpeedN(enB14_ceff_0, zero5, one2, true);
+        byte mathSpeedN_byte = (byte) mathSpeedN_result;
+        enB14_ceff[zero] = mathSpeedN_byte;
+        Battle enB15 = this.enB;
+        Monster enB15_mon = enB15.getMon();
+        int threeHundredFiftyTwo = 352;
+        int ninetySeven = 97;
+        int fifty = 50;
+        int zero6 = 0;
+        int one3 = 1;
+        Battle enB16 = this.enB;
+        short enB16_chp = enB16.chp;
+        drawMonsterHp(enB15_mon, threeHundredFiftyTwo, ninetySeven, fifty, zero6, one3, enB16_chp);
+        Battle enB17 = this.enB;
+        short enB17_chp = enB17.chp;
+        Battle enB18 = this.enB;
+        Monster enB18_mon = enB18.getMon();
+        short[] enB18_mon_monsterPro = enB18_mon.monsterPro;
+        short enB18_mon_monsterPro_0 = enB18_mon_monsterPro[zero];
+        short enB17_chp2 = enB17_chp;
+        short enB18_mon_monsterPro_0_2 = enB18_mon_monsterPro_0;
+        int speed;
+        if (enB17_chp2 < enB18_mon_monsterPro_0_2) {
+            int twenty = 20;
+            speed = twenty;
+        } else {
+            int six = 6;
+            speed = six;
+        }
+        Ms ms2 = Ms.i();
+        short chp_result = ms2.mathSpeedN(enB17_chp, enB18_mon_monsterPro_0, speed, true);
+        enB17.chp = chp_result;
     }
 
     public void drawMyMon() {
@@ -4409,79 +5802,68 @@ public class GameRun extends GameRun_F {
     
         return setCartoonFrameMagic_C(r8, r9, r10, true);
      */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct code enable 'Show inconsistent code' option in preferences
-    */
-    public boolean drawMagicC(int r8, int r9, int r10, int r11, int r12, int r13) {
-        /*
-            r7 = this;
-            r4 = 2
-            r6 = 1
-            r3 = 0
-            short[] r0 = r7.now_action_Magic
-            short r0 = r0[r8]
-            dm.Sprite[] r1 = r7.magic
-            r1 = r1[r9]
-            int r1 = r1.aLength(r10)
-            if (r0 < r1) goto L17
-            short[] r0 = r7.now_action_Magic
-            r0[r8] = r3
-            r0 = r6
-        L16:
-            return r0
-        L17:
-            dm.Sprite[] r0 = r7.magic
-            r0 = r0[r9]
-            short[] r1 = r7.now_action_Magic
-            short r1 = r1[r8]
-            int r0 = r0.action(r10, r1, r3)
-            short r2 = (short) r0
-        L24:
-            dm.Battle r0 = r7.f133dm
-            if (r0 == 0) goto L2a
-            if (r2 < r4) goto L3d
-        L2a:
-            dm.Ui r0 = dm.Ui.i()
-            dm.Sprite[] r1 = r7.magic
-            r1 = r1[r9]
-            r3 = r11
-            r4 = r12
-            r5 = r13
-            r0.drawFrameOne(r1, r2, r3, r4, r5)
-            boolean r0 = r7.setCartoonFrameMagic_C(r8, r9, r10, r6)
-            goto L16
-        L3d:
-            if (r2 != 0) goto L45
-            dm.Battle r0 = r7.f133dm
-            byte[] r0 = r0.ceff
-            r0[r3] = r4
-        L45:
-            short[] r0 = r7.now_time_Magic
-            r0[r8] = r3
-            short[] r0 = r7.now_action_Magic
-            short r1 = r0[r8]
-            int r1 = r1 + 1
-            short r1 = (short) r1
-            r0[r8] = r1
-            dm.Sprite[] r0 = r7.magic
-            r0 = r0[r9]
-            int r0 = r0.aLength(r10)
-            if (r1 < r0) goto L62
-            short[] r0 = r7.now_action_Magic
-            r0[r8] = r3
-            r0 = r6
-            goto L16
-        L62:
-            dm.Sprite[] r0 = r7.magic
-            r0 = r0[r9]
-            short[] r1 = r7.now_action_Magic
-            short r1 = r1[r8]
-            int r0 = r0.action(r10, r1, r3)
-            short r2 = (short) r0
-            goto L24
-        */
-        throw new UnsupportedOperationException("Method not decompiled: main.GameRun.drawMagicC(int, int, int, int, int, int):boolean");
+    public boolean drawMagicC(int i, int skill_mode, int select, int x, int y, int dir) {
+        int two = 2;
+        int one = 1;
+        int zero = 0;
+        short[] now_action_Magic = this.now_action_Magic;
+        short now_action_Magic_i = now_action_Magic[i];
+        Sprite[] magic = this.magic;
+        Sprite magic_skill_mode = magic[skill_mode];
+        int aLength = magic_skill_mode.aLength(select);
+        if (now_action_Magic_i >= aLength) {
+            short[] now_action_Magic2 = this.now_action_Magic;
+            now_action_Magic2[i] = (short) zero;
+            return true;
+        }
+        Sprite[] magic2 = this.magic;
+        Sprite magic2_skill_mode = magic2[skill_mode];
+        short[] now_action_Magic3 = this.now_action_Magic;
+        short now_action_Magic3_i = now_action_Magic3[i];
+        int action_result = magic2_skill_mode.action(select, now_action_Magic3_i, zero);
+        short frame_id = (short) action_result;
+        while (true) {
+            Battle dm = this.f133dm;
+            if (dm == null) {
+                break;
+            }
+            if (frame_id >= two) {
+                break;
+            }
+            int zero2 = 0;
+            if (frame_id == zero2) {
+                Battle dm2 = this.f133dm;
+                byte[] dm2_ceff = dm2.ceff;
+                dm2_ceff[zero2] = (byte) two;
+            }
+            short[] now_time_Magic = this.now_time_Magic;
+            now_time_Magic[i] = (short) zero;
+            short[] now_action_Magic4 = this.now_action_Magic;
+            short now_action_Magic4_i = now_action_Magic4[i];
+            int increment = now_action_Magic4_i + one;
+            short increment_short = (short) increment;
+            now_action_Magic4[i] = increment_short;
+            Sprite[] magic3 = this.magic;
+            Sprite magic3_skill_mode = magic3[skill_mode];
+            int aLength2 = magic3_skill_mode.aLength(select);
+            if (increment_short >= aLength2) {
+                short[] now_action_Magic5 = this.now_action_Magic;
+                now_action_Magic5[i] = (short) zero;
+                return true;
+            }
+            Sprite[] magic4 = this.magic;
+            Sprite magic4_skill_mode = magic4[skill_mode];
+            short[] now_action_Magic6 = this.now_action_Magic;
+            short now_action_Magic6_i = now_action_Magic6[i];
+            int action_result2 = magic4_skill_mode.action(select, now_action_Magic6_i, zero);
+            frame_id = (short) action_result2;
+        }
+        Ui ui = Ui.i();
+        Sprite[] magic5 = this.magic;
+        Sprite magic5_skill_mode = magic5[skill_mode];
+        ui.drawFrameOne(magic5_skill_mode, frame_id, x, y, dir);
+        boolean result = setCartoonFrameMagic_C(i, skill_mode, select, true);
+        return result;
     }
 
     private boolean setCartoonFrameMagic_C(int i, int skill_mode, int select, boolean mode) {
@@ -4588,7 +5970,8 @@ public class GameRun extends GameRun_F {
     }
 
     public void battleType(int mode) {
-        this.battle_type = (byte) mode;
+        int mode_val = mode;
+        this.battle_type = (byte) mode_val;
     }
 
     private void enemy_init() {
@@ -4638,9 +6021,25 @@ public class GameRun extends GameRun_F {
     }
 
     public void setAimBattle(int state) {
-        this.mini_state = (byte) state;
-        this.am = this.mini_state == 1 ? this.myB : this.enB;
-        this.f133dm = this.mini_state == 1 ? this.enB : this.myB;
+        int one = 1;
+        byte state_byte = (byte) state;
+        this.mini_state = state_byte;
+        byte mini_state_val = this.mini_state;
+        if (mini_state_val == one) {
+            Battle myB = this.myB;
+            this.am = myB;
+        } else {
+            Battle enB = this.enB;
+            this.am = enB;
+        }
+        byte mini_state_val2 = this.mini_state;
+        if (mini_state_val2 == one) {
+            Battle enB2 = this.enB;
+            this.f133dm = enB2;
+        } else {
+            Battle myB2 = this.myB;
+            this.f133dm = myB2;
+        }
     }
 
     public void goBattle() {
@@ -4720,7 +6119,13 @@ public class GameRun extends GameRun_F {
     }
 
     private boolean bufferAI(Monster mon) {
-        return !mon.isMonEffect(0);
+        int zero = 0;
+        boolean result = mon.isMonEffect(zero);
+        if (result) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:39:0x00c4. Please report as an issue. */
@@ -4730,11 +6135,191 @@ public class GameRun extends GameRun_F {
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
     private void aiEnemy() {
-        /*
-            Method dump skipped, instructions count: 386
-            To view this dump change 'Code comments level' option to 'DEBUG'
-        */
-        throw new UnsupportedOperationException("Method not decompiled: main.GameRun.aiEnemy():void");
+        int four = 4;
+        int three = 3;
+        int two = 2;
+        int zero = 0;
+        int one = 1;
+        byte skill_num = (byte) 5;
+        Ms.i();
+        int oneHundred = 100;
+        int n_int = Ms.getRandom(oneHundred);
+        byte n = (byte) n_int;
+        int minusOne = -1;
+        while (skill_num > minusOne) {
+            Battle enB = this.enB;
+            Monster enB_mon = enB.getMon();
+            byte[] enB_mon_monster = enB_mon.monster;
+            int skill_num_plus_eight = skill_num + 8;
+            byte monster_val = enB_mon_monster[skill_num_plus_eight];
+            if (monster_val == minusOne) {
+                break;
+            }
+            skill_num = (byte) (skill_num - one);
+        }
+        skill_num = (byte) (skill_num + one);
+        byte battle_type = this.battle_type;
+        if (battle_type == four) {
+            switch (skill_num) {
+                case 1:
+                    this.enB.skill = (byte) zero;
+                    break;
+                case 2:
+                    int fortyOne = 65;
+                    if (n < fortyOne) {
+                        this.enB.skill = (byte) one;
+                    } else {
+                        this.enB.skill = (byte) zero;
+                    }
+                    break;
+                case 3:
+                    int fortyFive = 45;
+                    if (n < fortyFive) {
+                        this.enB.skill = (byte) two;
+                    } else {
+                        int seventyFive = 75;
+                        if (n > seventyFive) {
+                            this.enB.skill = (byte) one;
+                        } else {
+                            this.enB.skill = (byte) zero;
+                        }
+                    }
+                    break;
+                default:
+                    int fortyFive2 = 45;
+                    if (n < fortyFive2) {
+                        this.enB.skill = (byte) (skill_num - one);
+                    } else {
+                        int seventyFive2 = 75;
+                        if (n < seventyFive2) {
+                            this.enB.skill = (byte) (skill_num - two);
+                        } else {
+                            int ninetyFive = 95;
+                            if (n < ninetyFive) {
+                                this.enB.skill = (byte) (skill_num - three);
+                            } else {
+                                this.enB.skill = (byte) (skill_num - four);
+                            }
+                        }
+                    }
+                    break;
+            }
+        } else {
+            byte i = (byte) zero;
+            Ms.i();
+            int rand_int = Ms.getRandom(oneHundred);
+            byte rand = (byte) rand_int;
+            while (i < two) {
+                Battle enB2 = this.enB;
+                Monster enB2_mon = enB2.getMon();
+                byte[] enB2_mon_monster = enB2_mon.monster;
+                int i_plus_fourteen = i + 14;
+                byte monster_val2 = enB2_mon_monster[i_plus_fourteen];
+                switch (monster_val2) {
+                    case 27:
+                        Battle enB3 = this.enB;
+                        Monster enB3_mon = enB3.getMon();
+                        int fifty = 50;
+                        boolean isMonHp50 = isMonHp(enB3_mon, fifty);
+                        if (isMonHp50) {
+                            int thirty = 30;
+                            if (rand < thirty) {
+                                Battle enB4 = this.enB;
+                                int i_plus_six = i + 6;
+                                enB4.skill = (byte) i_plus_six;
+                                i = (byte) (i + one);
+                                break;
+                            }
+                        }
+                        i = (byte) (i + one);
+                        continue;
+                    case 28:
+                        Battle enB5 = this.enB;
+                        Monster enB5_mon = enB5.getMon();
+                        int thirty2 = 30;
+                        boolean isMonHp30 = isMonHp(enB5_mon, thirty2);
+                        if (isMonHp30) {
+                            int thirty3 = 30;
+                            if (rand < thirty3) {
+                                Battle enB6 = this.enB;
+                                int i_plus_six2 = i + 6;
+                                enB6.skill = (byte) i_plus_six2;
+                                i = (byte) (i + one);
+                                break;
+                            }
+                        }
+                        i = (byte) (i + one);
+                        continue;
+                    default:
+                        i = (byte) (i + one);
+                        continue;
+                }
+                break;
+            }
+            if (i > one) {
+                switch (skill_num) {
+                    case 1:
+                        this.enB.skill = (byte) zero;
+                        break;
+                    case 2:
+                        int twenty = 20;
+                        if (n < twenty) {
+                            this.enB.skill = (byte) zero;
+                        } else {
+                            this.enB.skill = (byte) one;
+                        }
+                        break;
+                    case 3:
+                        int five2 = 5;
+                        if (n < five2) {
+                            this.enB.skill = (byte) zero;
+                        } else {
+                            int forty = 40;
+                            if (n > forty) {
+                                this.enB.skill = (byte) two;
+                            } else {
+                                this.enB.skill = (byte) one;
+                            }
+                        }
+                        break;
+                    case 4:
+                        int fifteen = 15;
+                        if (n < fifteen) {
+                            this.enB.skill = (byte) one;
+                        } else {
+                            int forty2 = 40;
+                            if (n < forty2) {
+                                this.enB.skill = (byte) two;
+                            } else {
+                                this.enB.skill = (byte) three;
+                            }
+                        }
+                        break;
+                    default:
+                        int sixty = 60;
+                        if (n < sixty) {
+                            this.enB.skill = (byte) (skill_num - one);
+                        } else {
+                            int ninetyFive2 = 95;
+                            if (n < ninetyFive2) {
+                                this.enB.skill = (byte) (skill_num - two);
+                            } else {
+                                this.enB.skill = (byte) (skill_num - three);
+                            }
+                        }
+                        break;
+                }
+            }
+        }
+        Battle enB7 = this.enB;
+        Battle enB8 = this.enB;
+        Monster enB8_mon = enB8.getMon();
+        byte[] enB8_mon_monster = enB8_mon.monster;
+        Battle enB9 = this.enB;
+        byte enB9_skill = enB9.skill;
+        int enB9_skill_plus_eight = enB9_skill + 8;
+        byte final_skill = enB8_mon_monster[enB9_skill_plus_eight];
+        enB7.skill = final_skill;
     }
 
     private boolean isMonHp(Monster mon, int percent) {
@@ -4870,18 +6455,30 @@ public class GameRun extends GameRun_F {
     }
 
     public synchronized void Success() {
-        SMSSender.i(this).setSendSms(4);
+        int four = 4;
+        SMSSender sender = SMSSender.i(this);
+        sender.setSendSms(four);
         try {
-            SMSSender.i(this);
-            if (SMSSender.smsType == 6) {
-                SMSSender.i(this).sendSuccess();
-                SMSSender.i(this).setSendSms(-1);
-                run_state = -10;
-                mc.temp_state = run_state;
-                mc.setSmsIsSetRun_state(true);
+            SMSSender sender2 = SMSSender.i(this);
+            int six = 6;
+            if (SMSSender.smsType == six) {
+                SMSSender sender3 = SMSSender.i(this);
+                sender3.sendSuccess();
+                SMSSender sender4 = SMSSender.i(this);
+                int minusOne = -1;
+                sender4.setSendSms(minusOne);
+                int minusTen = -10;
+                run_state = minusTen;
+                MainCanvas mc_local = mc;
+                int run_state_val = run_state;
+                mc_local.temp_state = run_state_val;
+                MainCanvas mc_local2 = mc;
+                int one = 1;
+                mc_local2.setSmsIsSetRun_state(true);
                 this.map.setRegState(true);
             } else {
-                SMSSender.i(this).sendSuccess();
+                SMSSender sender5 = SMSSender.i(this);
+                sender5.sendSuccess();
             }
         } catch (Exception e) {
             e.printStackTrace();

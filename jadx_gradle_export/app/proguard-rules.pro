@@ -18,3 +18,8 @@
 -keep class dm.** { *; }
 -keep class javax.microedition.** { *; }
 
+
+
+
+
+

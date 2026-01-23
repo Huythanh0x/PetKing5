@@ -3,6 +3,7 @@ package com.petking.reverse.cli
 import com.petking.reverse.apktool.ApktoolResult
 import com.petking.reverse.apktool.ApktoolWrapper
 import com.petking.reverse.core.DiffAnalyzer
+import com.petking.reverse.jadx.GradleBuildResult
 import com.petking.reverse.jadx.JadxResult
 import com.petking.reverse.jadx.JadxWrapper
 import com.petking.reverse.utils.DependencyChecker
@@ -22,6 +23,7 @@ fun main(args: Array<String>) {
         "disassemble" -> handleDisassemble(args)
         "reassemble" -> handleReassemble(args)
         "decompile" -> handleDecompile(args)
+        "build-apk" -> handleBuildApk(args)
         "compare" -> handleCompare(args)
         "diff" -> handleDiff(args)
         "check-deps" -> handleCheckDeps()
@@ -187,6 +189,36 @@ fun handleReassemble(args: Array<String>) {
         }
         is ApktoolResult.Error -> {
             println("❌ Reassembly failed: ${result.message}")
+        }
+    }
+}
+
+fun handleBuildApk(args: Array<String>) {
+    if (args.size < 2) {
+        println("Error: build-apk requires <gradle_project_dir> [output_apk]")
+        println("Example: build-apk jadx_gradle_exported new_compiled.apk")
+        return
+    }
+    
+    val gradleProjectDir = File(args[1])
+    val outputApk = if (args.size >= 3) File(args[2]) else null
+    
+    val wrapper = JadxWrapper()
+    
+    if (outputApk != null) {
+        println("Building APK from ${gradleProjectDir.name} → ${outputApk.name}...")
+    } else {
+        println("Building APK from ${gradleProjectDir.name}...")
+    }
+    
+    when (val result = wrapper.buildApkFromGradle(gradleProjectDir, outputApk)) {
+        is GradleBuildResult.Success -> {
+            println("✅ Build complete!")
+            println("APK location: ${result.apkFile.absolutePath}")
+            println("APK size: ${result.apkFile.length() / 1024} KB")
+        }
+        is GradleBuildResult.Error -> {
+            println("❌ Build failed:\n${result.message}")
         }
     }
 }
@@ -357,3 +389,5 @@ fun findMatchingSmaliFiles(dir1: File, dir2: File): List<Pair<File, File>> {
     
     return matches
 }
+
+
